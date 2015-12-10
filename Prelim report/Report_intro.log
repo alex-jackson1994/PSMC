@@ -1,0 +1,657 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.23)  10 DEC 2015 16:41
+entering extended mode
+**\nonstopmode\input Report_intro.tex
+(Report_intro.tex
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\base\article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\base\size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks14
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\amsmath\amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\amsmath\amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen103
+))
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\amsmath\amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count87
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count88
+\leftroot@=\count89
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count90
+\DOTSCASE@=\count91
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
+\dotsspace@=\muskip10
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
+\tag@help=\toks16
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
+\andhelp@=\toks17
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks18
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\tools\bm.sty
+Package: bm 2014/10/28 v1.1c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\ulem\ulem.sty
+\UL@box=\box28
+\UL@hyphenbox=\box29
+\UL@skip=\skip46
+\UL@hook=\toks20
+\UL@height=\dimen112
+\UL@pe=\count99
+\UL@pixel=\dimen113
+\ULC@box=\box30
+Package: ulem 2012/05/18
+\ULdepth=\dimen114
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\pgf\frontendlayer\tikz.sty
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\pgf\basiclayer\pgf.sty
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\pgf\utilities\pgfrcs.sty
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\utilities\pgfutil-common
+.tex
+\pgfutil@everybye=\toks21
+\pgfutil@tempdima=\dimen115
+\pgfutil@tempdimb=\dimen116
+
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\utilities\pgfutil-common
+-lists.tex))
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\utilities\pgfutil-latex.
+def
+\pgfutil@abb=\box31
+ (C:\Users\alex\Desktop\Software\miktex\tex\latex\ms\everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\utilities\pgfrcs.code.te
+x
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+))
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+ (C:\Users\alex\Desktop\Software\miktex\tex\latex\pgf\basiclayer\pgfcore.sty (C
+:\Users\alex\Desktop\Software\miktex\tex\latex\graphics\graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks22
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\graphics\graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\graphics\trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\pdftex-def\pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\oberdiek\infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\oberdiek\ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count100
+))
+\Gin@req@height=\dimen117
+\Gin@req@width=\dimen118
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\pgf\systemlayer\pgfsys.sty
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\systemlayer\pgfsys.code.
+tex
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\utilities\pgfkeys.code.t
+ex
+\pgfkeys@pathtoks=\toks23
+\pgfkeys@temptoks=\toks24
+
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\utilities\pgfkeysfiltere
+d.code.tex
+\pgfkeys@tmptoks=\toks25
+))
+\pgf@x=\dimen119
+\pgf@y=\dimen120
+\pgf@xa=\dimen121
+\pgf@ya=\dimen122
+\pgf@xb=\dimen123
+\pgf@yb=\dimen124
+\pgf@xc=\dimen125
+\pgf@yc=\dimen126
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count101
+\c@pgf@countb=\count102
+\c@pgf@countc=\count103
+\c@pgf@countd=\count104
+\t@pgf@toka=\toks26
+\t@pgf@tokb=\toks27
+\t@pgf@tokc=\toks28
+
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\systemlayer\pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\systemlayer\pgfsys-pdfte
+x.def
+File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\systemlayer\pgfsys-commo
+n-pdf.def
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)))
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\systemlayer\pgfsyssoftpa
+th.code.tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count105
+\pgfsyssoftpath@bigbuffer@items=\count106
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\systemlayer\pgfsysprotoc
+ol.code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\xcolor\xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\00miktex\color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\basiclayer\pgfcore.code.
+tex
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\math\pgfmath.code.tex
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\math\pgfmathcalc.code.te
+x
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\math\pgfmathutil.code.te
+x)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\math\pgfmathparser.code.
+tex
+\pgfmath@dimen=\dimen127
+\pgfmath@count=\count107
+\pgfmath@box=\box32
+\pgfmath@toks=\toks29
+\pgfmath@stack@operand=\toks30
+\pgfmath@stack@operation=\toks31
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\math\pgfmathfunctions.co
+de.tex
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\math\pgfmathfunctions.ba
+sic.code.tex)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\math\pgfmathfunctions.tr
+igonometric.code.tex)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\math\pgfmathfunctions.ra
+ndom.code.tex)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\math\pgfmathfunctions.co
+mparison.code.tex)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\math\pgfmathfunctions.ba
+se.code.tex)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\math\pgfmathfunctions.ro
+und.code.tex)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\math\pgfmathfunctions.mi
+sc.code.tex)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\math\pgfmathfunctions.in
+tegerarithmetics.code.tex)))
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\math\pgfmathfloat.code.t
+ex
+\c@pgfmathroundto@lastzeros=\count108
+))
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\basiclayer\pgfcorepoints
+.code.tex
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen128
+\pgf@picmaxx=\dimen129
+\pgf@picminy=\dimen130
+\pgf@picmaxy=\dimen131
+\pgf@pathminx=\dimen132
+\pgf@pathmaxx=\dimen133
+\pgf@pathminy=\dimen134
+\pgf@pathmaxy=\dimen135
+\pgf@xx=\dimen136
+\pgf@xy=\dimen137
+\pgf@yx=\dimen138
+\pgf@yy=\dimen139
+\pgf@zx=\dimen140
+\pgf@zy=\dimen141
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\basiclayer\pgfcorepathco
+nstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen142
+\pgf@path@lasty=\dimen143
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\basiclayer\pgfcorepathus
+age.code.tex
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen144
+\pgf@shorten@start@additional=\dimen145
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\basiclayer\pgfcorescopes
+.code.tex
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+\pgfpic=\box33
+\pgf@hbox=\box34
+\pgf@layerbox@main=\box35
+\pgf@picture@serial@count=\count109
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\basiclayer\pgfcoregraphi
+cstate.code.tex
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen146
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\basiclayer\pgfcoretransf
+ormations.code.tex
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen147
+\pgf@pt@y=\dimen148
+\pgf@pt@temp=\dimen149
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\basiclayer\pgfcorequick.
+code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\basiclayer\pgfcoreobject
+s.code.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\basiclayer\pgfcorepathpr
+ocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\basiclayer\pgfcorearrows
+.code.tex
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen150
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\basiclayer\pgfcoreshade.
+code.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen151
+\pgf@sys@shading@range@num=\count110
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\basiclayer\pgfcoreimage.
+code.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\basiclayer\pgfcoreextern
+al.code.tex
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+\pgfexternal@startupbox=\box36
+))
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\basiclayer\pgfcorelayers
+.code.tex
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\basiclayer\pgfcoretransp
+arency.code.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\basiclayer\pgfcorepatter
+ns.code.tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\modules\pgfmoduleshapes.
+code.tex
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box37
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\modules\pgfmoduleplot.co
+de.tex
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\pgf\compatibility\pgfcomp-vers
+ion-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen152
+\pgf@nodesepend=\dimen153
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\pgf\compatibility\pgfcomp-vers
+ion-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+))
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\pgf\utilities\pgffor.sty
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\pgf\utilities\pgfkeys.sty
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\utilities\pgfkeys.code.t
+ex)) (C:\Users\alex\Desktop\Software\miktex\tex\latex\pgf\math\pgfmath.sty
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\math\pgfmath.code.tex))
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\utilities\pgffor.code.te
+x
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+ (C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\math\pgfmath.code.tex)
+\pgffor@iter=\dimen154
+\pgffor@skip=\dimen155
+\pgffor@stack=\toks32
+\pgffor@toks=\toks33
+))
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\frontendlayer\tikz\tikz.
+code.tex
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\libraries\pgflibraryplot
+handlers.code.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count111
+\pgfplotmarksize=\dimen156
+)
+\tikz@lastx=\dimen157
+\tikz@lasty=\dimen158
+\tikz@lastxsaved=\dimen159
+\tikz@lastysaved=\dimen160
+\tikzleveldistance=\dimen161
+\tikzsiblingdistance=\dimen162
+\tikz@figbox=\box38
+\tikz@figbox@bg=\box39
+\tikz@tempbox=\box40
+\tikz@tempbox@bg=\box41
+\tikztreelevel=\count112
+\tikznumberofchildren=\count113
+\tikznumberofcurrentchild=\count114
+\tikz@fig@count=\count115
+
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\modules\pgfmodulematrix.
+code.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count116
+\pgfmatrixcurrentcolumn=\count117
+\pgf@matrix@numberofcolumns=\count118
+)
+\tikz@expandcount=\count119
+
+(C:\Users\alex\Desktop\Software\miktex\tex\generic\pgf\frontendlayer\tikz\libra
+ries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+)))
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\caption\caption.sty
+Package: caption 2015/09/17 v3.3-111 Customizing captions (AR)
+
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\caption\caption3.sty
+Package: caption3 2015/09/20 v1.7-115 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen163
+\captionmargin@=\dimen164
+\captionwidth=\dimen165
+\caption@tempdima=\dimen166
+\caption@indent=\dimen167
+\caption@parindent=\dimen168
+\caption@hangindent=\dimen169
+)
+\c@ContinuedFloat=\count120
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\algorithms\algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\base\ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@ALC@unique=\count121
+\c@ALC@line=\count122
+\c@ALC@rem=\count123
+\c@ALC@depth=\count124
+\ALC@tlm=\skip47
+\algorithmicindent=\skip48
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\algorithms\algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count125
+\float@exts=\toks34
+\float@box=\box42
+\@float@everytoks=\toks35
+\@floatcapt=\box43
+)
+\@float@every@algorithm=\toks36
+\c@algorithm=\count126
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\fancyhdr\fancyhdr.sty
+\fancy@headwidth=\skip49
+\f@ncyO@elh=\skip50
+\f@ncyO@erh=\skip51
+\f@ncyO@olh=\skip52
+\f@ncyO@orh=\skip53
+\f@ncyO@elf=\skip54
+\f@ncyO@erf=\skip55
+\f@ncyO@olf=\skip56
+\f@ncyO@orf=\skip57
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\setspace\setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\enumitem\enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip58
+\enit@outerparindent=\dimen170
+\enit@toks=\toks37
+\enit@inbox=\box44
+\enitdp@description=\count127
+)
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\amsfonts\eucal.sty
+Package: eucal 2009/06/22 v3.00 Euler Script fonts
+LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
+(Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
+)
+\c@theorem=\count128
+\c@construction=\count129
+
+(Report_intro.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+ ABD: EveryShipout initializing macros
+(C:\Users\alex\Desktop\Software\miktex\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count130
+\scratchdimen=\dimen171
+\scratchbox=\box45
+\nofMPsegments=\count131
+\nofMParguments=\count132
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count133
+\MPscratchDim=\dimen172
+\MPnumerator=\count134
+\makeMPintoPDFobject=\count135
+\everyMPtoPDFconversion=\toks39
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 208.
+ (C:\Users\alex\Desktop\Software\miktex\tex\latex\amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 208.
+
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<figures/UoA_logo.png, id=4, 124.0635pt x 92.0238pt>
+File: figures/UoA_logo.png Graphic file (type png)
+
+<use figures/UoA_logo.png>
+Package pdftex.def Info: figures/UoA_logo.png used on input line 221.
+(pdftex.def)             Requested size: 273.14922pt x 202.60884pt.
+ [1
+
+{C:/Users/alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./figures/Uo
+A_logo.png>] (Report_intro.toc)
+\tf@toc=\write4
+ (Report_intro.loa)
+\tf@loa=\write5
+(Report_intro.lof [1])
+\tf@lof=\write6
+ (Report_intro.lot)
+\tf@lot=\write7
+ [2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 244.
+
+
+(C:\Users\alex\Desktop\Software\miktex\tex\latex\base\omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 244.
+ [1]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 277.
+
+[2] [3]
+Overfull \hbox (13.57045pt too wide) in alignment at lines 363--365
+ [][][] []
+ []
+
+<figures/Triplot.jpg, id=38, 2601.72pt x 1943.26pt>
+File: figures/Triplot.jpg Graphic file (type jpg)
+ <use figures/Triplot.jpg>
+Package pdftex.def Info: figures/Triplot.jpg used on input line 389.
+(pdftex.def)             Requested size: 136.5746pt x 102.00192pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5 <./figures/Triplot.jpg>] [6] [7]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8] [9] [10]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[11] [12] [13] [14] (Report_intro.aux) ) 
+Here is how much of TeX's memory you used:
+ 14014 strings out of 493673
+ 270653 string characters out of 3139938
+ 312759 words of memory out of 3000000
+ 17083 multiletter control sequences out of 15000+200000
+ 16795 words of font info for 61 fonts, out of 3000000 for 9000
+ 1025 hyphenation exceptions out of 8191
+ 55i,19n,54p,772b,752s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/alex/Desktop/Software/miktex/
+fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/alex/Desktop/Software/mikt
+ex/fonts/type1/public/amsfonts/cmextra/cmbsy6.pfb><C:/Users/alex/Desktop/Softwa
+re/miktex/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb><C:/Users/alex/Desktop
+/Software/miktex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/alex/Deskt
+op/Software/miktex/fonts/type1/public/amsfonts/cm/cmbx6.pfb><C:/Users/alex/Desk
+top/Software/miktex/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/alex/Des
+ktop/Software/miktex/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/alex
+/Desktop/Software/miktex/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/a
+lex/Desktop/Software/miktex/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users
+/alex/Desktop/Software/miktex/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Use
+rs/alex/Desktop/Software/miktex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Us
+ers/alex/Desktop/Software/miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/U
+sers/alex/Desktop/Software/miktex/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C
+:/Users/alex/Desktop/Software/miktex/fonts/type1/public/amsfonts/cmextra/cmmib6
+.pfb><C:/Users/alex/Desktop/Software/miktex/fonts/type1/public/amsfonts/cmextra
+/cmmib8.pfb><C:/Users/alex/Desktop/Software/miktex/fonts/type1/public/amsfonts/
+cm/cmr10.pfb><C:/Users/alex/Desktop/Software/miktex/fonts/type1/public/amsfonts
+/cm/cmr12.pfb><C:/Users/alex/Desktop/Software/miktex/fonts/type1/public/amsfont
+s/cm/cmr6.pfb><C:/Users/alex/Desktop/Software/miktex/fonts/type1/public/amsfont
+s/cm/cmr8.pfb><C:/Users/alex/Desktop/Software/miktex/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb><C:/Users/alex/Desktop/Software/miktex/fonts/type1/public/amsfo
+nts/cm/cmsy6.pfb><C:/Users/alex/Desktop/Software/miktex/fonts/type1/public/amsf
+onts/cm/cmsy8.pfb><C:/Users/alex/Desktop/Software/miktex/fonts/type1/public/ams
+fonts/cm/cmti12.pfb>
+Output written on Report_intro.pdf (17 pages, 1501858 bytes).
+PDF statistics:
+ 156 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+

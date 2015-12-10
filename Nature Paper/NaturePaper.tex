@@ -1,0 +1,206 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bm} % bold maths
+
+
+\usepackage{fancyhdr}%to have a header and footer
+%\pagestyle{fancy}
+
+%\usepackage{longtable} % to split tables over the page
+
+\usepackage{setspace}%this stops lists having so much gap in them
+\usepackage{enumitem}
+\setlist{nolistsep}
+
+
+% for xfig
+\usepackage{graphicx}
+\usepackage[usenames,dvipsnames]{color}
+%\usepackage[pdftex]{graphicx}
+%\DeclareGraphicsExtensions{.pdf, .jpg}
+\usepackage{epsfig}
+% end for xfig
+
+\usepackage[mathscr]{eucal}%Euler script, use \mathscr
+
+
+% external references
+%\usepackage{xr}
+%\externaldocument[TS-]{tgt-splash-paper}
+
+\setlength{\topmargin}{-1.5cm} 
+\setlength{\textheight}{22cm}
+\setlength{\oddsidemargin}{-0.2cm}
+\setlength{\evensidemargin}{-1.2cm} 
+\setlength{\textwidth}{16cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{.35cm}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{construction}{Construction}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{result}[theorem]{Result}
+\newenvironment{proof}{\noindent{\bf Proof}\hspace{0.5em}}
+    { \null  \hfill $\square$ \par}
+
+
+
+\newcommand{\X}{\mathcal X}
+\newcommand{\Y}{\mathcal Y}
+\newcommand{\R}{\mathcal R}
+\newcommand\C{{\cal C}}
+\newcommand\E{{\cal E}}
+\newcommand\D{{\cal D}}
+\newcommand\F{{\cal F}}
+\newcommand\N{{\cal N}}
+\newcommand\J{{\cal J}}
+\renewcommand\L{{\mathscr L}}
+\renewcommand{\S}{\mathcal S}
+\renewcommand{\P}{\mathcal P}
+\newcommand{\K}{\mathcal K}
+\newcommand{\KK}{\mathscr K}
+\renewcommand{\H}{\mathcal H}
+\newcommand{\Q}{\mathscr Q}
+
+
+
+\newcommand{\takeaway}{\backslash}
+\renewcommand\setminus{\backslash}
+\newcommand{\st}{:}
+
+\newcommand\PGammaL{{\mbox{P}\Gamma {L}}}
+\newcommand\PGL{{\rm PGL}}
+\newcommand\GF{{\rm GF}}
+\newcommand\PG{{\rm PG}}
+\newcommand\AG{{\rm AG}}
+\newcommand\PGO{{\rm PGO}}
+
+%\usepackage{fourier}%lets you use \grimace, and changes font
+
+%% to number each row in a tabular environment
+%\usepackage{array} 
+%\newcounter{exno}
+%\newenvironment{table-label-row}
+%{
+%\begin{flushleft}
+%%\hspace*{1cm}
+%\begin{tabular}{|>{(\refstepcounter{exno}\theexno)}c|c|c|c|c|}
+%}
+%{
+%\end{tabular}
+%\end{flushleft}
+%}
+%
+%
+
+
+%%%%
+\newcommand{\Label}{\label}
+\newcommand{\Labele}{\label}
+%\newcommand{\LabelTable}[1]{\label{#1}{\rm [Table called {\it #1}]}}
+%\newcommand{\Label}[1]{{\blue{\label{#1}\marginpar{\tiny{#1}}}}}
+%\newcommand{\Labele}[1]{\label{#1}{\mbox{\quad [{\tt #1}]}}}
+%\newcommand\LABLE[1]{{\tiny\color{green} #1}}
+
+
+%\usepackage{color}%already added above
+\newcommand\wenai[1]{{\color{blue} #1}}
+\newcommand\sue[1]{{\color{magenta} #1}}
+\newcommand\TODO[1]{{\color{Purple} #1}}
+\newcommand{\todo}{{\color{red} \ \ ********* TO DO *********\\ } }
+\newcommand\red[1]{{\color{red} #1}}
+\newcommand\blue[1]{{\color{blue} #1}}
+\newcommand\magenta[1]{{\color{magenta} #1}}
+\newcommand\green[1]{{\color{green} #1}}
+%\newcommand\green[1]{{                 }}
+
+
+%\renewcommand\baselinestretch{1.5}     
+\newcommand\hl{{\;\rule[.5ex]{0.8em}{0.4pt}\;}} 
+
+%srg shortcuts
+\newcommand{\clique}{\mathcal C}
+\newcommand{\setX}{{\mathcal C}_{{\rm\romannumeral 1}}}
+\newcommand{\setY}{{\mathcal C}_{{\rm\romannumeral 2}}}
+\newcommand{\setZ}{{\mathcal C}_{{\rm\romannumeral 3}}}
+\newcommand\tone{{\rm (\romannumeral 1)}}
+\newcommand\ttwo{{\rm (\romannumeral 2)}}
+\newcommand\tthree{{\rm (\romannumeral 3)}}
+\newcommand\tonen{{\rm  \romannumeral 1}}
+\newcommand\ttwon{{\rm  \romannumeral 2}}
+\newcommand\tthreen{{\rm  \romannumeral 3}}
+
+\begin{document}
+%%Fancy header usage
+%\pagestyle{fancy}
+%\fancyhf{}
+%%%\fancyheadR{} % predefined ()
+%%%\fancyhead[L]{\color{Magenta}\leftmark} % 1. subsectionname
+%\fancyfoot[C]{\color{Magenta}\thepage}
+%\lfoot{\color{Magenta}\jobname}
+%\rfoot{\color{Magenta}\today}
+%
+%\fancypagestyle{plain}{%
+%  \fancyhf{}%
+%  \renewcommand{\headrulewidth}{0pt}%
+%}
+%%{\LARGE{\color{green}
+%%A new class of strongly regular graphs}
+%%}
+%
+%%{\color{green}
+%%\begin{spacing}{0} \tableofcontents \end{spacing}
+%%}
+
+\title{Evil Nature Paper :-(}
+
+\author{Shaun Barker, Alex Jackson, Jessica Parker}
+%%\date{\today}
+%%%\\ Department of Pure Mathematics, University of Adelaide\\
+%%%Adelaide 5005, Australia
+%%%\\ \\
+%}
+%%
+%%
+%%
+\maketitle
+%
+%
+%
+%%Corresponding Author: Dr Susan Barwick, University of Adelaide, Adelaide
+%%5005, Australia. Phone: +61 8 8303 3983, Fax: +61 8 8303 3696, email:
+%%susan.barwick@adelaide.edu.au
+%
+%%Keywords: Bruck-Bose representation, subplanes, exterior splash
+%%AMS code: 51E20
+%
+%
+%\newpage
+\begin{center}
+  \includegraphics[width=.6\linewidth]{i-have-no-idea-what-i-am-doing.jpeg}
+  \end{center}
+
+\begin{itemize}
+\item Start with 2 lots of DNA \textbf{(alleles?)}
+\item Divide sequence into 100 bp bins.
+\item Assign each bin either missing (.), heterozygous (1) or homozygous (0). The sequence of this gives the input to the HMM e.g. $(0,1,1,0,0,0,0,0,0,1,0,1,0,\dots)$.
+\item Divide time into $0=t_1<t_2<\dots<t_n=T_{\text{max}}<t_{n+1}=\infty$. Choose $T_{\text{max}}$ such that only a few percent of coalescent events fall in $[T_{\text{max}},\infty)$. \textbf{How do you choose this?}
+\item Hidden states: which interval $k=[t_k,t_{k+1})$, the TMRCA/coalescent times for the different bins fall into. \textbf{Figure 1} on the paper is quite useful for illustrating this.
+\item METHOD...
+\item Assume constant population size.
+\item Observations into HMM, find TMRCAs of the bins and associated parameters e.g. hidden states, 
+\item Evaluate the likelihood of the sequence using EM (expectation maximisation).
+\item Powell's direction set: Got a discretised $\lambda(t)$ function (piecewise constant), optimise one ``step''  at a time. \textbf{???}
+\item Iterate 20 times.
+\end{itemize}
+
+
+\end{document}

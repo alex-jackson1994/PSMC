@@ -1,0 +1,252 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bm} % bold maths
+
+
+\usepackage{fancyhdr}%to have a header and footer
+%\pagestyle{fancy}
+
+%\usepackage{longtable} % to split tables over the page
+
+\usepackage{setspace}%this stops lists having so much gap in them
+\usepackage{enumitem}
+\setlist{nolistsep}
+
+
+% for xfig
+\usepackage{graphicx}
+\usepackage[usenames,dvipsnames]{color}
+%\usepackage[pdftex]{graphicx}
+%\DeclareGraphicsExtensions{.pdf, .jpg}
+\usepackage{epsfig}
+% end for xfig
+
+\usepackage[mathscr]{eucal}%Euler script, use \mathscr
+
+
+% external references
+%\usepackage{xr}
+%\externaldocument[TS-]{tgt-splash-paper}
+
+\setlength{\topmargin}{-1.5cm} 
+\setlength{\textheight}{22cm}
+\setlength{\oddsidemargin}{-0.2cm}
+\setlength{\evensidemargin}{-1.2cm} 
+\setlength{\textwidth}{16cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{.35cm}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{construction}{Construction}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{result}[theorem]{Result}
+\newenvironment{proof}{\noindent{\bf Proof}\hspace{0.5em}}
+    { \null  \hfill $\square$ \par}
+
+
+
+\newcommand{\X}{\mathcal X}
+\newcommand{\Y}{\mathcal Y}
+\newcommand{\R}{\mathcal R}
+\newcommand\C{{\cal C}}
+\newcommand\E{{\cal E}}
+\newcommand\D{{\cal D}}
+\newcommand\F{{\cal F}}
+\newcommand\N{{\cal N}}
+\newcommand\J{{\cal J}}
+\renewcommand\L{{\mathscr L}}
+\renewcommand{\S}{\mathcal S}
+\renewcommand{\P}{\mathcal P}
+\newcommand{\K}{\mathcal K}
+\newcommand{\KK}{\mathscr K}
+\renewcommand{\H}{\mathcal H}
+\newcommand{\Q}{\mathscr Q}
+
+
+
+\newcommand{\takeaway}{\backslash}
+\renewcommand\setminus{\backslash}
+\newcommand{\st}{:}
+
+\newcommand\PGammaL{{\mbox{P}\Gamma {L}}}
+\newcommand\PGL{{\rm PGL}}
+\newcommand\GF{{\rm GF}}
+\newcommand\PG{{\rm PG}}
+\newcommand\AG{{\rm AG}}
+\newcommand\PGO{{\rm PGO}}
+
+%\usepackage{fourier}%lets you use \grimace, and changes font
+
+%% to number each row in a tabular environment
+%\usepackage{array} 
+%\newcounter{exno}
+%\newenvironment{table-label-row}
+%{
+%\begin{flushleft}
+%%\hspace*{1cm}
+%\begin{tabular}{|>{(\refstepcounter{exno}\theexno)}c|c|c|c|c|}
+%}
+%{
+%\end{tabular}
+%\end{flushleft}
+%}
+%
+%
+
+
+%%%%
+\newcommand{\Label}{\label}
+\newcommand{\Labele}{\label}
+%\newcommand{\LabelTable}[1]{\label{#1}{\rm [Table called {\it #1}]}}
+%\newcommand{\Label}[1]{{\blue{\label{#1}\marginpar{\tiny{#1}}}}}
+%\newcommand{\Labele}[1]{\label{#1}{\mbox{\quad [{\tt #1}]}}}
+%\newcommand\LABLE[1]{{\tiny\color{green} #1}}
+
+
+%\usepackage{color}%already added above
+\newcommand\wenai[1]{{\color{blue} #1}}
+\newcommand\sue[1]{{\color{magenta} #1}}
+\newcommand\TODO[1]{{\color{Purple} #1}}
+\newcommand{\todo}{{\color{red} \ \ ********* TO DO *********\\ } }
+\newcommand\red[1]{{\color{red} #1}}
+\newcommand\blue[1]{{\color{blue} #1}}
+\newcommand\magenta[1]{{\color{magenta} #1}}
+\newcommand\green[1]{{\color{green} #1}}
+%\newcommand\green[1]{{                 }}
+
+
+%\renewcommand\baselinestretch{1.5}     
+\newcommand\hl{{\;\rule[.5ex]{0.8em}{0.4pt}\;}} 
+
+%srg shortcuts
+\newcommand{\clique}{\mathcal C}
+\newcommand{\setX}{{\mathcal C}_{{\rm\romannumeral 1}}}
+\newcommand{\setY}{{\mathcal C}_{{\rm\romannumeral 2}}}
+\newcommand{\setZ}{{\mathcal C}_{{\rm\romannumeral 3}}}
+\newcommand\tone{{\rm (\romannumeral 1)}}
+\newcommand\ttwo{{\rm (\romannumeral 2)}}
+\newcommand\tthree{{\rm (\romannumeral 3)}}
+\newcommand\tonen{{\rm  \romannumeral 1}}
+\newcommand\ttwon{{\rm  \romannumeral 2}}
+\newcommand\tthreen{{\rm  \romannumeral 3}}
+
+\begin{document}
+%%Fancy header usage
+%\pagestyle{fancy}
+%\fancyhf{}
+%%%\fancyheadR{} % predefined ()
+%%%\fancyhead[L]{\color{Magenta}\leftmark} % 1. subsectionname
+%\fancyfoot[C]{\color{Magenta}\thepage}
+%\lfoot{\color{Magenta}\jobname}
+%\rfoot{\color{Magenta}\today}
+%
+%\fancypagestyle{plain}{%
+%  \fancyhf{}%
+%  \renewcommand{\headrulewidth}{0pt}%
+%}
+%%{\LARGE{\color{green}
+%%A new class of strongly regular graphs}
+%%}
+%
+%%{\color{green}
+%%\begin{spacing}{0} \tableofcontents \end{spacing}
+%%}
+
+\title{Bioinformatics}
+
+\author{Alex Jackson}
+%%\date{\today}
+%%%\\ Department of Pure Mathematics, University of Adelaide\\
+%%%Adelaide 5005, Australia
+%%%\\ \\
+%}
+%%
+%%
+%%
+\maketitle
+%
+%
+%
+%%Corresponding Author: Dr Susan Barwick, University of Adelaide, Adelaide
+%%5005, Australia. Phone: +61 8 8303 3983, Fax: +61 8 8303 3696, email:
+%%susan.barwick@adelaide.edu.au
+%
+%%Keywords: Bruck-Bose representation, subplanes, exterior splash
+%%AMS code: 51E20
+%
+\begin{abstract}
+  \textbf{Lyrics:}
+  \begin{center}
+
+Let it bean, let it bean\\
+Let it bean, let it bean\\
+Red-penned words of wisdom, let it bean
+\end{center}
+\end{abstract}
+%
+%\newpage
+
+\section{Introduction}\label{sec:intro}
+The overall aim is to reconstruct population dynamics of iconic Australian animals, to see if there was a bottleneck in the past resulting in a lack of genetic diversity.
+
+\subsection{Coalescent Theory}\label{ssec:coal}
+Coalescent theory is a technique which traces all alleles of a gene in a population back to the most recent common ancestorr (MRCA). It involves going back in time by having children ``select'' their parents from the precious generation. A coalescent event occurs when 2 children select the same parent, until all modern individuals can be shown to have descended from a single ancestor.
+
+The assumptions of coalescent theory are that children choose their parents uniformly at random, and that time is discretised into non-overlapping generations of constant size $N$. Time is usually rescaled so that 1 unit of scaled time corresponds to $N$ generations passing. It can be shown that for $k$ lineages in a population of $N$, the time of coalescence is distributed Exp$({k\choose 2})$.
+
+Other elements can be added to this simple model, such as population dynamics, population substructure, recombination, selection, and positive or negative mutations.
+
+\subsection{Tree Likelihood Calculations}\label{ssec:treelike}
+
+\subsubsection{Terminology}
+\begin{itemize}
+\item A \emph{bifurcating} genealogical tre has only two children selecting one parent.
+\item A \emph{node} is any point where two brances meet or a branch terminates.
+\item A \emph{leaf} is a node without any children (i.e. known sequences).
+\item An \emph{ancenstral node} is an internal node (i.e. with children, with unknown sequence).
+\item The \emph{root node} is the internal node furthest back in time, corresponding to the MRCA.
+  \item \emph{Branch lengths} give the times between coalescent events. Mutations can occur in this time.
+\end{itemize}
+
+\subsubsection{Likelihood Functions}\label{sssec:likelihoods}
+The \emph{likelihood function} $L(\bm{x}|\bm{\theta})$ is the probability of a set of outcomes $\bm{x}$ given some parameters $\bm{\theta}$.
+
+For these problems, $\bm{x}$ is the observed sequences, $\bm{\theta}$ are anything to do with the model e.g. mutation rates, and the tree topology and branch lengths are given. An assumption is that individual nucleotides evolve independently of one another.
+
+Finally, let
+\begin{itemize}
+\item $s_i$ be the sequence of the individual at node $i$;
+\item $v_i$ be the branch length extending backwards in time from node $i$; and
+  \item $P_{i,j}(v)$ be the likelihood of going from sequence $s_i$ to $s_j$ over time $v$.
+\end{itemize}
+The \emph{Jukes-Cantor model of nucleotide substitution},
+\begin{eqnarray*}
+  %\[
+  P_{x,y}(v)=\begin{cases} 
+      \frac{1}{4} + \frac{3}{4}e^{-\frac{4}{3}v} & x=y \\
+      \frac{1}{4} - \frac{1}{4}e^{-\frac{4}{3}v} & x\ne y
+   \end{cases}
+%\]
+\end{eqnarray*}
+will be used to model mutations, where $x$ and $y$ are the identity of single nucleotides, and $v$ is time.
+
+For a simple tree 4-leaf tree, the likelihood function is given by
+\begin{eqnarray*}
+L(\bm{x}|\bm{\theta}) &=& \pi_0 P_{s_0,s_5}(v_5) P_{s_5,s_1}(v_1) P_{s_5,s_2}(v_2) P_{s_0,s_6}(v_6) P_{s_6,s_3}(v_3) P_{s_6,s_4}(v_4).
+\end{eqnarray*}
+The $\pi_0$ is the probability of the root node sequence. As beyond the MRCA is assumed to be in equilibrium, all possibilities of $s_0$ are equally likely. The sequences at the leaves ($s_1,s_2,s_3,s_4$) are known.
+
+We don't know the sequences at the internal nodes, so have to use the Law of Total Probability to account for all the possibilities of internal sequences. This can then be simplified by grouping the different internal states, to give the following expression.
+\begin{eqnarray*}
+L(\bm{x}|\bm{\theta}) &=& \sum_{\text{all }s_0} \left[ \pi_0 \left\{ \sum_{\text{all }s_5} P_{s_0,s_5}(v_5) P_{s_5,s_1}(v_1) P_{s_5,s_2}(v_2) \right\} \left\{\sum_{\text{all }s_6} P_{s_0,s_6}(v_6) P_{s_6,s_3}(v_3) P_{s_6,s_4}(v_4) \right\}\right].
+\end{eqnarray*}
+
+\end{document}

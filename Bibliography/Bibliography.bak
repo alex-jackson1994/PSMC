@@ -1,0 +1,25 @@
+% Encoding: UTF-8
+
+
+@Article{li2011inference,
+  Title                    = {Inference of human population history from individual whole-genome sequences},
+  Author                   = {Li, Heng and Durbin, Richard},
+  Journal                  = {Nature},
+  Year                     = {2011},
+  Number                   = {7357},
+  Pages                    = {493--496},
+  Volume                   = {475},
+  Publisher                = {Nature Publishing Group}
+}
+
+@Article{marjoram2006fast,
+  Title                    = {Fast "coalescent" simulation},
+  Author                   = {Marjoram, Paul and Wall, Jeff D},
+  Journal                  = {BMC genetics},
+  Year                     = {2006},
+  Number                   = {1},
+  Pages                    = {16},
+  Volume                   = {7},
+  Publisher                = {BioMed Central Ltd}
+}
+

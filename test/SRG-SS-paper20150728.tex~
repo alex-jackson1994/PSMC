@@ -1,0 +1,1290 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+
+
+\usepackage{fancyhdr}%to have a header and footer
+%\pagestyle{fancy}
+
+%\usepackage{longtable} % to split tables over the page
+
+\usepackage{setspace}%this stops lists having so much gap in them
+\usepackage{enumitem}
+\setlist{nolistsep}
+
+
+% for xfig
+\usepackage{graphicx}
+\usepackage[usenames,dvipsnames]{color}
+%\usepackage[pdftex]{graphicx}
+%\DeclareGraphicsExtensions{.pdf, .jpg}
+\usepackage{epsfig}
+% end for xfig
+
+\usepackage[mathscr]{eucal}%Euler script, use \mathscr
+
+
+% external references
+%\usepackage{xr}
+%\externaldocument[TS-]{tgt-splash-paper}
+
+\setlength{\topmargin}{-1.5cm} 
+\setlength{\textheight}{22cm}
+\setlength{\oddsidemargin}{-0.2cm}
+\setlength{\evensidemargin}{-1.2cm} 
+\setlength{\textwidth}{16cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{.35cm}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{construction}{Construction}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{result}[theorem]{Result}
+\newenvironment{proof}{\noindent{\bf Proof}\hspace{0.5em}}
+    { \null  \hfill $\square$ \par}
+
+
+
+\newcommand{\X}{\mathcal X}
+\newcommand{\Y}{\mathcal Y}
+\newcommand{\R}{\mathcal R}
+\newcommand\C{{\cal C}}
+\newcommand\E{{\cal E}}
+\newcommand\D{{\cal D}}
+\newcommand\F{{\cal F}}
+\newcommand\N{{\cal N}}
+\newcommand\J{{\cal J}}
+\renewcommand\L{{\mathscr L}}
+\renewcommand{\S}{\mathcal S}
+\renewcommand{\P}{\mathcal P}
+\newcommand{\K}{\mathcal K}
+\newcommand{\KK}{\mathscr K}
+\renewcommand{\H}{\mathcal H}
+\newcommand{\Q}{\mathscr Q}
+
+
+
+\newcommand{\takeaway}{\backslash}
+\renewcommand\setminus{\backslash}
+\newcommand{\st}{:}
+
+\newcommand\PGammaL{{\mbox{P}\Gamma {L}}}
+\newcommand\PGL{{\rm PGL}}
+\newcommand\GF{{\rm GF}}
+\newcommand\PG{{\rm PG}}
+\newcommand\AG{{\rm AG}}
+\newcommand\PGO{{\rm PGO}}
+
+%\usepackage{fourier}%lets you use \grimace, and changes font
+
+%% to number each row in a tabular environment
+%\usepackage{array} 
+%\newcounter{exno}
+%\newenvironment{table-label-row}
+%{
+%\begin{flushleft}
+%%\hspace*{1cm}
+%\begin{tabular}{|>{(\refstepcounter{exno}\theexno)}c|c|c|c|c|}
+%}
+%{
+%\end{tabular}
+%\end{flushleft}
+%}
+%
+%
+
+
+%%%%
+\newcommand{\Label}{\label}
+\newcommand{\Labele}{\label}
+%\newcommand{\LabelTable}[1]{\label{#1}{\rm [Table called {\it #1}]}}
+%\newcommand{\Label}[1]{{\blue{\label{#1}\marginpar{\tiny{#1}}}}}
+%\newcommand{\Labele}[1]{\label{#1}{\mbox{\quad [{\tt #1}]}}}
+%\newcommand\LABLE[1]{{\tiny\color{green} #1}}
+
+
+%\usepackage{color}%already added above
+\newcommand\wenai[1]{{\color{blue} #1}}
+\newcommand\sue[1]{{\color{magenta} #1}}
+\newcommand\TODO[1]{{\color{Purple} #1}}
+\newcommand{\todo}{{\color{red} \ \ ********* TO DO *********\\ } }
+\newcommand\red[1]{{\color{red} #1}}
+\newcommand\blue[1]{{\color{blue} #1}}
+\newcommand\magenta[1]{{\color{magenta} #1}}
+\newcommand\green[1]{{\color{green} #1}}
+%\newcommand\green[1]{{                 }}
+
+
+%\renewcommand\baselinestretch{1.5}     
+\newcommand\hl{{\;\rule[.5ex]{0.8em}{0.4pt}\;}} 
+
+%srg shortcuts
+\newcommand{\clique}{\mathcal C}
+\newcommand{\setX}{{\mathcal C}_{{\rm\romannumeral 1}}}
+\newcommand{\setY}{{\mathcal C}_{{\rm\romannumeral 2}}}
+\newcommand{\setZ}{{\mathcal C}_{{\rm\romannumeral 3}}}
+\newcommand\tone{{\rm (\romannumeral 1)}}
+\newcommand\ttwo{{\rm (\romannumeral 2)}}
+\newcommand\tthree{{\rm (\romannumeral 3)}}
+\newcommand\tonen{{\rm  \romannumeral 1}}
+\newcommand\ttwon{{\rm  \romannumeral 2}}
+\newcommand\tthreen{{\rm  \romannumeral 3}}
+
+\begin{document}
+%%Fancy header usage
+%\pagestyle{fancy}
+%\fancyhf{}
+%%%\fancyheadR{} % predefined ()
+%%%\fancyhead[L]{\color{Magenta}\leftmark} % 1. subsectionname
+%\fancyfoot[C]{\color{Magenta}\thepage}
+%\lfoot{\color{Magenta}\jobname}
+%\rfoot{\color{Magenta}\today}
+%
+%\fancypagestyle{plain}{%
+%  \fancyhf{}%
+%  \renewcommand{\headrulewidth}{0pt}%
+%}
+%%{\LARGE{\color{green}
+%%A new class of strongly regular graphs}
+%%}
+%
+%%{\color{green}
+%%\begin{spacing}{0} \tableofcontents \end{spacing}
+%%}
+
+\title{New families of strongly regular graphs}
+
+\author{S.G. Barwick, Wen-Ai Jackson and Tim Penttila}
+%%\date{\today}
+%%%\\ Department of Pure Mathematics, University of Adelaide\\
+%%%Adelaide 5005, Australia
+%%%\\ \\
+%}
+%%
+%%
+%%
+\maketitle
+%
+%
+%
+%%Corresponding Author: Dr Susan Barwick, University of Adelaide, Adelaide
+%%5005, Australia. Phone: +61 8 8303 3983, Fax: +61 8 8303 3696, email:
+%%susan.barwick@adelaide.edu.au
+%
+%%Keywords: Bruck-Bose representation, subplanes, exterior splash
+%%AMS code: 51E20
+%
+\begin{abstract} In this article we construct a series of new infinite families of strongly regular graphs with the same parameters as the point-graphs of non-singular quadrics in $\PG(n,2)$. 
+\end{abstract}
+%
+%\newpage
+
+\section{Introduction}
+
+
+A strongly regular graph srg$(v,k,\lambda,\mu)$, is a graph with  $v$ vertices such that
+each vertex lies on $k$ edges;
+any two adjacent vertices have exactly $\lambda$ common neighbours; and 
+any two non-adjacent vertices have exactly $\mu$ common neighbours.
+
+%\red{Tim: do you have a preference for either of the following two versions of the next paragraph?}
+%
+%\blue{version 1: mention Seidel} In \cite{godsil}, Godsil-McKay take a graph $\Gamma$,  and describe a technique they call {\em local switching} with respect to a special vertex partition to construct a new graph $\Gamma'$ that has the same spectrum as $\Gamma$. Note that this `local switching' is not a   `Seidel switching'~\cite{seidel}. It is well-known (see for example \cite{brouwer}) that if a graph $\Gamma'$ has the same spectrum as a strongly regular graph $\Gamma$, then $\Gamma'$ is also strongly regular with the same parameters as $\Gamma$. Specialising the Godsil-McKay construction  to a partition of size two in a strongly regular graph gives the following result. 
+%
+%\blue{version 2: no mention of the word `switch'} 
+
+In \cite{godsil}, Godsil-McKay take a graph $\Gamma$,  and use a vertex partition to  construct a new graph $\Gamma'$ that has the same spectrum as $\Gamma$. It is well-known (see for example \cite{brouwer}) that if a graph $\Gamma'$ has the same spectrum as a strongly regular graph $\Gamma$, then $\Gamma'$ is also strongly regular with the same parameters as $\Gamma$. Specialising the Godsil-McKay construction  to a partition of size two in a strongly regular graph gives the following result. 
+
+\begin{result}\Label{GMK} {\em The Godsil-McKay construction.}\ Let $\Gamma$ be a strongly regular graph and partition the vertices into two sets $\X,\Y$. Then $\{\X,\Y\}$ is called  a {\em Godsil-McKay partition} if  the following two conditions are satisfied.
+\begin{itemize}
+\item[{\rm I.}] The set $\X$ induces a regular subgraph. 
+\item[{\rm II.}] Each vertex in $\Y$ is adjacent to $0$, $\frac12|\X|$ or $|\X|$ vertices in $\X$. 
+\end{itemize}
+Construct  a new graph $\Gamma'$ from $\Gamma$ by: for each vertex $R$ in $\Y$ with $\frac12|\X|$ neighbours in $\X$, delete these $\frac12|\X|$ edges and join $R$ to the other $\frac12|\X|$ vertices in $\X$.
+Then the new graph $\Gamma'$ is strongly regular with the same parameters as $\Gamma$. 
+\end{result}
+
+
+We consider the strongly regular graphs constructed  from a non-singular  quadric $\Q_n$ in $\PG(n,q)$, see \cite[Chapter 22]{HT} for more information on quadrics. The {\em projective index} $g$ of $\Q_n$ is the dimension of the largest subspace contained in $\Q_n$. Note that $\Q_n$ is a  polar space of rank $g+1$. If $n=2r$ is even, then a non-singular quadric is a parabolic quadric, denoted  $\P=Q(2r,q)$, which has projective index $g=r-1$.
+If $n=2r+1$ is odd, then there are two types of non-singular quadrics. The elliptic quadric denoted $\E=Q^-(2r+1,q)$ has  projective index $g=r-1$. The hyperbolic quadric denoted $\H=Q^+(2r+1,q)$ has  projective index $g=r$. 
+
+The {\em point-graph}  of  the non-singular  quadric $\Q_n$ is denoted by $\Gamma$ or $\Gamma_{\Q_n}$, and is defined as follows.  The vertices of $\Gamma$ are the points of $\Q_n$, and two vertices are adjacent  in $\Gamma$ if the corresponding points of $\Q_n$ lie on a line contained in  $\Q_n$. It is well known (see for example \cite{brouwer89}) that $\Gamma$ is a strongly regular graph. 
+
+%We list the parameters for these strongly regular graphs in the case $q=2$, as this is where our construction works.
+%As before, denote the non-singular quadrics by  $\E=Q^-(2r+1,2)$, $\H=Q^+(2r+1,2)$, and $\P=Q(2r,2)$, then Table~\ref{table1} gives the parameters of the corresponding strongly regular graphs.
+%
+%\begin{table}[h]\caption{Parameters of the strongly regular point-graph of a non-singular quadric}\label{table1}
+%\begin{center}\begin{tabular}{|c|c|c|c|c|}
+%\hline
+%graph &$v$&$k$&$\lambda$&$\mu$\\ \hline
+% $\Gamma_\E$ &$2^{2r+1}-2^r-1$&$2^{2r}-2^r-2$&$2^{2r-1}-2^{r}-3$&$2^{2r-1}-2^{r-1}-1$\\
+% $\Gamma_\H$ &$2^{2r+1}+2^r-1$&$2^{2r}+2^r-2$&$2^{2r-1}+2^{r}-3$&$2^{2r-1}+2^{r-1}-1$\\
+% $\Gamma_\P$ &$2^{2r}-1$&$2^{2r-1}-2$&$2^{2r-2}-3$&$2^{2r-2}-1$\\ \hline
+%\end{tabular}\end{center}
+%
+%\end{table}%
+
+%\begin{enumerate}
+%\item 
+%\blue{Case $\E_{2r+1}$} $$\begin{array}{cclccl}
+%n_\E&=&\displaystyle\frac{(q^{r+1}+1)(q^r-1)}{q-1}, 
+%& \quad\quad k_\E&=&\displaystyle\frac{q(q^{r}+1)(q^{r-1}-1)}{q-1}, \\ 
+%\mu_\E&=&\displaystyle\frac{(q^{r}+1)(q^{r-1}-1)}{q-1}, &\quad\quad
+%\lambda_\E&=&\displaystyle\frac{q^{2r-1}-q^{r+1}+q^{r}-2q+1}{q-1} .
+%\end{array}$$
+%\renewcommand*{\arraystretch}{1}
+%Note that when $q=2$, we have $n_\E=2^{2r+1}-2^r-1$, $k_\E=2^{2r}-2^r-2$, $\mu_\E=2^{2r-1}-2^{r-1}-1$, and $\lambda_\E=2^{2r-1}-2^r-3$.
+%
+%\item 
+%\blue{Case $\H_{2r+1}$}
+%$\epsilon = -1$ or $1$ for $\E$ or $\H$
+%$$v = (q^{2r+1}-1)/(q-1) + \epsilon q^{r},
+%k = q(q^{2r-1}-1)/(q-1) + \epsilon  q^{r},$$
+%$$k -\lambda - 1 = q^{2r-1},
+%\mu = k/q, $$
+%
+%
+%\item 
+%\blue{Case $\P_{2r}$}
+%$$ v = (q^{2r}-1)/(q-1),
+%k = q(q^{2r-2}-1)/(q-1),$$
+%$$\lambda = q^2(q^{2r-4}-1)/(q-1) + q-1,
+%\mu = (q^{2r-2}-1)/(q-1), 
+%$$
+%\end{enumerate}
+%
+
+The article proceeds as follows. Section~\ref{sec:const} describes our construction of a series of infinite families of strongly regular graphs, the proof of the construction is given in  Section~\ref{sec:pf}. In Section~\ref{sec-cliques}, we classify and count the maximal cliques in these constructed graphs. Section~\ref{sec-new} looks at isomorphism, and shows that our construction yields new families of strongly regular graphs. \red{and the last auto section}
+
+\section{Our construction}\Label{sec:const}
+
+We begin with a small example 
+to illustrate the general technique. 
+
+\begin{example}\Label{example} {\rm 
+ Let $\ell$ be a line of the elliptic quadric  $\E=Q^-(2r+1,q)$ in $\PG(2r+1,q)$.
+Define a new graph $\Gamma_1$ with the following vertices of three types; and edges given in  Table~\ref{table-edges}.
+\begin{itemize}
+\item[(i)] points of $\E$ on $\ell$, 
+\item[(ii)] points of $\E$ that are on a plane of $\E$ that contains $\ell$, 
+\item[(iii)] the  remaining points of $\E$.
+\end{itemize}
+ 
+  \begin{table}[h]
+  \caption{Edges in $\Gamma_1$}\label{table-edges}
+\begin{center}
+\begin{tabular}{|c|l|l|}
+\hline
+Vertex pair & Vertex types &  Vertex pair  is an edge of $\Gamma_1$: \\
+\hline
+%edge&&\\ \hline
+ $P,P'$  & $P,P'$ are type (i)&always (note $PP'$ is a line of $\E$)\\
+ $P,Q$ &  $P$ is type (i), $Q$ is type (ii)& always (note $PQ$ is a line of $\E$)\\
+ $Q,Q'$ & $Q,Q'$ are type (ii)&  when $QQ'$ is a line of $\E$\\
+ $P,R$ & $P$ is type (i), $R$ is type (iii)&  when $PR$ is a line of $\E$\\
+ $R,R'$ & $R,R'$ are type (iii)&   when $RR'$ is a line of $\E$\\
+ $Q,R$ & $Q$ is type (ii), $R$ is type (iii)&  when  $QR$ is a $2$-secant of $\E$\\ \hline
+ \end{tabular}
+\end{center} \end{table}
+
+
+Note that it can be shown  using geometric techniques that $\Gamma_1$ is regular if and only if $q=2$, and that in this case $\Gamma_1$ is strongly regular with the same parameters as the point-graph $\Gamma_\E$ of $\E$. This can also be proved using  the Godsil-McKay construction as follows.
+The graph $\Gamma_1$ is constructed from  $\Gamma_\E$  by altering the edges through points $Q$ of type (ii), and $R$ of type (iii). Consider the partition $\{\X,\Y\}$ of $\Gamma_\E$ where $\X$ contains the vertices of type (ii), and $\Y$ contains the vertices of type (i) and (iii). Then geometric techniques can be used to show that this partition satisfies the conditions of Result~\ref{GMK} if and only if $q=2$, and so $\Gamma_1$ is strongly regular when $q=2$.   \hfill$\square$} \end{example}
+
+We now give our general construction of a series of infinite families of strongly regular  graphs. First we define a partition of the vertices  of the point-graph of $\Q_n$.
+
+
+\begin{definition}\Label{def-partition} In $\PG(n,q)$, let $\Q_n$ be a non-singular quadric  with projective index $g$, and let $\Gamma$ be the point-graph of $\Q_n$.
+ For each integer $s$ with $0\leq s< g$ \TODO{(where $g$ is the projective index)}, let $\alpha_s$ be an $s$-dimensional subspace  that is contained in ${\Q_n}$. Let
+\begin{itemize}
+\item $\X_s$ be the vertices of  $\Gamma$ which correspond to points of $\Q_n$ that:  do not lie in $\alpha_s$; and lie in an $(s+1)$-dimensional subspace that contains $\alpha_s$ and  is contained in $\Q_n$;
+\item $\Y_s$  be the remaining vertices of  $\Gamma$   (note  that this includes the points of $\alpha_s$). 
+\end{itemize}
+\end{definition}
+Note that if $s=g$, then $\X_s$ is empty, so we  need $s<g$.
+We  show in Section~\ref{sec:pf} that  $\{\X_s,\Y_s\}$  is a Godsil-McKay partition if and only if $q=2$. Hence using Result~\ref{GMK}, we can construct another strongly regular graph.
+The main result of this article is to prove the following result (Section~\ref{sec:pf}) and to determine when we obtain new strongly regular graphs (Section~\ref{sec-new}).
+
+
+\begin{theorem}\Label{main-thm} In $\PG(n,2)$, let $\Q_n$ be a non-singular quadric of projective index $g\geq1$ with point-graph $\Gamma$. For each integer $s$, $0\leq s <g$,  the partition  $\{\X_s,\Y_s\}$ defined in Definition~\ref{def-partition} is a Godsil-McKay partition. Hence the graph $\Gamma_{s}$ obtained using the  Godsil-McKay construction with the partition $\{\X_s,\Y_s\}$ is a strongly regular graph with the same parameters as $\Gamma$.
+% These parameters  are given in Table~\ref{table1}.
+\end{theorem}
+
+
+
+
+
+When working with $\Gamma_s$, it is useful to partition the vertices of the graphs $\Gamma$, $\Gamma_s$ (and so the corresponding points of $\Q_n$) into three sets with respect to the $s$-dimensional subspace $\alpha_s$ (as we did in Example~\ref{example}).
+\begin{itemize}
+\item Vertices of type (i) correspond to points in $\alpha_s$.
+\item Vertices of type (ii) correspond to points that lie in an $(s+1)$-dimensional subspace that is contained in $\E$ and contains $\alpha_s$ (and are not of type (i)). 
+\item Vertices of type (iii) correspond to the remaining points of $\E$.
+\end{itemize}
+Note that $\X_s$ contains all the vertices of type (ii), and $\Y_s$ contains all the vertices of type (i) and (iii).
+
+
+\section{Proof of Theorem~\ref{main-thm}}\Label{sec:pf}
+
+%\subsection{The elliptic quadric $\E=Q^-(2r+1,q)$}\Label{sec-elliptic}
+%
+%In this section, we consider the case when $n=2r+1$, and the non-singular quadric $\Q_n$ is $\E=Q^-(2r+1,q)$, which has projective index $g=r-1$. Let $\alpha_s$ be a subspace of dimension $s$, $0\leq s<g$,  contained in $\E$. Let $\{\X_s,\Y_s\}$ be the partition defined on  the point-graph $\Gamma_\E$ of $\E$, as in Definition~\ref{def-partition}. We show that $\{\X_s,\Y_s\}$ satisfies Conditions I and II of Result~\ref{GMK}. First we count the points in $\X_s$.
+
+In this section, let $\Q_n$  non-singular quadric in $\PG(n,q)$ with projective index $g=r-1$. Let $\alpha_s$ be a subspace of dimension $s$, $0\leq s<g$,  contained in $\Q_n$. Let $\{\X_s,\Y_s\}$ be the partition defined on  the point-graph $\Gamma$ of $\Q_n$, as in Definition~\ref{def-partition}. We show that $\{\X_s,\Y_s\}$ satisfies Conditions I and II of Result~\ref{GMK}. First we count the points in $\X_s$.
+
+
+\begin{lemma}\Label{lemma-ell-1} Let $x$ be the number of points in  $\X_s$, then 
+\begin{enumerate}
+\item if  $\Q_n=Q^-(2r+1,q)$, $x=\displaystyle \frac{q^{s+1}(q^{r-s}+1)(q^{r-s-1}-1)}{(q-1)}$;\\[1mm]
+\item if  $\Q_n=Q^+(2r+1,q)$, $x=\displaystyle \frac{q^{s+1}(q^{r-s-1}+1)(q^{r-s}-1)}{(q-1)}$;\\[1mm]
+\item if  $\Q_n=Q(2r,q)$, $x=\displaystyle\frac{q^{s+1}(q^{r-s-1}+1)(q^{r-s-1}-1)}{(q-1)}$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+We prove this in the case $\Q_n$ is $\E=Q^-(2r+1,q)$, which has projective index $g=r-1$ and point-graph denoted $\Gamma_\E$. The cases when $\Q_n$ is $\H=Q^-(2r+1,q)$ and $\P=Q(2r,q)$ are proved in a very similar manner. 
+
+ By \cite[Theorem 22.5.1]{HT},  the number of subspaces of dimension $s$ contained in $\E$ is $$\frac{\Big((q^{r-s+1}+1)(q^{r-s+2}+1)\cdots(q^{r+1}+1)\Big)\times \Big((q^{r-s}-1)(q^{r-s+1}-1)\cdots(q^r-1)\Big)}{(q-1)(q^2-1)\cdots(q^{s+1}-1)}$$ (note this can also be used to count the number of subspaces of dimension $s+1$ contained in $\E$,  which we will also need).
+Further, \cite[Theorem 3.1]{hirs98} shows that the number of subspaces of dimension $s$ in a subspace of dimension $s+1$ is
+$$\frac{q^{s+2}-1}{q-1}.$$
+By \cite{HT}, the number of subspaces of dimension $s+1$ that contain $\alpha_s$ and are contained in $\E$ is a constant. To calculate it, we
+ count  pairs
+ $(\Pi,\Sigma)$ where $\Pi$ is an $s$-dimensional subspace contained in $\E$, $\Sigma$ is an $(s+1)$-dimensional subspace contained in $\E$, and $\Pi\subset\Sigma$. 
+ This count gives the number of subspaces of dimension $s+1$ that contain $\alpha_s$ and are contained in $\E$ is 
+ \begin{equation}\label{eqn-1}
+\frac{ (q^{r-s}+1)(q^{r-s-1}-1)}{(q-1)}. 
+ \end{equation}
+
+
+%{\color{red} REPLACE BY:
+%In \cite[Theorem 22.4.7]{HT}, the (constant) number of generators (subspaces of dimension $g=r-1$ for elliptic quadrics (this might need to be defined here rather than later))  containing a fixed subspace is given.  Using this when counting $(\Sigma,\Pi)$, where $\Pi$ is a generator containing an $(s+1)$-dimensional subspace $\Sigma$ containing a fixed $\alpha_s$, we get 
+%the number of subspaces of dimension $s+1$ that contain $\alpha_s$ and are contained in $\E$ is 
+% \begin{equation}\label{eqn-1}
+%\frac{ (q^{r-s}+1)(q^{r-s-1}-1)}{(q-1)}. 
+% \end{equation}
+%}
+
+
+ Each of these subspace contains $q^{s+1}$ points that are not in $\alpha_s$. Hence $|\X_s|$ is (\ref{eqn-1}) times  $q^{s+1}$ as required.
+\end{proof}
+
+
+Next we show that $\{\X_s,\Y_s\}$ satisfies Condition I of Result~\ref{GMK}.
+
+
+
+\begin{lemma}\Label{lemma-ell-2} 
+Let $G$ be the subgraph of $\Gamma$ on the vertices in   $\X_s$. Then $G$ is a regular graph with degree $k$ where
+\begin{enumerate}
+\item if $\Q_n=Q^-(2r+1,q)$, then 
+$\displaystyle k=(q^{s+1}-1)+\frac{q^{s+2}(q^{r-s-1}+1)(q^{r-s-2}-1)}{(q-1)}$;\\[1mm]
+\item if $\Q_n=Q^+(2r+1,q)$, then 
+$\displaystyle k=(q^{s+1}-1)+\frac{q^{s+2}(q^{r-s-2}+1)(q^{r-s-1}-1)}{(q-1)}$;\\[1mm]
+\item if $\Q_n=Q(2r,q)$, then 
+$\displaystyle k=(q^{s+1}-1)+\frac{q^{s+2}(q^{r-s-2}+1)(q^{r-s-2}-1)}{(q-1)}.$
+\end{enumerate}
+\end{lemma}
+
+
+\begin{proof} We prove this in the case $\Q_n$ is $\E=Q^-(2r+1,q)$, which has projective index $g=r-1$ and point-graph denoted $\Gamma_\E$. The cases when $\Q_n$ is $\H=Q^-(2r+1,q)$ and $\P=Q(2r,q)$ are proved in a very similar manner. 
+Let $Q$ be a vertex in $\X_s$, so in $\PG(2r+1,q)$, 
+$Q$ is a point of $\E$ such that the $(s+1)$-dimensional space $\Sigma=\langle Q,\alpha_s\rangle$ is contained in $\E$.
+A vertex $Q'$ in $\X_s$ is adjacent to $Q$ if the line $QQ'$ is  contained in $\E$. We can partition the lines of $\E$ through $Q$ into three groups: $A$ contains the lines of $\E$ through $Q$ that lie in $\Sigma$; 
+$B$ contains the lines of $\E$ through $Q$ (not in $A$) that lie in an $(s+2)$-dimensional subspace that contains $\Sigma$ and is contained in $\E$; and $C$ contains the remaining lines of $\E$ through $Q$.
+
+
+
+The number of lines in $A$ is the number of lines through a point in an $s$-dimensional subspace \TODO{should the $s$ be $s+1$?}, which by \cite[Theorem 3.1]{hirs98} is 
+\begin{equation}\label{eqn-2}
+\frac{(q^{s+1}-1)}{(q-1)}.
+\end{equation}
+ Each of the lines in $A$ contains $Q$ and meets $\alpha_s$ in one point. So each line in $A$ gives rise to $q-1$ vertices in $\X_s$ which are adjacent to $Q$ in $G$. 
+In total,  $A$ contributes $(q-1)\times |A|=(q^{s+1}-1)$ neighbours of $Q$ in $G$.
+
+The count  in (\ref{eqn-1}) can be used to show that the number of subspace of dimension $s+2$ that contain the $(s+1)$-space $\Sigma=\langle Q,\alpha_s\rangle$  and are contained in $\E$ is 
+$(q^{r-s-1}+1)(q^{r-s-2}-1)/(q-1)$. \TODO{Shall we remove from here} Note that this number is $0$ if $s=g-1$. \TODO{to here, as discussed later?} Similarly, (\ref{eqn-2}) can be generalised to show that the number of lines through $Q$ that lie in a subspace of dimension $s+2$, and do not lie in  the $(s+1)$-space $\Sigma$ is $\Big( (q^{s+2}-1)/(q-1)\Big) -\Big( (q^{s+1}-1)/(q-1)\Big) =q^{s+1}$. Hence $$|B|=q^{s+1}\times \frac{(q^{r-s-1}+1)(q^{r-s-2}-1)}{(q-1)}.$$ Each line in $B$ contains one point of $\Sigma$ and the remaining $q$ points correspond to  $q$ vertices that lie in $\X_s$ (and are not considered in $A$). That is, each line in $B$ contributes $q$ neighbours to $Q$ in the graph $G$. So in total, $B$ contributes $q\times|B|=q^{s+2}(q^{r-s-1}+1)(q^{r-s-2}-1)/(q-1)$ neighbours to $Q$ in the graph $G$. 
+
+
+Let $\ell$ be a line in $C$, so $\ell$ contains $Q$, but the $(s+2)$-space $\Pi=\langle \alpha_s,\ell\rangle$ is not contained in $\E$. Suppose that $\ell$ contains another point $Q'$ that corresponds to a vertex  in $\X_s$. Then $\Pi\cap\E$ contains the two distinct $(s+1)$-dimensional subspaces 
+$\Sigma=\langle \alpha_s,Q\rangle$  and $\Sigma'=\langle \alpha_s,Q'\rangle$. As $\Pi$ is not contained in $\E$, $\Pi$ meets $\E$ in exactly $\Sigma,\Sigma'$. Thus $\ell$ is not a line of $\E$. So $\ell$ contains exactly two points $Q,Q'$ that correspond to vertices of $\X_s$, and they are not adjacent in $G$ (as $QQ'=\ell$ is not a line of $\E$). Thus $C$ contributes 0  neighbours to $Q$ in the graph $G$. 
+
+
+
+Finally, summing the neighbours to $Q$ obtained from cases $A,B,C$ gives the required result. Note that if $s=g-1$, and so $s=r-2$, the second term is zero, and so the degree of $G$ is $q^{r-1}-1$.
+\end{proof}
+
+Now we look at Condition II of Result~\ref{GMK}. 
+
+\begin{lemma}\Label{lemma-ell-3} 
+The partition  $\{\X_s,\Y_s\}$ satisfies Condition II of Result~\ref{GMK} if and only if $q=2$.
+\end{lemma}
+
+\begin{proof}%We use $P,P'$ to denote points of type (i); $Q,Q'$ to denote points of type (ii); and $R,R'$ to denote points of type (iii). 
+We prove this in the case $\Q_n$ is $\E=Q^-(2r+1,q)$, which has projective index $g=r-1$ and point-graph denoted $\Gamma_\E$. The cases when $\Q_n$ is $\H=Q^-(2r+1,q)$ and $\P=Q(2r,q)$ are proved in a very similar manner. 
+
+\TODO{We show that each vertex in $\Y_s$ is adjacent to $0$, $\frac12|\X_s|$ or $\frac12|\X_s|$ vertices in $\X_s$.
+
+First consider a vertex $P$ in $\Y_s$ of type (i). For every point $Q$ of type (ii), $PQ$ is a line of $\E$, so $P$, $Q$ are adjacent vertices in $\Gamma_\E$. That is, each vertex of type (i) in $\Y_s$ is adjacent to the $|\X_s|$ vertices in $\X_s$.
+
+ Now consider a vertex $R$ in $\Y_s$ of type (iii).} We count the number of vertices $Q$ of type (ii) for which $RQ$ is a line of $\E$. We will show that this is $\frac12|\X_s|$ if and only if $q=2$. Let $\Sigma$ be a subspace of $\E$ of dimension $s+1$ that contains $\alpha_s$. So $\Sigma\setminus\alpha_s$ consists of points of type (ii), hence $R\notin\Sigma$. Consider the $(s+2)$-space $\Pi=\langle \Sigma,R\rangle$. As $R$ is of type (iii), $\langle\alpha_s,R\rangle$ is not contained in $\E$, so $\Pi$ is not contained in $\E$. Further $\Pi\cap\E$ contains the $(s+1)$-space $\Sigma$ and the point $R\notin\Sigma$. 
+Hence $\Pi\cap\E$ is two distinct $(s+1)$-spaces \TODO{(I think we might need a reference for this - just noticed that Property * in Section 4 might be what we need - or something equivalent?)}, one is $\Sigma$, the other we denote by $\Sigma'$.  As $\Sigma'$ contains $R$ of type (iii),  $\Sigma'$ does not contain $\alpha_s$. Hence $\Sigma'\cap\Sigma=\Omega$ is an $s$-space distinct from $\alpha_s$. Consider a line $m$ joining $R$ to a point $Q$ in $\Omega\setminus(\Omega\cap\alpha_s)$, and note that  $Q'$ \TODO{(should this be $Q$?)}is type (ii). As  $m\subseteq\Omega\subset\E$ - \TODO{should this be $m\subseteq\Sigma'\subset\E$}, $m$ is a line of $\E$. As $\Pi$ is not in $\E$, $m$  contains a unique point of type (ii), namely $Q$. So the remaining points of $m$ are of type (iii). That is, in the graph $\Gamma_\E$, $m$ gives rise to one neighbour of $R$ in $\X_s$, namely $Q$.
+Thus each point in $\Omega\setminus(\Omega\cap\alpha_s)$ gives a unique neighbour  of type (ii) to $R$  in $\Gamma_\E$. This is true for every $(s+1)$-space that contains $\alpha_s$ and is contained in $\E$. Moreover, each neighbour  of $R$ in $\X_s$ corresponds to a point that lies in exactly one such $(s+1)$-space, so arises   exactly once in this way. Further, there are no other  lines of $\E$ through $R$ that contain a point of type (ii). By (\ref{eqn-1}), there are 
+$$\frac{ (q^{r-s}+1)(q^{r-s-1}-1)}{(q-1)}$$ $(s+1)$-dimensional spaces that contain $\alpha_s$ and are contained in $\E$. Further, $|\Omega\setminus(\Omega\cap\alpha_s)|=q^{s}$. Hence in $\Gamma_\E$, there are 
+\[
+\frac{ q^{s}\ (q^{r-s}+1)(q^{r-s-1}-1)}{(q-1)}
+\] neighbours of $R$ in $\X_s$. 
+To satisfy Condition II of Result~\ref{GMK}, we  want this to be 0, $\frac12|\X_s|$ or $|\X_s|$. Note that since it is $<|\X_s|$ (calculated in Lemma~\ref{lemma-ell-1}), we see that this can occur if and only if $q=2$ \TODO{(when it is equal to $\frac12|\X_s|$), or 0 (when $r-s-1=0$). However by Definition~\ref{def-partition}, $s<g=r-1$, so $r-s-1$ is never zero.  Thus $q=2$ and } $R$ is adjacent to $\frac12|\X_s|$ vertices in $\X_s$.
+ 
+ Thus vertices in $\Y_s$ are adjacent to  either $|\X_s|$ \TODO{(if of type (i))} or $\frac12|\X_s|$ vertices in $\X_s$ \TODO{(if of type (iii))}, if and only if $q=2$. That is, Condition II of Result~\ref{GMK} is satisfied in $\Gamma$ if and only if $q=2$.  
+\end{proof}
+
+
+
+%
+%\subsection{The hyperbolic quadric $\H=Q^+(2r+1,q)$}
+%
+%In this section, we consider the case when $n=2r+1$, and the non-singular quadric $\Q_n$ is $\H=Q^+(2r+1,q)$, so $g=r$. Let $\alpha_s$ be a subspace of dimension $s$, $0\leq s<g$,  contained in $\H$. We show that the partition $\{\X_s,\Y_s\}$ defined on $\H$ as in Definition~\ref{def-partition} satisfies Conditions I and II of Result~\ref{GMK}. The proofs are straightforward generalisation of those given in Section~\ref{sec-elliptic}, and so we state the results without proof in this section. 
+%
+%\begin{lemma}\Label{lemma-H-Xs} The number of points  in $\X_s$ is
+%$$\frac{q^{s+1}(q^{r-s-1}+1)(q^{r-s}-1)}{(q-1)}.$$
+%\end{lemma}
+%%\blue{Case $\H_{2r+1}$ \quad $w=2$};
+%%$$a=N(\alpha_s,\H_{2r+1})=\frac{[r-s,r]_+[r+1-s,r+1]_-}{[1,s+1]_-};
+%%\quad
+%%c=N(\Pi_{s+1},\H_{2r+1})=\frac{[r-s-1,r]_+[r-s,r+1]_-}{[1,s+2]_-}
+%%$$
+%%
+%%$$\frac{c}{a}=\frac{(q^{r-s-1}+1)(q^{r-s}-1)}{(q^{s+2}-1)};
+%%\quad
+%%b=\frac{c}{a}d=(q^{r-s-1}+1)(q^{r-s}-1)/(q-1)
+%%$$
+%\begin{lemma}
+%Let $G$ be the subgraph of $\Gamma_\H$ on the vertices in   $\X_s$. Then $G$ is a regular graph with degree $$(q^{s+1}-1)+\frac{q^{s+2}(q^{r-s-2}+1)(q^{r-s-1}-1)}{(q-1)}.$$
+%\end{lemma}
+%
+%\begin{lemma}
+%The partition  $\{\X_s,\Y_s\}$ satisfies Condition II of Result~\ref{GMK} if and only if $q=2$.
+%\end{lemma}
+%
+%
+%
+%
+%
+%\subsection{The parabolic quadric $\P=Q(2r,q)$}
+%
+%In this section, we consider the case when $n=2r$, and the non-singular quadric $\Q_n$ is $\P=Q(2r,q)$, so $g=r-1$. Let $\alpha_s$ be a subspace of dimension $s$, $0\leq s<g$,  contained in $\P$. We show that the partition $\{\X_s,\Y_s\}$ defined on $\P$ as in Definition~\ref{def-partition} satisfies Conditions I and II of Result~\ref{GMK}. The proofs are straightforward generalisation of those given in Section~\ref{sec-elliptic}, and so we state the results without proof in this section. 
+%
+%\begin{lemma}\Label{lemma-P-Xs} The number of points  in $\X_s$ is
+%$$\frac{q^{s+1}(q^{r-s-1}+1)(q^{r-s-1}-1)}{(q-1)}.$$
+%\end{lemma}
+%%\blue{Case $\P_{2r}$ \quad $w=1$};
+%%$$a=N(\alpha_s,\P_{2r})=\frac{[r-s,r]_+[r-s,r]_-}{[1,s+1]_-};
+%%\quad
+%%c=N(\Pi_{s+1},\P_{2r})=\frac{[r-s-1,r]_+[r-s-1,r]_-}{[1,s+2]_-}
+%%$$
+%%
+%%$$\frac{c}{a}=\frac{(q^{r-s-1}+1)(q^{r-s-1}-1)}{(q^{s+2}-1)};
+%%\quad
+%%b=\frac{c}{a}d=(q^{r-s-1}+1)(q^{r-s-1}-1)/(q-1)
+%%$$
+%\begin{lemma}
+%Let $G$ be the subgraph of $\Gamma_\P$ on the vertices in   $\X_s$. Then $G$ is a regular graph with degree $$(q^{s+1}-1)+\frac{q^{s+2}(q^{r-s-2}+1)(q^{r-s-2}-1)}{(q-1)}.$$
+%\end{lemma}
+%
+%\begin{lemma}
+%The partition  $\{\X_s,\Y_s\}$ satisfies Condition II of Result~\ref{GMK} if and only if $q=2$.
+%\end{lemma}
+
+
+
+%\subsection{The hyperbolic and parabolic quadrics}
+%
+%The proofs of Lemmas~\ref{lemma-ell-1}, \ref{lemma-ell-2}, and \ref{lemma-ell-3}
+%generalise in a straightforward manner to the hyperbolic quadric $\H=Q^+(2r+1,q)$ in $\PG(2r+1,q)$, and the parabolic quadric $\P=Q(2r,q)$ in $\PG(2r,q)$. We state the corresponding results here without proof. 
+%
+%\begin{lemma}\Label{lemma-hyp}
+%In $\PG(2r+1,q)$, let $\H=Q^+(2r+1,q)$ be a non-singular quadric, so $\H$ has  projective index $g=r$.  Let $\alpha_s$ be a subspace of dimension $s$, $0\leq s<g$,  contained in $\H$. Let  $\{\X_s,\Y_s\}$  be the partition defined on the point-graph $\Gamma_\H$ of $\H$ as in Definition~\ref{def-partition}. Then:
+%\begin{enumerate}
+%\item The number of points  in $\X_s$ is
+%$$\frac{q^{s+1}(q^{r-s-1}+1)(q^{r-s}-1)}{(q-1)}.$$
+%\item 
+%Let $G$ be the subgraph of $\Gamma_\H$ on the vertices in   $\X_s$. Then $G$ is a regular graph with degree $$(q^{s+1}-1)+\frac{q^{s+2}(q^{r-s-2}+1)(q^{r-s-1}-1)}{(q-1)}.$$
+%\item 
+%The partition  $\{\X_s,\Y_s\}$ satisfies Condition II of Result~\ref{GMK} if and only if $q=2$.
+%\end{enumerate}
+%\end{lemma}
+%
+%\begin{lemma}\Label{lemma-par}
+%In $\PG(2r,q)$, let $\P=Q(2r,q)$ be the non-singular parabolic quadric, so $\P$ has  projective index $g=r-1$. Let $\alpha_s$ be a subspace of dimension $s$, $0\leq s<g$,  contained in $\P$. Let $\{\X_s,\Y_s\}$ be the partition  defined on the point-graph $\Gamma_\P$ of $\P$ as in Definition~\ref{def-partition}. Then: 
+%\begin{enumerate}
+%\item The number of points  in $\X_s$ is
+%$$\frac{q^{s+1}(q^{r-s-1}+1)(q^{r-s-1}-1)}{(q-1)}.$$
+%\item 
+%Let $G$ be the subgraph of $\Gamma_\P$ on the vertices in   $\X_s$. Then $G$ is a regular graph with degree $$(q^{s+1}-1)+\frac{q^{s+2}(q^{r-s-2}+1)(q^{r-s-2}-1)}{(q-1)}.$$
+%\item 
+%The partition  $\{\X_s,\Y_s\}$ satisfies Condition II of Result~\ref{GMK} if and only if $q=2$.
+%\end{enumerate}
+%\end{lemma}
+
+We use these lemmas to provide a proof of Theorem~\ref{main-thm}.
+
+{\bf Proof of Theorem~\ref{main-thm}} Let $s$ be an integer with  $0\le s <g$, and so we need $g\ge 1$. 
+Lemmas~\ref{lemma-ell-2} and \ref{lemma-ell-3}, show that for a non-singular quadric $\Q_n$ in $\PG(n,2)$, the partition defined in Definition~\ref{def-partition} satisfies Conditions I and II of Result~\ref{GMK}. Hence by Result~\ref{GMK}, for any  $s$, $0\leq s<g$, the graph  $\Gamma_{s}$  is a strongly regular graph with the same parameters as $\Gamma$. \hfill $\square$ 
+
+
+It is useful to note that the proof of Lemma~\ref{lemma-ell-3} gives a description of  the edges in the graph $\Gamma_s$. That is, let  $P,P'$ be vertices of type (i), $Q,Q'$ 
+ vertices of type (ii), and
+$R,R'$ 
+ vertices of type (iii). Then $\{P,P'\}$, $\{P,Q\}$, $\{P,R\}$, $\{Q,Q'\}$, $\{R,R'\}$ are edges of $\Gamma_s$ if $PP'$, $PQ$, $PR$, $QQ'$, $RR'$ are lines of $\Q_n$ respectively; and $\{Q,R\}$ is an edge of $\Gamma_s$ if $QR$ is a 2-secant of $\Q_n$. In summary, we have:
+
+
+\begin{corollary}\Label{cor-edges} Let $\Gamma_s$, $0\leq s<g$  be the graph constructed in Theorem~\ref{main-thm}. The adjacencies in $\Gamma_s$ are the same as those given in Table~\ref{table-edges}.  
+\end{corollary}
+
+
+%\begin{remark}\Label{remark} {\rm  Note that the proof of Lemma~\ref{lemma-ell-3} shows that the Godsil Mc-Kay construction using $\{\X_s,\Y_s\}$ preserves the edges between vertices of type (ii) (which are in $\X_s$) and vertices of type (i) (which are in $\Y_s$). So the only edges changed in the Godsil Mc-Kay construction are those joining a vertex $Q$ of type (ii) with a vertex $R$ of type (iii).
+% That is, if $QR$ is a line of $\E$, then $Q$ and $R$ are adjacent in $\Gamma$, but not adjacent in $\Gamma_s$. Similarly, if $QR$ is 2-secant of $\E$, then $Q$ and $R$ are not adjacent in $\Gamma$, but are adjacent in $\Gamma_s$. In particular, it is useful to note that the adjacencies for the graph $\Gamma_s$ are those described in Table~\ref{table-edges}. This  also hold in the cases when $\Q_n$ is hyperbolic and parabolic.}
+% \end{remark} 
+%
+
+
+
+\begin{remark}
+{\rm  Let $\Q_n$ be a non-singular  quadric in $\PG(n,2)$. As we need $g\geq1$ for our construction to work:  when $\Q_n$ is a hyperbolic quadric,  we need $n\ge 3$; when $\Q_n$ is a parabolic quadric, we need $n\ge 4$; and when $\Q_n$ is an elliptic quadric, we need $n\ge 5$.
+}\end{remark}
+
+\begin{remark}{\rm  We note that if $q\neq 2$, then geometric techniques similar to those used in Lemmas~\ref{lemma-ell-1}, 
+\ref{lemma-ell-2} and \ref{lemma-ell-3} show that the graph $\Gamma_s$ with $s>0$ is {\em not} regular. }
+\end{remark}
+
+\section{Maximal cliques of $\Gamma_s$}\Label{sec-cliques}
+
+In this section, we classify and count the maximal cliques in each  graph $\Gamma_s$. We will  make repeated use of the following property of polar spaces, see \cite[Section 26.1]{HT}.
+
+ {\bf Property (*)} Let $\Q_n$ be a non-singular quadric in $\PG(n,2)$, $\Sigma$   a generator of $\Q_n$, and $X$ a point of $\Q_n$ not in $\Sigma$. Then there is a unique generator $\Pi$ of $\Q_n$ that contains $X$ and meets $\Sigma$ in a $(g-1)$-space.  Further, the  points in $\Sigma$ which lie on a line of $\Q_n$ through  $X$ are exactly the points in $\Sigma\cap\Pi$.
+
+
+\subsection{Description of Maximal Cliques of $\Gamma_s$}\Label{sec:max-descr}
+
+
+
+In this section, let $\Q_n$ be a non-singular quadric of $\PG(n,2)$ of projective index $g$ with point-graph $\Gamma$. Let $\alpha_s$ be an $s$-dimensional space of $\Q_n$ giving rise to the Godsil-McKay partition  $\{\X_s,\Y_s\}$ and the new graph $\Gamma_s$ as in Theorem~\ref{main-thm}.
+
+We first describe the maximal cliques in the  point-graph $\Gamma$ of $\Q_n$. The projective index $g$ of $\Q_n$ is the dimension of the  largest subspaces  contained in $\Q_n$, these $g$-spaces  are called {\em generators} of $\Q_n$ (see \cite[Chapter 22]{HT} for more details). A generator contains $2^{g+1}-1$ points, and  any subspace of $\Q_n$ is contained in a generator of $\Q_n$. Hence the maximal cliques of $\Gamma$ correspond to generators of  $\Q_n$, and so contain
+ $2^{g+1}-1$ vertices. 
+% By \cite[Theorem 22.5.1]{HT}, the number of maximal cliques of $\Gamma$ is given in Table~\ref{table-cliq-quad}.
+% 
+% \begin{table}[h]\caption{Number of maximal cliques in the point-graph of $\Q_n$}\label{table-cliq-quad}
+% \begin{center}
+% \begin{tabular}{ll}
+% \hline
+% Quadric&number of maximal cliques\\ \hline
+% $\E=Q^-(2r+1,q)$&$(q^2+1)(q^3+1)\cdots(q^{r+1}+1)$\\
+% $\H=Q^+(2r+1,q)$&$2(q+1)(q^2+1)\cdots(q^r+1)$\\
+% $\P=Q(2r,q)$&$(q+1)(q^2+1)\cdots(q^r+1)$\\ \hline
+% \end{tabular}\end{center}\end{table}
+% 
+We want to study 
+maximal cliques in $\Gamma_s$,  we begin by studying cliques of  $\Gamma_s$ of size $2^{g+1}-1$.
+We define a {\em $g$-clique} of $\Gamma_s$ to be a clique of size $2^{g+1}-1$.
+The next lemma describes two types of $g$-cliques of $\Gamma_s$. Note that the first type 
+ corresponds to generators  of $\Q_n$ containing $\alpha_s$, and so corresponds to maximal cliques of the original graph $\Gamma$.
+Figure~\ref{fig-cliques} illustrates both types of $g$-cliques of  Lemma~\ref{g-cliq-1}.
+
+
+\begin{figure}[h]
+\centering
+\input{cliques.pdf_t}
+\caption{$g$-cliques of $\Gamma_s$}\label{fig-cliques}
+\end{figure}
+
+
+
+\begin{lemma}\Label{g-cliq-1} 
+Let $\Gamma_s$, $0\le s < g$, be the graph constructed as in Theorem~\ref{main-thm}.
+\begin{itemize}
+\item[A.]
+ Let $\Sigma$ be a generator of $\Q_n$ that contains $\alpha_s$. Then the vertices of $\Gamma_s$ corresponding to the points of $\Sigma$ form a $g$-clique of $\Gamma_s$.
+ \item[B.]  Let $\Pi,\Sigma$ be two generators of $\Q_n$ such that: $\Sigma$ contains $\alpha_s$; $\Pi$ does not contain $\alpha_s$; and $\Pi$, $\Sigma$ meet in a $(g-1)$-dimensional space. Let $\C_a$ be the $2^s-1$ points of $\alpha_s\cap\Pi$; $\C_b$ be the $2^g-2^s$ points of $\Sigma$ that are not in $\alpha_s$ or $\Pi$; and $\C_c$ be the $2^g$ points of $\Pi\setminus\Sigma$. Then $\C_a\cup\C_b\cup\C_c$ corresponds to a $g$-clique of the graph $\Gamma_s$.
+ \end{itemize}
+\end{lemma}
+
+
+\begin{proof} 
+For part A, let $\Sigma$ be a generator of $\Q_n$ that contains $\alpha_s$. 
+Let $\C$ be the set of vertices of $\Gamma_s$ that correspond to the points of $\Sigma$. As  $\C$ consists of vertices of type (i) and (ii) only, two vertices of $\C$ are adjacent if the corresponding two points lie on a line of $\Q_n$. As $\Sigma$ is contained in $\Q_n$, every pair of distinct points in $\Sigma$ lie in a line of $\Q_n$. Hence every pair of distinct vertices in $\C$ are adjacent, so $\C$ is a clique. Further, $\Sigma$ contains $2^{g+1}-1$ points, so $|\C|=2^{g+1}-1$. Thus $\C$ is a $g$-clique of $\Gamma_s$. 
+
+We now consider the set described in part B.  
+First note that the three sets $\C_a, \C_b,\C_c$ are pairwise disjoint, and $\C_a$ consists of points  of type (i);
+$\C_b$ consists of points of type (ii);
+and $\C_c$ consists of points of type (iii). Further, the number of points in $\C_a, \C_b,\C_c$ can be calculated by straightforward counting points in projective spaces. 
+
+Suppose $|\C_a|,|\C_b|,|\C_c|>1$, and let
+ $P,P'\in\C_a$, $Q,Q'\in\C_b$, $R,R'\in\C_c$. We note the following pairs lie in a subspace of $\Q_n$, and so lie on a line of $\Q_n$:
+ $P,P'\in\alpha_s\subset\Q_n$, 
+ $Q,Q'\in\Sigma\subset\Q_n$, 
+ $P,Q\in\Sigma\subset\Q_n$, 
+ $P,R\in\Pi\subset\Q_n$,
+ $R,R'\in\Pi\subset\Q_n$.
+ Hence the corresponding pairs of vertices are all adjacent in $\Gamma_s$. 
+ So to show that $\C_a\cup\C_b\cup\C_c$ is a clique, we need 
+to show that $QR$ is a 2-secant of $\Q_n$.
+Similarly, if any of $|\C_a|,|\C_b|,|\C_c|$ is $\leq1$, we only need to show that $QR$ is a 2-secant of $\Q_n$.
+
+
+
+Consider the line $QR$. It lies in  the $(g+1)$-space $\langle\Pi,\Sigma\rangle$, which meets $\Q_n$ in exactly $\Pi$ and $\Sigma$. As $Q\in\Sigma\setminus\Pi$ and $R\in\Pi\setminus\Sigma$,  the line $QR$ is not contained in $\Q_n$, so it is a 2-secant of $\Q_n$. Hence $QR$ is an edge of $\Gamma_s$. That is, $\C_a\cup\C_b\cup\C_c$ is a set of $2^{g+1}-1$ vertices of $\Gamma_s$ such that any two vertices are adjacent, and so it is a $g$-clique of $\Gamma_s$. 
+\end{proof}
+
+We will show that  the only maximal cliques in $\Gamma_s$ are the $g$-cliques of Type A and B. We begin with some preliminary lemmas. 
+First note that the $g$-cliques of Type A contain no points of type (iii), \TODO{ and we will now show that } the converse also holds. 
+
+
+\begin{lemma}\Label{conv-g-cliq-1} Let $\C$ be a $g$-clique of $\Gamma_s$, $0\le s < g$, that contains no vertices of type \tthree, then $\C$ is of Type A.
+\end{lemma}
+
+\begin{proof}
+Let $\C$ be a $g$-clique of $\Gamma_s$, $0\le s < g$, that contains no vertices of type \tthree. Suppose $\C$ is not contained in a generator of $\Q_n$. We can enumerate the number \TODO{(shouldn't this be ``enumerate the points'' or ``count the number of points''?)} of points of $\Q$ in each generator of $\Q_n$. Let $\Sigma$ be a generator of $\Q_n$ that contains the maximum number of points of $\C$. As $\C$ is not contained in $\Sigma$, there is a point $A$ of $\C$ that is not in $\Sigma$. By property (*), there is a unique generator $\Pi$ of $\Q_n$ that contains $A$ and meets $\Sigma$ in a $(g-1)$-space. Further, the points of $\Sigma$ that lie on a line of $\Q_n$ through $A$ are exactly the points of $\Sigma\cap\Pi$. 
+ As $\C$ contains no points of type (iii), edges in $\C$ correspond to lines of $\Q_n$, so the points of $\C$ \TODO{(should $\C$ be changed to $\C\cap\Sigma$)} lie in $\Sigma\cap\Pi$. That is, $|\Pi\cap\C|\geq |\Sigma\cap\C|+1$, which contradicts the choice of $\Sigma$ \TODO{being the generator with the largest intersection with $\C$}. Hence $\C$ is contained in a generator of $\Q_n$. As $|\C|=2^{g+1}-1$, the vertices of $\C$ correspond exactly to the points of this generator, and so $\C$ is a Type A $g$-clique.
+\end{proof}
+
+
+
+\begin{lemma}\Label{lem-1-type-ii} Every generator of $\Q_n$ contains a point of type (ii).
+\end{lemma}
+\begin{proof}
+\blue{DELETE THIS:
+  Let $\Pi$ be a generator of $\Q_n$. If $\Pi$ contains $\alpha_s$, then $\Pi$ contains only points of type (i) and (ii), \TODO{and as $s<g$, } $\Pi$ contains at least one point of type (ii). 
+Suppose $\Pi$ meets $\alpha_s$ in a subspace $\alpha_t$ of dimension $t$,  with $-1\le t\le s-1$.  Let $P_1$ be a point of $\alpha_s\backslash\alpha_t$, and let $\alpha_{t+1}=\langle P_1,\alpha_t\rangle$, so $\alpha_{t+1}$ has dimension $t+1$. As  $P_1\notin\Pi$, by property (*) there exists a unique generator $\Sigma_1$ of $\Q_n$ containing $P_1$ and meeting $\Pi$ in a $(g-1)$-space $H_1$.  Now each point  $X\in H_1$ either lies in $\alpha_t$ or is on a line of $\Q_n$ with each point in  $\alpha_{t+1}$ \TODO{(But $\alpha_s$ could be contained in $\Pi$?)}.  If $\alpha_{t+1}\neq\alpha_s$, that is, if $t+1<s$, we can repeat this process with $P_2\in\alpha_s\backslash\alpha_{t+1}$. We use property (*) to get a generator  $\Sigma_2$ of $\Q_n$ that contains $P_2$ and meets $\Pi$ in a $(g-1$)-space which contains $\alpha_{t}$. Further, $\Sigma_2$ meets $H_1$ in a $(g-2)$-space denoted $H_2$. \TODO{(Is it clear that $H_2\ne H_1$? - we could argue this if we had a count of how many generators through a $g-1$ space)} Repeating this process a total of $s-t$ times, we eventually obtain $H_{s-t}$ of dimension $(g-(s-t))=g-s+t$ in $\Pi$.  Note that as $s<g$ we have $g-s+t>t$ and so $H_{s-t}\backslash\alpha_t$ is not empty. Let $X\in H_{s-t}\backslash\alpha_t$, then $X$ 
+ is on a line of $\Q_n$ with all the points of $\alpha_s$. Thus $X$ is type (ii). As $H_{s-t}\subset\Pi$, $X\in\Pi$, so $\Pi$ contains at least one point of type (ii) as required.
+
+ADD THE FOLLOWING:}
+
+
+\red{
+ Let $\Pi$ be a generator of $\Q_n$. If $\Pi$ contains $\alpha_s$, then $\Pi$ contains only points of type (i) and (ii), and as $s<g$, $\Pi$ contains at least one point of type (ii). 
+Suppose $\Pi$ meets $\alpha_s$ in a subspace $\alpha_t$ of dimension $t$,  with $-1\le t\le s-1$.  Let $P_1$ be a point of $\alpha_s\backslash\alpha_t$, and as  $P_1\notin\Pi$, by property (*) there exists a unique generator $\Sigma_1$ of $\Q_n$ containing $P_1$ and meeting $\Pi$ in a $(g-1)$-space $H_1$, which necessarily contains $\alpha_t$.  Let $\Sigma_1^s=\alpha_s\cap\Sigma_1\supseteq \langle\alpha_t,P_1\rangle$. The points of   $H_1$ not of type (i) is on a line of $\Q_n$ with each point in  $\Sigma_1^s$.  
+
+If $\Sigma_1^s\neq\alpha_s$, we can repeat this process with $P_2\in\alpha_s\backslash\Sigma_1^s$. We use property (*) to get a generator  $\Sigma_2$ of $\Q_n$ that contains $P_2$ and meets $\Pi$ in a $(g-1)$-space which contains $\alpha_{t}$. Further, $\Sigma_2$ meets $H_1$ in at least a  $(g-2)$-dimensional space denoted $H_2$, which necessarily contains $\alpha_t$.  The points of $H_2$ which are not of type (i) are on a line of $Q_n$ with each point in $\Sigma_2^2=\alpha_s\cap\Sigma_2\supseteq \langle\alpha_t,P_1,P_2\rangle$.
+
+
+Repeating this process at most $s-t$ times, we eventually obtain $H_{s-t}\subseteq\Pi$ of dimension at least $d=g-(s-t)$, with the property that all the points of $H_{s-t}$ which are not of type (i), are on a line of $Q_n$ with all the points in $\alpha_s$, and so are of type (ii). We need to show that $H_{s-t}$ \emph{does} contain points other than that of $\alpha_t$.
+
+We consider the dimension of $H_{s-t}$ compared to that of its subspace $\alpha_t$.  We have that the dimension of $H_{s-t}$ less that of $\alpha_t$ is at least $d-t=g-(s-t)-t=g-s>0$, by definition of $s$.  Hence the set $H_{s-t}\backslash \alpha_t$ is non-empty and contains points of type (ii).  Thus $\Pi\supset H_{s-t}$ contains at least one point of type (ii) as required.
+}
+\end{proof}
+
+We now show that there are only two types of $g$-cliques in $\Gamma_s$, namely those of Type A and B described in Lemma~\ref{g-cliq-1}.
+%\renewcommand\baselinestretch{1.2}\small\normalsize
+
+
+\TODO{
+\begin{lemma}
+In the quadric graph, any clique lies on a generator.
+\end{lemma}
+\begin{proof}
+Suppose a clique $\C$ is not contained in any generator.  Let $\Pi$ be the generator which has maximal intersection with $\C$, so there is a point $P\in\C$ which is not in $\Pi$.  Consider the generator $\Sigma$ which contains $P$ and meets $\Pi$ in a $(g-1)$--space $H$.  Then the points of $H$ is exactly the points on $\Pi$ which are on a line with $P$.  Thus $\C\cap\Pi\subseteq H$.  However $\Sigma$ contains $P$ and $\C\cap\Pi$, thus $\Sigma$ has at least one more point of $\C$ than $\Pi$, contradicting the definition of $\Pi$, proving that $\C$ lies on a generator.
+\end{proof}
+}
+
+\begin{lemma}\Label{classify-cliq}
+Let $\C$ be a $g$-clique in $\Gamma_s$, $0\leq s<g$,  then $\C$ is a $g$-clique of Type A or B.
+\end{lemma}
+
+\begin{proof}
+Let $\clique$ be a $g$-clique of $\Gamma_s$ and denote the subsets of vertices of $\clique$ of type (i), (ii), (iii) by $\setX$, $\setY$, $\setZ$ respectively. 
+If $\setZ=\emptyset$, then by Lemma~\ref{conv-g-cliq-1},
+$\clique$ corresponds to a generator of $\Q_n$ containing $\alpha_s$, and so  is of Type A. So suppose $\setZ\neq \emptyset$. 
+
+
+\blue{REMOVE THE FOLLOWING: 
+
+We begin by  constructing two generators of $\Q_n$ whose union contains the $g$-clique $\C$. 
+Let $P\in\alpha_s$ and $R\in\setZ$, so $P$ is type (i) and $R$ is type (iii), and hence  $PR$ is a line of $\Q_n$.  Moreover, as $\C$ is a clique,  for any two points $R,R'\in\setZ$, $RR'$ is a line of $\Q_n$.  Further, note that $\alpha_s$ is a subspace. Thus any  two points in $\alpha_s\cup\setZ$ lie on a line of $\Q_n$, and so $\langle\alpha_s,\setZ\rangle$ is a subspace contained in $\Q_n$. \TODO{I think the required result is that every clique lies on a generator} Hence $\langle\alpha_s,\setZ\rangle$  is contained in a generator  of $\Q_n$, denoted $\Pi$. Thus  $\langle\setX,\setZ\rangle$ is contained in $\Pi$.
+A similar argument  shows that $\langle\setX,\setY\rangle$ is contained in a generator $\Sigma$ of $\Q_n$. 
+We now show that $\setY$ is not empty. Suppose $\setY=\emptyset$, then 
+$\C$ is contained in $\Pi$, and as $|\C|=2^{g+1}-1$, 
+we have  $\C=\setX\cup\setZ=\Pi$.  However, by Lemma~\ref{lem-1-type-ii}, $\Pi$ contains at least one point of type (ii), a contradiction.  Thus $\setY\ne\emptyset$.
+So let $Q\in\setY$ and $R\in\setZ$, then $\{Q,R\}$ is an edge of $\Gamma_s$, hence $QR$ is a 2-secant of $\Q_n$. As $Q\in\Sigma\subset\Q_n$, we have $R\notin\Sigma$. Similarly $R\in\Pi$ and $QR$ a 2-secant implies $Q\notin\Pi$. 
+ In summary,  we have 
+ $$\setX\subset\alpha_s\cap\Pi\cap\Sigma;\quad \setY\subset \Sigma\setminus\Pi; \quad \setZ\subset\Pi\setminus\Sigma;\quad  
+  \C\subset\Sigma \cup \Pi.$$
+
+
+  
+Next we determine the size of $\setX$, $\setY$ and $\setZ$. 
+As $\setZ\neq\emptyset$, there is a point $R\in\setZ$, so $R\notin\Sigma$. By property (*),  there is a unique generator $\Pi'$ of $\Q_n$ that contains $R$ and meets $\Sigma$ in a $(g-1)$-space denoted  $H=\Sigma\cap\Pi'$. 
+If $H$ contained $\alpha_s$, then $\langle R,\alpha_s\rangle\subset\Pi'$ would be a subspace of $\Q_n$, which implies that $R$ is type (ii), a contradiction. Thus $H\cap\alpha_s$ is an $(s-1)$-space. 
+If $P\in\setX$, then $P,R\in\C$, so $P,R$ are adjacent in $\Gamma_s$ and so $PR$ is a line of $\Q_n$. Thus $P\in H$, and so $P\in H\cap\alpha_s$. Hence
+ $|\setX|\leq |H\cap\alpha_s|=2^s-1$.  Now by the construction of $H$, each point in $H\setminus\alpha_s$ lies on a line of $\Q_n$ with $R$, and each point of $\Sigma\setminus(H\cup\alpha_s)$ lies on a 2-secant of $\Q_n$ with $R$. So the type (ii) points of $\C$ are contained in $ \Sigma\setminus(H\cup\alpha_s)$. That is, $|\setY|\leq|\Sigma\setminus(H\cup\alpha_s)|=(2^{g+1}-1)-\big((2^g-1)+2^s)\big)=2^g-2^s$.
+ 
+As $\setY\neq\emptyset$, there is a point   $Q\in\setY$,  so $Q\in\Sigma\setminus\Pi$. 
+ By property (*),  there is a unique generator $\Sigma'$ of $\Q_n$ that contains $Q$ and meets $\Pi$ in a $(g-1)$-space. Hence $Q$ is on a line of $\Q_n$ with the $2^g-1$ points of $\Pi\cap\Sigma'$; and  $Q$ is on a 2-secant of $\Q_n$ with the $(2^{g+1}-1)-(2^g-1)=2^g$ points of $\Pi\setminus\Sigma'$. 
+If $R$ is a point of $\setZ$, then as $Q,R\in\C$, they are adjacent in $\Gamma_s$ and so $QR$ is a 2-secant of $\Q_n$. Hence the points of $\setZ$ lie in $\Pi\setminus\Sigma'$, and so
+ $|\setZ|\leq2^g$. 
+ 
+  
+Further, as $|\C|=2^{g+1}-1$, we need equality in all three of these  bounds, that is,
+$|\setX|=2^s-1$,   
+$|\setY|=2^g-2^s$,
+and $|\setZ|=2^g$.
+Moreover,  \begin{equation}\label{eqn-gcliq} \setX=\alpha_s\cap\Pi',\quad
+\setY=\Sigma\setminus(\alpha_s\cup\Pi'), \quad
+\setZ=\Pi\setminus\Sigma'.\end{equation}
+
+
+To show that $\C$ is a $g$-clique of Type B, we need to show that $\Pi=\Pi'$ and $\Sigma=\Sigma'$. 
+Suppose that $\Pi\ne\Pi'$, so $\Pi\cap\Pi'$ has dimension at most $g-1$, that is $|\Pi\cap\Pi'|\leq 2^g-1$. As $\Pi$ contains $\setZ$,  and $|\setZ|=2^g>|\Pi\cap\Pi'|$, 
+there exists a point $R^*\in\setZ$ with $R^*\in\Pi\backslash\Pi'$.  By Property (*), there exists a unique generator $\Pi^*$ of $\Q_n$ which contains $R^*$ and meets $\Sigma$ in a $(g-1)$-space. 
+Further, for each point $X\in\Sigma\setminus\Pi^*$, $XR^*$ is a 2-secant of $\Q_n$. Thus $\setY\subset\Sigma\setminus\Pi^*$. By (\ref{eqn-gcliq}), $\setY=\Sigma\setminus(\alpha_s\cup\Pi')$, moreover we have $|\Sigma\setminus(\alpha_s\cup\Pi')|=|\Sigma\setminus(\alpha_s\cup\Pi^*)|$. Hence $\Sigma\cap\Pi'=\Sigma\cap\Pi^*$, and so $\Pi'\cap\Pi^*$ is a $(g-1)$-space  in $\Sigma$. Recall that $R\in\Pi'$, and by assumption $R^*\in\Pi^*\setminus\Pi'$, so $\Pi'\neq\Pi^*$. Thus $\langle\Pi',\Pi^*\rangle$ is a $(g+1)$-space, and so meets $\Q_n$ in exactly the two generators $\Pi',\Pi^*$. Now $R,R^*\in\setZ$, so $\{R,R^*\}$ is an edge of $\Gamma_s$, and so $RR^*$ is a line of $\Q_n$. As $R^*\in\Pi^*\setminus\Pi$, and $RR^*$ is a line of $\Q_n$ in $\langle\Pi',\Pi^*\rangle$, we have $R\in\Pi^*$. So $R\in\Pi^*\cap\Pi'\subset\Sigma$, contradicting the choice of $R\not\in\Sigma$.
+ Hence 
+ $\Pi=\Pi'$. Thus $\Sigma$ meets $\Pi$ in a $(g-1)$-space, so by the construction of $\Sigma'$, we have $\Sigma=\Sigma'$.
+
+
+}
+
+\red{
+We begin by  constructing two generators of $\Q_n$ whose union contains the $g$-clique $\C$. 
+As $\C$ is a clique,  then $\setX\cup\setZ$ is a clique, and since $\setX\cup\setZ$ contains only points of type (i) and (iii), it follows that every two such points is on a line of $Q_n$, so $\setX\cup\setZ$ is a clique of $\Q_n$ and so lie on a generator $\Pi$ of $\Q_n$. (have lemma above to support this)
+
+Now consider the points of $\alpha_s$ and $\setY$.  By definition of points of type (ii), every point of $\setY$ is on a line with every point of $\alpha_s$.  So $\alpha_s\cup\setY$ is a clique of $\Q_n$ and so lies on a generator $\Sigma$ of $\Q_n$.
+
+For $\C$ to be of type B, we need to show that $\Pi\cap\Sigma$ has dimension $g-1$.
+
+ 
+We now show that $\setY$ is not empty. Suppose $\setY=\emptyset$, then 
+$\C$ is contained in $\Pi$, and as $|\C|=2^{g+1}-1$, 
+we have  $\C=\setX\cup\setZ=\Pi$.  However, by Lemma~\ref{lem-1-type-ii}, $\Pi$ contains at least one point of type (ii), a contradiction.  Thus $\setY\ne\emptyset$.
+
+
+So let $Q\in\setY$ and $R\in\setZ$, then $\{Q,R\}$ is an edge of $\Gamma_s$, hence $QR$ is a 2-secant of $\Q_n$. As $Q\in\Sigma\subset\Q_n$, we have $R\notin\Sigma$. Similarly $R\in\Pi$ and $QR$ a 2-secant implies $Q\notin\Pi$. 
+ In summary,  we have 
+ $$\setX\subset\alpha_s\cap\Pi\cap\Sigma;\quad \setY\subset \Sigma\setminus\Pi; \quad \setZ\subset\Pi\setminus\Sigma;\quad  
+  \C\subset\Sigma \cup \Pi.$$
+
+
+  
+Next we determine the size of $\setX$, $\setY$ and $\setZ$. 
+As $\setZ\neq\emptyset$, there is a point $R\in\setZ$, so $R\notin\Sigma$. By property (*),  there is a unique generator $\Pi'$ of $\Q_n$ that contains $R$ and meets $\Sigma$ in a $(g-1)$-space denoted  $H=\Sigma\cap\Pi'$. 
+If $H$ contained $\alpha_s$, then $\langle R,\alpha_s\rangle\subset\Pi'$ would be a subspace of $\Q_n$, which implies that $R$ is type (ii), a contradiction. Thus $H\cap\alpha_s$ is an $(s-1)$-space. 
+If $P\in\setX$, then $P,R\in\C$, so $P,R$ are adjacent in $\Gamma_s$ and so $PR$ is a line of $\Q_n$. Thus $P\in H$, and so $P\in H\cap\alpha_s$. Hence
+ $|\setX|\leq |H\cap\alpha_s|=2^s-1$.  Now by the construction of $H$, each point in $H\setminus\alpha_s$ lies on a line of $\Q_n$ with $R$, and each point of $\Sigma\setminus(H\cup\alpha_s)$ lies on a 2-secant of $\Q_n$ with $R$. So the type (ii) points of $\C$ are contained in $ \Sigma\setminus(H\cup\alpha_s)$. That is, $|\setY|\leq|\Sigma\setminus(H\cup\alpha_s)|=(2^{g+1}-1)-\big((2^g-1)+2^s)\big)=2^g-2^s$.
+ 
+As $\setY\neq\emptyset$, there is a point   $Q\in\setY$,  so $Q\in\Sigma\setminus\Pi$. 
+ By property (*),  there is a unique generator $\Sigma'$ of $\Q_n$ that contains $Q$ and meets $\Pi$ in a $(g-1)$-space. Hence $Q$ is on a line of $\Q_n$ with the $2^g-1$ points of $\Pi\cap\Sigma'$; and  $Q$ is on a 2-secant of $\Q_n$ with the $(2^{g+1}-1)-(2^g-1)=2^g$ points of $\Pi\setminus\Sigma'$. 
+If $R$ is a point of $\setZ$, then as $Q,R\in\C$, they are adjacent in $\Gamma_s$ and so $QR$ is a 2-secant of $\Q_n$. Hence the points of $\setZ$ lie in $\Pi\setminus\Sigma'$, and so
+ $|\setZ|\leq2^g$. 
+ 
+  
+Further, as $|\C|=2^{g+1}-1$, we need equality in all three of these  bounds, that is,
+$|\setX|=2^s-1$,   
+$|\setY|=2^g-2^s$,
+and $|\setZ|=2^g$.
+Moreover,  \begin{equation}\label{eqn-gcliq} \setX=\alpha_s\cap\Pi',\quad
+\setY=\Sigma\setminus(\alpha_s\cup\Pi'), \quad
+\setZ=\Pi\setminus\Sigma'.\end{equation}
+To show that $\C$ is a $g$-clique of Type B, we need to show that $\Pi=\Pi'$ and $\Sigma=\Sigma'$. 
+Suppose that $\Pi\ne\Pi'$, so $\Pi\cap\Pi'$ has dimension at most $g-1$, that is $|\Pi\cap\Pi'|\leq 2^g-1$. As $\Pi$ contains $\setZ$,  and $|\setZ|=2^g>|\Pi\cap\Pi'|$, 
+there exists a point $R^*\in\setZ$ with $R^*\in\Pi\backslash\Pi'$.  By Property (*), there exists a unique generator $\Pi^*$ of $\Q_n$ which contains $R^*$ and meets $\Sigma$ in a $(g-1)$-space. 
+Further, for each point $X\in\Sigma\setminus\Pi^*$, $XR^*$ is a 2-secant of $\Q_n$. Thus $\setY\subset\Sigma\setminus\Pi^*$. By (\ref{eqn-gcliq}), $\setY=\Sigma\setminus(\alpha_s\cup\Pi')$, moreover we have $|\Sigma\setminus(\alpha_s\cup\Pi')|=|\Sigma\setminus(\alpha_s\cup\Pi^*)|$. Hence $\Sigma\cap\Pi'=\Sigma\cap\Pi^*$, and so $\Pi'\cap\Pi^*$ is a $(g-1)$-space  in $\Sigma$. Recall that $R\in\Pi'$, and by assumption $R^*\in\Pi^*\setminus\Pi'$, so $\Pi'\neq\Pi^*$. Thus $\langle\Pi',\Pi^*\rangle$ is a $(g+1)$-space, and so meets $\Q_n$ in exactly the two generators $\Pi',\Pi^*$.\blue{is this right? - some justification?} Now $R,R^*\in\setZ$, so $\{R,R^*\}$ is an edge of $\Gamma_s$, and so $RR^*$ is a line of $\Q_n$. As $R^*\in\Pi^*\setminus\Pi$, and $RR^*$ is a line of $\Q_n$ in $\langle\Pi',\Pi^*\rangle$, we have $R\in\Pi^*$. So $R\in\Pi^*\cap\Pi'\subset\Sigma$, contradicting the choice of $R\not\in\Sigma$.
+ Hence 
+ $\Pi=\Pi'$. Thus $\Sigma$ meets $\Pi$ in a $(g-1)$-space, so by the construction of $\Sigma'$, we have $\Sigma=\Sigma'$.
+}
+%\blue{REMOVE:
+%
+%So suppose $\Sigma\cap\Pi$ has dimension less than $g-1$, that is, 
+%suppose that $\Pi\neq\Pi'$. As $|\Pi\cap\Pi'|<|\setZ|$, there exists a point $A\in\Pi'\setminus\Pi$. 
+%By property (*), there is a unique generator $\Pi_2$ of $\Q_n$ that contains $A$ and meets $\Sigma$ in a $(g-1)$-space $H_2=\Sigma\cap\Pi_2$. If $\Pi'\cap\Sigma\neq\Pi_2\cap\Sigma$, then similar to the argument in the preceding paragraph, $H_2$ will exclude additional points of $\Sigma$ from belonging to $\setY$, which would give $|\setY|<2^g-2^s$, and so $|\clique|<2^{g+1}-1$, a contradiction. Hence  $\Pi'\cap\Sigma=\Pi_2\cap\Sigma=H$. So $\Pi'$, $\Pi_2$ are distinct $g$-spaces that meet in the $(g-1)$-space $H$, hence $\Pi\cap (\Pi'\setminus H) $
+%and $\Pi\cap (\Pi_2\setminus H) $
+% are disjoint. 
+% 
+%Now consider the subspace $\Pi\cap H=\Pi\cap\Sigma\cap\Pi'$, and denote it's dimension by $j$. As $\Sigma\cap\Pi$ has dimension less than $g-1$, we have $j<g-1$. Now $\Pi\setminus H$ contains $x=(2^{g+1}-1)-(2^{j+1}-1)=2^{g+1}-2^{j+1}$ points. 
+%Note that both $\Pi,\Pi'$ contain $H$, and so they both contain the $j$-space $\Pi\cap H$. 
+%As we are assuming $\Pi\neq\Pi'$, we have $\Pi\cap\Pi'$ has dimension at most $g-1$. Hence
+%  the number of points in   $\Pi'\cap\Pi\setminus H$ is at most $y_1=(2^{g}-1)-(2^{j+1}-1)$. 
+%Similarly,  the number of points in   $\Pi_2\cap\Pi\setminus H$ is at most $y_2=(2^{g}-1)-(2^{j+1}-1)$. 
+%Now $y_1+y_2=2^{g+1}-2^{j+2}$ which is greater than $x$. Hence there is a point in $\Pi\setminus H$ that is not in $\Pi'$ or $\Pi_2$. Repeating the process  above gives a generator $\Pi_3$ of $\Q_n$ that contains $H$, and meets $\Pi\setminus H$ in points that are not in $\Pi'$ or $\Pi_2$. 
+%We keep repeating  this process if possible, and obtain a finite sequence $\Pi_1=\Pi',\Pi_2,\ldots,\Pi_i$, $i\geq 3$ of generators of $\Q_n$ that contain $H$ and partition the points of $\Pi\setminus H$. 
+%That is, we can partition the points of $\Pi\setminus H$ into $i\geq 3$ sets $(\Pi\cap \Pi_1)\setminus H,\ldots, (\Pi\cap \Pi_i)\setminus H$, such that  $\Pi_1,\ldots,\Pi_i$ each contain $H$.
+%
+%
+%In particular, we note that the four distinct generators $\Sigma,\Pi',\Pi_2,\Pi_3$ of $\Q_n$ all contain the $(g-1)$-space $H$. 
+%By \cite[Lemma 22.4.7]{HT}, the number of distinct generators of $\Q_n$ in $\PG(n,2)$ that contain a fixed $(g-1)
+%$-space is 2, 3 or 5 if $\Q_n$ is hyperbolic, parabolic or elliptic respectively. 
+%We have four   distinct generators $\Sigma,\Pi',\Pi_2,\Pi_3$  containing the $(g-1)$-space $H$, so have a contradiction  in the case when $\Q_n$ is hyperbolic or parabolic, thus $\Pi=\Pi'$ in these cases.
+%Moreover, the proof of  \cite[Lemma 22.4.7]{HT} shows that in the case when $\Q_n$ is elliptic, the five generators of $\Q_n$ through $H$ form a cone with vertex $H$ and base a 3-dimensional elliptic quadric. Hence no three of the generators  of $\Q_n$ through $H$ lie in a $(g+1$)-space that contains $H$. 
+%We obtain a contradiction to this as follows. Recall the partition of the points of $\Pi\setminus H$ into $i\geq 3$ sets $(\Pi\cap \Pi_k)\setminus H$, $k=1,\ldots,i$. Let $A$ be a point of $(\Pi\cap\Pi_1)\setminus H$, and $B$ a point of $(\Pi\cap\Pi_2)\setminus H$. The line $AB$  is not in either $\Pi_1$ or $\Pi_2$. So the third point $C$ of $AB$ lies in another one of the elements of the partition. That is, $C\in(\Pi\cap\Pi_k)\setminus H$ for some $k\in\{3,\ldots,i\}$. Thus $\Pi_1$, $\Pi_2$ and $\Pi_k$ all lie in the $(g+1)$-space $\langle \Pi_1,AB\rangle$ which contains $H$. This is the contradiction we wanted. Thus we conclude that $\Pi=\Pi'$.
+%
+%As $H=\Sigma\cap\Pi'$, we also have $H=\Sigma\cap \Pi$, that is, $\Sigma$ meets $\Pi$ in 
+% the $(g-1)$-space $H$. Recall that $\Sigma'$ contains the fixed point  $Q$ and meets $\Pi$ in a $(g-1)$-space, so $\Sigma'=\langle Q,H\rangle\subseteq\Sigma$, and so $\Sigma'=\Sigma$. So letting $\Sigma=\Sigma'$ and $\Pi=\Pi'$ in (\ref{eqn-gcliq}) shows that 
+% $\clique$ contains the $2^g$ points in $\setZ=\Pi\setminus\Sigma$;   the $2^g-2^s$ points in $\setY=\Sigma\setminus(\alpha_s\cup\Pi)$; and the $2^s-1$ points in $\setX=\alpha_s\cap\Pi$. That is, $\clique$ is a $g$-clique of  Type B.
+%}
+\end{proof}
+
+
+\begin{lemma}
+ The maximum size of a clique in  $\Gamma_s$ is $2^{g+1}-1$.
+ \end{lemma}
+
+\begin{proof} \blue{REMOVE:
+
+Suppose $\Gamma_s$ contains a clique $\K$ of size $2^{g+1}$, and let $X,Y\in\K$.  Then by Theorem~\ref{classify-cliq}, $\K\setminus X$ is a $g$-clique of Type A or B, and so the number of vertices of each type in $\K\setminus X$ satisfies Table~\ref{table-types}.
+
+}
+
+\red{INSERT THIS:
+
+Suppose $\Gamma_s$ contains a clique $\K$ of size $2^{g+1}$.  Then for each vertex $X$ in $\K$, 
+by Theorem~\ref{classify-cliq}, $\K\setminus X$ is a $g$-clique of Type A or B, whose vertices are given in Table~\ref{table-types}. As $g>0$ it follows that if one $\K\setminus X$ is of type B, then every  $\K\setminus X$ is of type B. However, if we then remove a vertex $Y$ of type different to $X$, then $\K\setminus Y$ does not satisfy either column.  Similarly, if one of $\K\setminus X$ is of type A, then if we remove  vertex $Y$ of type different to $X$, then $\K\setminus Y$ does not satisfy either column. Hence $\K$ does not exist.
+}
+\begin{table}[h]\caption{Number of vertices of each type in each $g$-clique}\label{table-types}
+\begin{center}
+ \begin{tabular}{|c|c|c|}
+\hline
+&$g$-clique A&$g$-clique B\\
+\hline
+vertex type (i)&$2^{s+1}-1$&$2^s-1$\\ \hline
+vertex type (ii)&$2^{g+1}-2^{s+1}$&$2^g-2^s$\\ \hline
+vertex type (iii)&$0$&$2^g$\\ \hline
+\end{tabular}\end{center}\end{table}
+
+\blue{REMOVE
+It is straightforward to check that if $\K\setminus X$ satisfies one of the columns in Table~\ref{table-types}, then $\K\setminus Y$ does not satisfy either column, contradicting Theorem~\ref{classify-cliq}. Hence $\K$ does not exist.
+
+}
+\end{proof}
+
+In summary, we have classified the maximal cliques of $\Gamma_s$ as follows. 
+
+\begin{theorem} \Label{max-cl}
+Let $\Q_n$ be a non-singular quadric of $\PG(n,2)$ of projective index $g\geq1$, and let $\Gamma_s$, $0\leq s<g$, be the graph constructed in Theorem~\ref{main-thm}.
+If $\C$ is a maximal clique of $\Gamma_s$, then $\C$ is a $g$-clique of Type A or B.
+\end{theorem}
+
+
+
+
+
+
+\subsection{Counting maximal cliques}
+
+In the previous section, we classified the maximal cliques in the  graph $\Gamma_s$. In this section we count them.
+
+
+\begin{theorem}\Label{thm-max-cliq}
+ Let $\Q_n$ be a non-singular quadric in $\PG(n,2)$ of projective index $g\geq1$. Let $\Gamma$ be the point-graph of $\Q_n$ and let $\Gamma_s$, $0\leq s<g$,
+ be the graph constructed in Theorem~\ref{main-thm}.
+\begin{enumerate}
+\item If $\Q_n=Q^-(2r+1,2)$, then 
+\begin{enumerate}
+\item  $\Gamma$ has $(2^2+1)(2^3+1)\cdots(2^{r+1}+1)$ maximal cliques.
+\item $\Gamma_s$ has $(2^2+1)(2^3+1)\cdots(2^{r-s}+1)\big(2^{r+2}-2^{r-s+1}+1\big)$ maximal cliques.
+% checked for n=7, s=0,1; n=9, s=2 by waj 16/11/15
+\end{enumerate}
+\item If $\Q_n=Q^+(2r+1,2)$, then 
+\begin{enumerate}
+\item  $\Gamma$ has $(2^0+1)(2^1+1)\cdots(2^{r}+1)$ maximal cliques.
+\item $\Gamma_s$ has $(2^0+1)(2^1+1))\cdots(2^{r-s-1}+1)\big(2^{r+1}-2^{r-s}+1\big)$ maximal cliques.
+%checked for n=5, s=1; n=7, s=0,1; n=9, s=1
+\end{enumerate}
+\item If $\Q_n=Q(2r,2)$, then 
+\begin{enumerate}
+\item  $\Gamma$ has $(2^1+1)(2^2+1)\cdots(2^{r}+1)$ maximal cliques.
+\item $\Gamma_s$ has $(2^1+1)(2^2+1)\cdots(2^{r-s-1}+1)\big(2^{r+1}-2^{r-s+1}+1\big)$ \red{should be
+ $(2^1+1)(2^2+1)\cdots(2^{r-s-1}+1)\big(2^{r+1}-2^{r-s}+1\big)$ } 
+maximal cliques.
+% checked for n=6, s=0,1; n=8, s=0,1,2;
+\end{enumerate}
+\end{enumerate}
+\end{theorem}
+
+\begin{proof} For part 1, let $\Q_n=\E=Q^-(2r+1,2)$ have point graph $\Gamma$. The maximal cliques of $\Gamma$ correspond exactly to the generators of $\E$; and the number  of generators of $\E$ is  $(2^2+1)(2^3+1)\cdots(2^{r+1}+1)$ by \cite[Theorem 22.5.1]{HT}. This proves 1(a).
+
+Now consider the graph $\Gamma_s$, $0\leq s<g=r-1$. Let $N_{s,{\rm A}}$, $N_{s,{\rm B}}$ be  the number of maximal cliques of $\Gamma_s$ of Type A and B respectively. 
+By Lemma~\ref{g-cliq-1}, $N_{s,{\rm A}}$ is equal to the number of generators of $\E$ that contain $\alpha_s$, and so by \cite[Theorem 22.4.7]{HT}, 
+\begin{equation}\label{eqn-nsA} N_{s,{\rm A}}=(2^2+1)(2^3+1)\cdots(2^{r-s}+1).\end{equation}
+To count the maximal cliques of Type B, by Lemma~\ref{g-cliq-1}
+we need to count the number of pairs of generators $\Sigma,\Pi$ of $\E$ such that $\Sigma$ contains $\alpha_s$, and $\Pi$ meets $\Sigma$ in a $(g-1)$-space not containing $\alpha_s$.
+The number of choices for $\Sigma$ is the number of generators of $\E$ that contain $\alpha_s$ which by (\ref{eqn-nsA}) is $N_{s,{\rm A}}$. Once $\Sigma$ is chosen, we count the number of choices for $\Pi$. The number of $(g-1)$-spaces contained in $\Sigma$ but not containing $\alpha_s$ equals the number of $(g-1)$-spaces contained in $\Sigma$ minus the number of $(g-1)$-spaces contained in $\Sigma$ which contain $\alpha_s$. This is $(2^{g+1}-1)-(2^{g-s}-1)=2^{g+1}-2^{g-s}$. By \cite[Lemma 22.4.8]{HT}, the number of generators of $\E$ that meet $\Sigma$ in a fixed $(g-1)$-space is four. Hence the number of choices for $\Pi$ is  $(2^{g+1}-2^{g-s})\times4=2^{g+3}-2^{g-s+2}$. Thus $N_{s,{\rm B}}=N_{s,{\rm A}}\big(2^{g+3}-2^{g-s+2}\big)= N_{s,{\rm A}}\big(2^{r+2}-2^{r-s+1}\big)$ as the projective index of $\E$ is $g=r-1$. Hence the total number of maximal cliques of $\Gamma_s$ is $N_{s,{\rm A}}+N_{s,{\rm B}}=
+N_{s,{\rm A}}\big(2^{r+2}-2^{r-s+1}+1\big)$ as required. This completes the proof of part 1. The proofs of parts 2 and 3 are  similar.
+\end{proof}
+
+
+\begin{theorem}\Label{thm-max-cliq-thru-pt}
+ Let $\Q_n$ be a non-singular quadric in $\PG(n,2)$ of projective index $g\geq1$. Let $\Gamma_s$, $0\leq s<g$,
+ be the graph constructed in Theorem~\ref{main-thm}.
+\begin{enumerate}
+\item If $\Q_n=Q^-(2r+1,2)$, then the number of maximal cliques of $\Gamma_s$, \red{  $0\leq s<g-1$}, containing a vertex of Type
+\begin{enumerate}
+\item[{\rm (i)}] is  $(2^2+1)(2^3+1)\cdots(2^{r-s}+1)\big(2^{r+1}-2^{r-s+1}+1\big)$,
+\item[{\rm (ii)}] is  $(2^2+1)(2^3+1)\cdots(2^{r-s-1}+1)\big(2^{r+1}-2^{r-s}+1\big)$,
+\item[{\rm (iii)}] is  $(2^2+1)(2^3+1)\cdots(2^{r-s}+1)$.
+\end{enumerate}
+\red{If $s=g-1=r-2$, then  the number of maximal cliques of $\Gamma_s$ containing a vertex of Type \tone, \ttwo, and \tthree\ is  $5(2^{r+1}-3)$, $2^{r+1}-3$ and 5 respectively. }\item If $\Q_n=Q^+(2r+1,2)$, then the number of maximal cliques of $\Gamma_s$, $0\leq s<g-1$, containing a vertex of Type
+\begin{enumerate}
+\item[{\rm (i)}] is  $(2^0+1)(2^1+1)\cdots(2^{r-s-1}+1)\big(2^{r}-2^{r-s}+1\big)$,
+\item[{\rm (ii)}] is  $(2^0+1)(2^1+1)\cdots(2^{r-s-2}+1)\big(2^{r}-2^{r-s-1}+1\big)$,
+\item[{\rm (iii)}] is   $(2^0+1)(2^1+1)\cdots(2^{r-s-1}+1)$.
+\end{enumerate}
+If $s=g-1=r-1$, then  the number of maximal cliques of $\Gamma_s$ containing a vertex of Type \tone, \ttwo, and \tthree\ is 
+ $2(2^r-1)$, $2^r$ and 1 respectively. 
+\item If $\Q_n=Q^-(2r+1,2)$ \red{should be  $\Q_n=Q(2r,2)$?}, then the number of maximal cliques of $\Gamma_s$, \red{  $0\leq s<g-1$}, containing a vertex of Type
+\begin{enumerate}
+\item[{\rm (i)}] is  $(2^1+1)(2^2+1)\cdots(2^{r-s-1}+1)\big(2^{r}-2^{r-s}+1\big)$,
+\item[{\rm (ii)}] is  $(2^1+1)(2^2+1)\cdots(2^{r-s-2}+1)\big(2^{r}-2^{r-s-1}+1\big)$,
+\item[{\rm (iii)}] is  $(2^1+1)(2^2+1)\cdots(2^{r-s-1}+1)$.
+\end{enumerate}
+\red{If $s=g-1=r-2$, then  the number of maximal cliques of $\Gamma_s$ containing a vertex of Type \tone, \ttwo, and \tthree\ is  $3(2^r-3)$, $2^r-1$ and 3 respectively. }
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+For part 1, let $\Q_n=\E=Q^-(2r+1,2)$ and let $P$ be a vertex of $\Gamma_s$ of type (i), so in $\PG(2r+1,2)$, $P\in\alpha_s$. All the maximal cliques of $\Gamma_s$ of Type A
+contain $\alpha_s$. So by (\ref{eqn-nsA}), $P$ lies in $N_{s,{\rm A}}=(2^2+1)(2^3+1)\cdots(2^{r-s}+1)$ maximal cliques of Type A. To form a maximal clique of $\Gamma_s$ of Type B that contains $P$, we need two generators $\Sigma,\Pi$ of $\E$ such that $\Sigma$ contains $\alpha_s$, $\Pi$ meets $\Sigma$ in a $(g-1)$-space not containing $\alpha_s$, and $P\in\Pi$. We count the number of pairs $\Sigma$, $\Pi$ satisfying this. First, the number of choices for $\Sigma$ equals the number of generators of $\E$ containing $\alpha_s$ which is $N_{s,{\rm A}}$. The number of $(g-1)$-spaces of $\Sigma$ that contain $P$ is $2^g-1$, and the number of $(g-1)$-spaces of $\Sigma$ that contain $\alpha_s$ and $P$ is $2^{g-s}-1$. Hence the number of $(g-1)$-spaces of $\Sigma$ that contain $P$, but do not contain $\alpha_s$ is $(2^g-1)-(2^{g-s}-1)=2^g-2^{g-s}$. By \cite[Lemma 22.4.8]{HT}, the number of generators of $\E$ that meet $\Sigma$ in a fixed $(g-1)$-space is four.  In total, the number of maximal cliques of Type B containing $P$ is $N_{s,{\rm A}}\times(2^g-2^{g-s})\times4=N_{s,{\rm A}}\big(2^{r+1}-2^{r-s+1}\big)$ as $\E$ has projective index $g=r-1$. Hence the total number of maximal cliques of $\Gamma_s$ containing 
+$P$ is $N_{s,{\rm A}}\big(2^{r+1}-2^{r-s+1}+1\big)$ as required.
+
+Now let $Q$ be   a vertex of $\Gamma_s$  of type (ii). The number of maximal cliques of Type A containing $Q$ equals the number of generators of $\E$ containing $\alpha_s$ and $Q$ which by \cite[Theorem 22.4.7]{HT} is  $(2^2+1)(2^3+1)\cdots(2^{r-s-1}+1)$. To count the maximal cliques of $\Gamma_s$ that contain $Q$, we need to count pairs of generators $\Sigma,\Pi$ of $\E$ such that $\Sigma$ contains $\alpha_s$ and $Q$, and $\Pi$ meets $\Sigma$ in a $(g-1)$-space not containing $\alpha_s$ or $Q$.
+The number of choices for $\Sigma$ is calculated above to be $(2^2+1)(2^3+1)\cdots(2^{r-s-1}+1)$. Further, the number of $(g-1)$-spaces of $\Sigma$ containing $\alpha_s$ is $2^{g-s}-1$; 
+the number of $(g-1)$-spaces of $\Sigma$ containing $\alpha_s$ and $Q$ is $2^{g-s-1}-1$; and 
+the number of $(g-1)$-spaces of $\Sigma$ containing $Q$ is $2^{g}-1$.
+Hence the number of $(g-1)$-spaces of $\Sigma$ that do not contain $\alpha_s$ \red{and do not contain} $Q$ is $(2^{g+1}-1)-(2^{g-s}-1)\red{-(2^g-1)+(2^{g-s-1}-1)}=2^g-2^{g-s-1}$. As before, each of these $(g-1)$-spaces lies in  four suitable choices for the generator $\Pi$ of $\E$. Hence the number of maximal cliques of Type B containing $Q$ is  $(2^2+1)(2^3+1)\cdots(2^{r-s-1}+1)\times (2^g-2^{g-s-1})\times 4 = (2^2+1)(2^3+1)\cdots(2^{r-s-1}+1)\big(2^{r+1}-2^{r-s}\big)$ as $\E$ has projective index $g=r-1$. Hence the total number of maximal cliques containing $Q$ is 
+$(2^2+1)(2^3+1)\cdots(2^{r-s-1}+1)\big(2^{r+1}-2^{r-s}+1\big)$ as required.
+
+Let $R$ be   a vertex of $\Gamma_s$ of type (iii), then $R$ is in no maximal cliques of Type A. To count the maximal cliques of $\Gamma_s$ of Type B containing $R$, we  need to count pairs of generators $\Sigma,\Pi$ of $\E$ such that $\Sigma$ contains $\alpha_s$, $\Pi$ meets $\Sigma$ in a $(g-1)$-space not containing $\alpha_s$, and $\Pi$ contains $R$. The number of choices for $\Sigma$ equals the number of generators of $\E$ containing $\alpha_s$ which is $N_{s,{\rm A}}$ by (\ref{eqn-nsA}).  As $\Sigma$ contains $\alpha_s$, it contains no points of type (iii), so $R\notin\Sigma$. So by  property (*), there is a unique generator of $\E$ that contains $R$ and meets $\Sigma$ in a $(g-1)$-space $H$. Further, if $H$ contained $\alpha_s$, then $\langle R,\alpha_s\rangle$ would be contained in $\E$, and so $R$ would be type (ii), a contradiction, so $H$ does not contain $\alpha_s$. So for each $\Sigma$, there is a unique choice for $\Pi$ that can be used to form a Type B maximal clique containing $R$. Hence the number of maximal cliques of $\Gamma_s$ containing $R$ is $N_{s,{\rm A}}=(2^2+1)(2^3+1)\cdots(2^{r-s}+1)$ as required.  This completes the proof of part 1. The proofs of parts 2 and 3 are  similar.
+
+\red{Note that if $s=0$, then as $\Gamma_s\cong\Gamma$ then the number of cliques through points of type (i), (ii) and (iii) are all the same.}
+ \end{proof}
+
+\section{The graphs $\Gamma_s$ are all  non-isomorphic}\Label{sec-new}
+
+\begin{theorem}\Label{thm:s0iso}  Let $\Q_n$ be a non-singular quadric in $\PG(n,2)$ of projective index $g\geq1$. Let $\Gamma$ be the point-graph of $\Q_n$ and let $\Gamma_s$, $0\leq s<g$,
+ be the graph constructed in Theorem~\ref{main-thm}.
+ Then $\Gamma_s$ is isomorphic to $\Gamma$ if and only if $s=0$.
+\end{theorem}
+\begin{proof} We want to define an isomorphism between $\Gamma$ and $\Gamma_0$. Consider $s=0$, so in $\PG(n,2)$, the  subspace $\alpha_0$ is a point denoted $P$ (that is, there is a unique point of type (i)). We define a mapping $\phi$  of $\Gamma$ as follows. The map $\phi$  fixes the vertex $P$ and   fixes each vertex  of type (iii). Let $Q$ be a vertex of type (ii) of $\Gamma$. Then $Q$ corresponds to a point of $\PG(n,2)$. Further, $PQ$ is a line of $\Q_n$, and so meets $\Q_n$ in a third point  that corresponds to a vertex of $\Gamma$ of type (ii), we let  $\phi(Q)$ be this third point, \red{so $\phi(\phi(Q))=Q$.} 
+So $\phi$ is an isomorphism that maps $\Gamma$ to a graph denoted $\Gamma'$, \red{with incidence inherited from $\Gamma$, that is, vertices $X$ and $Y$ lie on a line of $\Q_n$ if and only if $\phi(X)$ and $\phi(Y)$ are adjacent in $\Gamma'$.}
+
+We now show that $\Gamma'$ is $\Gamma_0$. In $\Gamma'$, 
+let  $Q_1,Q_2$ be vertices  of type (ii), and $R,R'$  vertices   of type (iii). We consider in turn  the different types of edges of $\Gamma'$, and show that they satisfy Table~\ref{table-edges}.
+To simplify notation, let $Q_1^*=\phi^{-1}(Q_1)$ and  $\phi^{-1}(Q_2)=Q_2^*$. Firstly, $\{P,Q_1\}$ is an edge of $\Gamma'$  if and only if $\{P,Q_1^*\}$ is an edge of $\Gamma$ if and only if $PQ_1^*=PQ_1$ is a line of $\Q_n$.
+Similarly, $\{P,R\}$ (respectively $\{R,R'\}$) is  an edge of $\Gamma$ if and only if $PR$  (respectively $RR'$) is a line of $\Q_n$.
+Now $\{Q_1,R\}$ is an edge of $\Gamma$ \red{should this be $\Gamma'$?}, if $\{Q_1^*,R\}$ is an edge of $\Gamma$, that is, 
+$Q_1^*R$ is a line of $\Q_n$.The plane $\langle P,Q_1^*,R\rangle$ is not contained in $\Q_n$ (as $R$ is type (iii)), so it meets $\Q_n$ in exactly the lines $PQ_1^*$, $Q_1^*R$.\red{need a reference here}
+As $Q_1$ is the third point on the line $PQ_1^*$, we have that 
+ $Q_1R$ is a 2-secant of $\Q_n$. 
+
+Finally suppose $\{Q_1,Q_2\}$ is an edge of $\Gamma'$, so $\{Q_1^*,Q_2^*\}$ is an edge of $\Gamma$. If the line $Q_1Q_2$ contains $P$, then $Q_1^*=Q_2$ and $Q_2^*=Q_1$, so $\{Q_1,Q_2\}$ is an edge of $\Gamma$ and so $Q_1Q_2$ is a line of $\Q_n$. Now suppose $Q_1Q_2$ does not contain $P$. Then 
+$\{Q_1^*,Q_2^*\}$ an edge of $\Gamma$ implies $Q_1^*Q_2^*$ is a line of $\Q_n$. Hence the plane 
+$\langle P,Q_1^*,Q_2^*\rangle$ contains at least three lines, namely $PQ_1^*$, $PQ_2^*$ and $Q_1^*Q_2^*$, and so is contained in  $\Q_n$. \red{need a reference here} Further, it contains  $Q_1$ and $Q_2$, so $Q_1Q_2$ is a line of $\Q_n$. In summary, we have shown that the edges of $\Gamma'$ satisfy Table~\ref{table-edges}. So by Corollary~\ref{cor-edges}, $\Gamma'$ is $\Gamma_s$ with $\alpha_s$ a point, that is,  $\Gamma'$ is $\Gamma_0$. 
+
+
+We now show that $\Gamma_s$ with $s>1$ is not isomorphic to  the graph $\Gamma$. The maximal cliques of $\Gamma$ correspond exactly to the generators of $\Q_n$. 
+Let $\Q_n=\E=Q^-(2r+1,2)$, then the number of maximal cliques of $\Gamma$ through a vertex $X$ of $\Gamma$ equals the number of generators of $\E$ containing a point of $\E$. By \cite[Theorem 22.4.7]{HT}, this is $(2^2+1)(2^3+1)\cdots(2^{r}+1)$. 
+
+\blue{REMOVE: Let $P$ be a vertex of   $\Gamma$ of type (i), so $P$ is also a vertex of $\Gamma_s$ of type (i). If $\Gamma$ is isomorphic to $\Gamma_s$, then the number of maximal cliques containing $P$ is the same for both graphs. So by Theorem~\ref{thm-max-cliq-thru-pt}, we need
+$$   (2^2+1)(2^3+1)\cdots(2^{r-s}+1)\big(2^{r+1}-2^{r-s+1}+1\big)
+=(2^2+1)(2^3+1)\cdots(2^{r}+1).$$
+This holds if and only if $2^{r+1}-2^{r-s+1}+1=(2^{r-s+1}+1)\cdots(2^{r}+1)$ which holds if and only if $s=0$. }
+
+\red{ADD:
+
+Thus in $\Gamma'$, points of type (i) and (iii) have the same number of maximal cliques. Consider  Theorem~\ref{thm-max-cliq-thru-pt}. If $s<g-1$ then we need $2^{r+1}-2^{r-s+1}+1=1$, and so $s=0$.  If $s=g-1$ then $r=1$ and $s=-1$, so this case does not occur.}
+
+
+Hence $\Gamma_s$ with $s>1$ is not isomorphic to $\Gamma$. The proof of this in the cases when $\Q_n$ is $Q^+(2r+1,2)$ or $Q(2r,2)$ are similar. 
+\end{proof}
+
+
+\begin{theorem}  Let $\Q_n$ be a non-singular quadric in $\PG(n,2)$ of projective index $g\geq1$. Let $\Gamma$ be the point-graph of $\Q_n$ and let $\Gamma_s$, $0\leq s<g$,
+ be the graph constructed in Theorem~\ref{main-thm}.
+Then the graphs
+$\Gamma_0,\Gamma_1,\ldots,\Gamma_{g-1}$ are distinct up to isomorphism.
+\end{theorem}
+
+\begin{proof} First suppose that $\Q_n=\E=Q^-(2r+1,2)$, and let $s_1,s_2$ be two integers with $0\leq s_1<s_2<g$. Then the number of maximal cliques in $\Gamma_{s_1}$ and $\Gamma_{s_2}$ are given in Theorem~\ref{thm-max-cliq}(1). These two numbers are equal if and only if 
+\begin{eqnarray}
+2^{r+2}-2^{r-s_2+1}+1&=&(2^{r-s_2+1}+1)\cdots(2^{r-s_1}+1)
+\big( 2^{r+2}-2^{r-s_1+1}+1\big).\Label{eqn:non-iso}
+\end{eqnarray}
+\red{Now $2^{r+2}>$ LHS (\ref{eqn:non-iso}) $=$  RHS (\ref{eqn:non-iso})  $>2^{r-s_1}\times(2^{r+2}-2^{r-s_1})$
+and so $2^{s_1+2}>2^{r+2}-2^{r-s_1}>2^{r+1}$, hence $s_1+2>r+1$.  However, this contradicts $s_1<s_2<g=r-1$. [Can just put this as a comment if you think the argument is ok so don't have to work it out to check it]
+}
+Thus $\Gamma_{s_1}$ and $\Gamma_{s_2}$ are not isomorphic  if  $s_1$ and $s_2$ are distinct. The proof  in the cases when $\Q_n$ is $Q^+(2r+1,2)$ or $Q(2r,2)$ are similar. 
+
+\end{proof}
+
+
+
+%\begin{remark} {\rm As the quadrics $Q^-(2r+1,2)$, $Q^+(2r+1,2)$ and $Q(2r,2)$ all contain different numbers of points, the graphs $\Gamma_s$ arising from distinct quadrics are also distinct. 
+%}\end{remark}
+
+\subsection{Kantor's graphs}
+
+In \cite{kantor}, Kantor constructs a strongly regular graph $\Gamma_K$ from a non-singular quadric $\Q_n$ in $\PG(n,q)$ with the same parameters as the point-graph $\Gamma$ of $\Q_n$. 
+Kantor conjects that the graph $\Gamma_K$ is  not the same as $\Gamma$ except in the case when $\Q_n=Q^+(7,q)$. We show that $\Gamma_K$ is not isomorphic to the graphs $\Gamma_s$ when $s>0$. Kantor's construction works when the quadric $\Q_n$ contains a spread, however, we do not need to describe the details of Kantor's graphs to prove non-isomorphism.  We use \cite[Lemma 3.3]{kantor} which shows that $\Gamma_K$ contains a partition of the vertices into maximal cliques (which contain $2^{g+1}-1$ vertices). We show that $\Gamma_s$, $s>0$ cannot contain such a partition. 
+
+
+\begin{theorem} Let $\Q_n$ be a non-singular quadric in $\PG(n,2)$ of projective index $g\geq1$. Let $\Gamma_s$, $0<s<g$ be the graph constructed in Theorem~\ref{main-thm}. Let $\Gamma_K$ be the graph constructed from $\Q_n$ in \cite{kantor}. Then $\Gamma_K$ is not isomorphic to $\Gamma_s$, $0<s<g$. \end{theorem}
+\begin{proof} We show that the vertices of $\Gamma_s$, $s>0$ cannot be partitioned into maximal cliques. 
+Suppose $s>0$, and let $\C,\C'$ be maximal cliques of $\Gamma_s$ of type A, and $\K,\K'$ be maximal cliques of $\Gamma_s$ of type B. Now $\C$, $\C'$ both contain $\alpha_s$ so they are not disjoint. Further, $\K$ contains at least one point in $\alpha_s$ as $s>0$. So $\C,\K$ are not disjoint. Now consider $\K,\K'$. They both meet $\alpha_s$ in a subspace of dimension $s-1$. If $s\geq 2$, then two subspaces of dimension $s-1$ contained in an $s$-space meet in at least a point,  and so $\K,\K'$ share at least a point.  Thus if $s\geq 2$, any two cliques of $\Gamma_s$ share at least one vertex.
+Now suppose $s=1$, so $\alpha_1$ is a line. To partition the three points of the line $\alpha_1$ using maximal cliques, we need three maximal cliques of type B, one through each point. Moreover, any partition of $\Gamma_1$ into maximal cliques cannot contain any further maximal clique.  We show that $\Gamma_1$ cannot be partitioned into three maximal cliques. First, a maximal clique has $2^{g+1}-1$ points, so three pairwise disjoint maximal cliques contain $x=3(2^{g+1}-1)$ points, with either $g=r-1$ or $r$. 
+As $0<s<g$, it follows that $g\ge2$. Thus for the elliptic and parabolic case we have $r\ge 3$ and for the hyperbolic case we have $r\ge 2$. 
+However, $Q^-(2r+1,2)$ contains $2^{2r+1}-2^r-1$ points, $Q^+(2r+1,2)$ contains $2^{2r+1}+2^r-1$ points and $Q(2r,2)$ contains $2^{2r}-1$ points. 
+None of these numbers is equal to $x$ when $r\ge 2$. Hence we cannot partition 
+ the vertices of $\Gamma_s$, $s>0$ into maximal cliques. 
+Thus by \cite[Lemma 3.3]{kantor}, $\Gamma_s$ is not isomorphic to $\Gamma_K$. 
+\end{proof}
+
+
+\section{Conclusion}
+
+In summary, Table~\ref{table-summary} lists the parameters of the strongly regular graphs arising from the point graph of each type of non-singular quadric. Further, we list the number of non-isomorphic graphs with these parameters arising from our construction (note that one of these is the point graph of the quadric). 
+%
+%\begin{table}[h]\caption{Parameters of the strongly regular graphs $\Gamma_s$}\label{table-summary}
+%\begin{center}\begin{tabular}{|c|c|c|c|c|p{1.8cm}|}
+%\hline
+%quadric &$v$&$k$&$\lambda$&$\mu$&{\small number of non-isomorphic graphs}\\ \hline
+% $Q^-(2r+1,2)$, $r\geq 2$ &$2^{2r+1}-2^r-1$&$2^{2r}-2^r-2$&$2^{2r-1}-2^{r}-3$&$2^{2r-1}-2^{r-1}-1$&$r-1$\\
+%  $Q^+(2r+1,2)$, $r\geq 1$ &$2^{2r+1}+2^r-1$&$2^{2r}+2^r-2$&$2^{2r-1}+2^{r}-3$&$2^{2r-1}+2^{r-1}-1$&$r$\\
+%  $Q(2r,2)$, $r\geq 2$&$2^{2r}-1$&$2^{2r-1}-2$&$2^{2r-2}-3$&$2^{2r-2}-1$&$r-1$\\ \hline
+%\end{tabular}\end{center}
+%
+%\end{table}%
+
+
+\begin{table}[h]\caption{Parameters of the strongly regular graphs $\Gamma_s$}\label{table-summary}
+\begin{center}\begin{tabular}{|p{3.1 cm}|c|c|c|c|p{1.8cm}|}
+\hline
+\centering{quadric} &$Q^-(2r+1,2)$, $r\geq 2$ &  $Q^+(2r+1,2)$, $r\geq 1$ &  $Q(2r,2)$, $r\geq 2$\\
+\hline
+\centering{$v$} &$2^{2r+1}-2^r-1$&$2^{2r+1}+2^r-1$&$2^{2r}-1$     \\
+\centering{$k$}&$2^{2r}-2^r-2$&$2^{2r}+2^r-2$&$2^{2r-1}-2$\\
+\centering{$\lambda$}&$2^{2r-1}-2^{r}-3$&$2^{2r-1}+2^{r}-3$&$2^{2r-2}-3$\\
+\centering{$\mu$}&$2^{2r-1}-2^{r-1}-1$&$2^{2r-1}+2^{r-1}-1$&$2^{2r-2}-1$\\
+\hline
+\centering{\small \# non-isomorphic  graphs}
+&$r-1$&$r$&$r-1$\\ 
+\hline
+\end{tabular}\end{center}
+
+\end{table}%
+
+%We list the values for the first few small examples in Table~\ref{table3}.
+%
+%\begin{table}[h]\caption{Small parameters of the strongly regular graphs}\label{table3}
+%\begin{center}\begin{tabular}{|c|c|c%p{4cm}
+%|}
+%\hline
+%quadric&$(v,k,\lambda,\mu)$&number of non-isomorphic graphs \\ \hline
+%$Q^+(3,2)$&$(9,4,1,2)$&1\\
+%$Q(4,2)$&$(15,6,1,3)$&1\\
+%$Q^-(5,2)$&$(27,10,1,5)$&1\\
+%$Q^+(5,2)$&$(35,18,9,9)$&2\\
+%$Q(6,2)$&$(63,30,13,15)$&2\\
+%$Q^-(7,2)$&$(119,54,21,27)$&2\\
+%$Q^+(7,2)$&$(135,70,37,35)$&3\\
+%$Q(8,2)$&$(255,126,61,63)$&3\\
+%\hline
+%
+%
+%\end{tabular}\end{center}\end{table}
+
+
+\section{The automorphism group of $\Gamma_s$}
+The aim of this section is to determine the automorphism group of $\Gamma_s$, and we will show the following:
+
+
+\begin{theorem}\Label{aut-thm}
+Consider the graph $\Gamma_s$ defined above with $s>0$. Then ${\rm Aut}(\Gamma_s)={\rm Aut}(\Gamma)_{\alpha_s}$.
+\end{theorem}
+
+Note that in the case $s=0$, we have $\Gamma_0\cong\Gamma$, so in this case {\rm Aut}($\Gamma_0)={\rm Aut}(\Gamma)$.
+
+The graph $\Gamma$ defined from the quadric $\Q_n$, is in some sense independent of the projective space $\PG(n,q)$ in which $\Q_n$ is embedded.  However, the result is stronger:
+\red{
+\begin{result}\Label{res:same-auto} [XREF]
+Suppose  $n\ge 3$. Consider the graph $\Gamma$ whose vertices are the points lying on a non-singular quadric $\Q_n$, whose vertices are adjacent if the corresponding points of $\Q_n$ lie on a line contained in $\Q_n$.  Then the automorphism group ${\rm Aut}(\Gamma)$ is ismorphic to $\PGO(n+1,q)$, the subgroup of the automorphism group of  $\PG(n,2)$ fixing $\Q_n$.
+\end{result}
+}
+
+
+\begin{lemma}\Label{gen-aut}
+Let $\gamma$ be any 1-1 mapping on the points of $\Q_n$ that preserves the generators of $\Q_n$.  Then the action of $\gamma$ on the vertices of $\Gamma$ induces an automorphism of $\Gamma$.
+\end{lemma}
+\begin{proof}Suppose $\Q_n$ is an elliptic quadric.
+We first show that every subspace $X$ of dimension $d$ ($0\le d\le g$) lying on $\Q$ is the exact intersection of the generators containing it. By \cite[Theorem 22.4.7]{HT}, the number of generators containing $X$ is $(q^2+1)(q^3+1)\cdots(q^{\frac12(n-1)-d}+1)$. Note that this value is different for each dimension $d$ ($0\le d\le g$). Now suppose the intersection $X'$ of the generators containing $X$ is bigger than $X$.  So there exists $P\in X'\backslash X$ with the generators containing $X$ are the generators containing $\langle X,P\rangle$, and the dimension of $\langle X,P\rangle$ is one more than that of $X$.  This contradicts the count of the generators containing a subspace, given above.
+
+Consider a subspace $X$ lying on $\Q_n$, where $X$ is the exact intersection of generators $G_1,\ldots,G_a$ say.  Thus under $\gamma$, $X$ maps to a set $X^\gamma$, and as $\gamma$ preserves the generators, $G_1^\gamma,\ldots,G_a^\gamma$ are also generators, and we have $X^\gamma=\cap_{i=1}^a G_i^\gamma$. As the intersection of the generators define the subspaces in $\Q_n$, it follows that $X^\gamma$ is a subspace of $\Q_n$, that is $\gamma$ preserves the subspaces of $\Q_n$. 
+
+We now show that show such a map is an automorphism of $\Gamma$. Two points $A,B$  are adjacent in $\Gamma$, if and only if they lie on a line $\ell=\{A,B,\ldots\}$ of $Q_n$. As $\gamma$ preserves subspaces of $\Q_n$, in particular lines, then $\ell^\gamma=\{A^\gamma,B^\gamma,\ldots,\}$ is a line of $Q_n$ and so $A^\gamma,B^\gamma$ are adjacent in $\Gamma$. If $A$ and $B$ are non-adjacent, but $A^\gamma,B^\gamma$ are  adjacent, then applying $\gamma^{-1}$ (which preserves subspaces, as $\gamma$ does)  shows that $A,B$ are adjacent in $\Gamma$, a contradiction. Hence $\gamma$ is an automorphism of $\Gamma$.
+
+The proof for the parabolic and hyperbolic quadrics are similar.
+\end{proof}
+
+
+We now introduce Witt's theorem and its implications over finite fields of characteristic 2. 
+
+
+Recall that a quadratic form $\Q_n(x_0,\ldots,x_n)$ (not necessarily non-singular) over $V$, the vector space of dimension $n+1$ over $\GF(q)$, is a homogeneous polynomial of degree 2 over $\GF(q)$, given by
+\[
+\Q_n(x_0,\ldots,x_n)=\sum_{i=0}^n\sum_{j=0}^n a_{ij}x_ix_j.
+\]
+The  $(n+1)\times(n+1)$ matrix $A=[a_{ij}]$ defines a bilinear form $B(x,y)$ over the vectors $x,y$ of $V$ by: $B(x,y)=\Q_n(x+y)-\Q_n(x)-\Q_n(y)$.
+
+A \emph{quadratic space} is a pair $(V,\Q_n)$ where $V,\Q_n$ are defined above.
+
+\begin{definition}
+Two $n$-dimensional quadratic spaces $(V, \Q_n)$ and $(V', \Q_n')$ are \emph{isometric} if there exists an invertible linear transformation $T \colon V \rightarrow V'$ called an \emph{isometry} such that $\Q_n(v)=\Q_n'(Tv)$ for all $v\in V$.
+\end{definition}
+
+\begin{result}[Witt's theorem XREF]
+Let $(V, b)$ be a finite-dimensional vector space over an arbitrary field $K$ together with a non-degenerate symmetric or skew-symmetric bilinear form. If $f\colon U\rightarrow U'$ is an isometry between two subspaces of $V$ then $f$ extends to an isometry of $(V,b)$ if and only if $f( U\cap\mbox{rad}(V))=f( U)\cap\mbox{rad}(V)$.
+\end{result}
+We interpret the above result for projective spaces. In this case the radical is the empty set when $n$ is odd, or $q$ is odd.  In the case when both $n$ and $q$ are even, $\Q_n$ is a parabolic quadric and the radical is a the point $N\not\in\Q_n$ which is called the \emph{nucleus}, being the intersection of the all the tangent spaces. Now consider any two subspaces  $X,Y$ of the same dimension of $\PG(n,2)$ and a quadric $\Q_n$ in $\PG(n,2)$.
+
+
+Consider the corresponding quadratic spaces $(X,X\cap \Q_n)$, $(Y,Y\cap \Q_n)$. So an isometry $\gamma$ is an automorphism of $\PG(n,q)$ with the property that $\gamma\colon X\mapsto Y$, $X\cap\Q_n\mapsto Y\cap\Q_n$.  Witt's Theorem then says there is an automorphism $\beta$ of $\PG(n,q)$ fixing $\Q_n$ with  $\beta|_X=\gamma|_X$ if and only if either 
+\begin{enumerate}
+\item $n$ or $q$ is odd; or
+\item $n,q$ are both even, and either both $X,Y$ contain the nucleus, or both do not contain the nucleus.
+\end{enumerate}
+
+In the case when $X$ (and hence $Y$) lie on $\Q_n$ (that is, $X,Y\subseteq \Q_n$), neither contain the nucleus (if it exists). So Witt's Theorem says that for any automorphism $\gamma\colon X\mapsto Y$, we can find $\beta$  with   $\beta|_X=\gamma|_X$ and $\beta$ fixing $\Q_n$.  So for example we may take $X,Y$ to be generators of $\Q_n$, so there is an automorphism $\alpha$ of $\PG(n,q)$ mapping $X$ to $Y$ fixing $\Q_n$, so the group fixing $\Q_n$ is transitive on the generators.  If we take $X,Y$ to be points of $\Q_n$, then there is an automorphism  $\alpha$ of $\PG(n,q)$ mapping $X$ to $Y$ fixing $\Q_n$, so the group fixing $\Q_n$ is transitive on the points of $\Q_n$.  In general, the group fixing $\Q_n$ is transitive on the $r$-dimensional subspaces contained in $\Q_n$.  
+
+If we consider $X=Y\subseteq\Q_n$ and an automorphism group transitive on the points of $X$, then there is a subgroup of the automorphism subgroup of $\PG(n,q)$ fixing $\Q_n$ and transitive on the points of $X$. 
+
+\newpage
+\begin{lemma}\Label{lem:three-orbs} The stabilizer $A_s$ $(0\le s <g)$  of $\alpha_s$ in the group fixing $\Q_n$ is transitive on the each of the following three sets: the points of type (i), the points of type (ii) and the points of type (iii).
+\end{lemma}
+\begin{proof}
+First note by  \cite[Theorem 2.10]{ZxW}, for any $r\ge 1$, the group $G=\PGL(r+1,q)$ acting on $X=\PG(r,q)$ is transitive on on sets of $r+2$ points, with every $r+1$  independent.
+
+Consider two points $P,P'$ of type (i), that is, $P,P'\in\alpha_s\subseteq\Q_n$ and as there is an automorphism of $\PG(n,q)$ mapping $P$ to $P'$ fixing $\alpha_s$, it follows by Witt's Theorem that there is an automorphism mapping $P$ to $P'$, fixing $\alpha_s$ and fixing $\Q_n$. Thus $A_s$ is transitive on the points of type (i).
+
+Now consider two points $Q,Q'$ of type (ii). Let $X=\langle Q,\alpha_s\rangle$ and $Y=\langle Q',\alpha_s\rangle$, so $X,Y\subseteq \Q_n$. Since there is an automorphism $\gamma\colon X\mapsto Y$ fixing $\alpha_s$ and mapping $Q$ to  $Q'$, by Witt's Theorem there is one which does this and fixes $\Q_n$. Thus $A_s$ is transitive on the points of type (ii).
+
+Finally, consider two points $R,R'$ of type (iii). Let $X=\langle R,\alpha_s\rangle$ and $Y=\langle R',\alpha_s\rangle$.  As $R,R'$ is of type (iii), $X$ and $Y$ are not contained entirely within $\Q_n$. However, as $X\cap\Q_n$ contains the space $\alpha_s$, it follows \red{ (XREF)} that it contains another $s$ dimensional space $\beta_X$ of $\Q_n$.  Note that by property (*), there is a generator containing $R$ which meets in a hyperplane some generator $\Pi$ containing $\alpha_s$, hence $\beta_X$ contains $X$.  Similarly define $\beta_Y\subseteq Y$ with $\beta_Y$ containing $Y$. $X$ (and similarly $Y$) contain no other points of $Q$, since if it contained another point $A$, then a line $\ell$ through $A$ would contain three points of $Q$, namely $A$, $\ell\cap\alpha_s$ and $\ell\cap\beta_X$, and as $\ell$ only contains three points, it follows that $\ell\subseteq\Q_n$ and so $X\subseteq\Q_n$,\red{ (XREF)} a contradiction.  So $X$ and $Y$ both meet $\Q_n$ in a pair of hyperplanes $(\alpha_s,\beta_X)$ and $(\alpha_s,\beta_Y)$ with $X\in\beta_X$ and $Y\in\beta_Y$. Thus we can find an automorphism of $\PG(n,q)$ which fixes $\alpha_s$ and maps $Q$ to $Q'$, so by Witt's theorem there is one which does that and also fixes $\Q_n$, hence $A_s$ is transitive on the points of type (iii).
+\end{proof}
+
+We show that the different types of vertices in $\Gamma_s$ have different number of maximal cliques, hence {\rm Aut}$(\Gamma_s)$ has at least three orbits on the vertices. 
+
+\begin{lemma}\Label{lem:diffcliq}
+In $\Gamma_s$ $(0<s<g)$, when counting the maximal cliques, the number  through points of type (i) is greater than the number through points of than type (ii), which is greater than the number through points of type (iii).
+
+or
+
+\red{In $\Gamma_s$ $(0<s<g)$, the number of maximal cliques through points of type (i), (ii) and (iii) are all different.}
+\end{lemma}
+\begin{proof}
+We only prove the result for the elliptic quadric $\Q_n^-(2r+1,2)$, the other cases are similar.
+
+ We will show that for $s>0$ the number of maximal cliques through points of type (i) is greater than type (ii), greater than type (iii). 
+Comparing the number of cliques through points of type (i), (ii) and (ii), from Theorem~\ref{thm-max-cliq-thru-pt}, it is sufficient to show that
+\[
+A=(2^{r-s}+1)(2^{r+1}-2^{r-s+1}+1) > B=2^{r+1}-2^{r-s}+1
+> C=2^{r-s}+1.
+\]
+We calculate $A-B=2^{r-s}(2^{r+1}-2^{r-s+1})>0$ as $s>0$, and  $B-C=2^{r+1}-2^{r-s+1}>0$ as $s>0$, and so $A>B>C$ as required.
+\end{proof}
+
+In the above proof, in the case $s=0$ we see that $A-B=B-C=0$. That is, there are the same number of $g$-cliques through each point of $\Gamma_0$.  This is because $\Gamma_0\cong\Gamma$ (Theorem~\ref{thm:s0iso}) and the automorphism group of $\Gamma$ is transitive on the vertices of $\Gamma$.
+
+
+\begin{theorem}\Label{thm:3-orbit} The group $A_s=\mbox{Aut}(\Gamma)_{\alpha_s}$ induces an automorphism group on $\Gamma_s$, and so $\mbox{Aut}(\Gamma)_{\alpha_s}\subseteq\mbox{Aut}(\Gamma_s)$. Further, if $s>0$, then ${\rm Aut}(\Gamma_s)$ has exactly three orbits on the vertices of $\Gamma_s$, namely the points of each type.
+\end{theorem}
+\begin{proof} 
+We now show that subgroup of the group fixing $\Q_n$ which fixing $\alpha_s$ induces an automorphism group on $\Gamma_s$.  Let $\gamma$ be an automorphism of $\PG(n,2)$   fixing $\Q_n$ and $\alpha_s$. As $\gamma$ is an automorphism fo $\Gamma$, it preserves adjacency and non-adjacency in $\Gamma$.  Note that the only difference between $\Gamma$ and $\Gamma_s$ is between the points $Q$ of type (ii) and $R$ of type (iii), more specifically, $Q$ is adjacent to $R$ in $\Gamma$ if and only if $Q$ is non-adjacent to $R$ in $\Gamma_s$. It follws that $\gamma$ induces an automorphism of $\Gamma_s$.  Thus, by Lemma~\ref{lem:three-orbs}, ${\rm Aut}(\Gamma_s)$ has at most three orbits on the vertices of $\Gamma_s$, being the points of each type. The result now follows since by Lemma~\ref{lem:diffcliq}, ${\rm Aut}(\Gamma_s)$ has at least three orbits.   
+ \end{proof}
+
+We will now show that every automorphism of $\Gamma_s$ is an automorphism of $\Gamma$, and this will completely determine the automorphism group of $\Gamma_s$.
+
+\red{The following is well known, https://cameroncounts.files.wordpress.com/2015/04/pps1.pdf, in the proof of Theorem 7.7 (or here is another reference: http://www.e-booksdirectory.com/details.php?ebook=3107.   Is it available on xarchive? Perhaps we should ask him to put it on there for posterity)}
+\begin{result}\Label{res:gens}
+Let $\Gamma$ be the strongly regular graph associated with the quadric $\Q_n$.  Then the $g$-cliques of $\Gamma$ (of size $2^{g+1}-1$) are in one to one correspondence with the generators of $\Q_n$.
+\end{result} 
+
+%\begin{proof}
+%Each generator of $\Q_n$ defines a $g$-clique of $\Gamma$.  Now consider a $g$-clique of $G$ of $\Gamma$. Let $A$ and $B$ be two points.  So $AB$ is a line of $G$.  If for all such $A,B$, the line $AB$ is in the clique then it follows that the clique arises from a generator. So suppose the third point $C$ on the line $AB$ is not part of the clique. Let $D$ be another point of the clique.  Now $AD$ and $AB$ are lines of $\Q_n$.  Consider $DC$. As the plane $\langle A,B,D\rangle$ contains three lines of $\Q_n$, it is contained entirely within $\Q_n$, and so $DC$ is a line of  $\Q_n$.  This is true for all points $D$ off the line $AB$, and also true for $A$ and $B$.  Thus we can add $C$ to the clique $G$ to make a bigger clique.  But what we have show is that every maximal clique is a subspace of $\Q_n$, and we know the maximal subspaces of $\Q_n$ are the generators of $\Q_n$, so the maximal cliques are exactly the generators of $\Q_n$. 
+%\end{proof}
+
+
+
+\begin{lemma}
+We can recover $\Gamma$ (and hence $\Q_n$, as a set of points and subspaces) from $\Gamma_s$ $(0\le s <g)$.  
+%(Note that we are not assuming that the automorphism group of $\Gamma_s$ carries over.
+\end{lemma}
+
+
+\begin{proof}
+We wish to recover $\Gamma$ and hence $\Q_n$.  If $s=0$ then $\Gamma=\Gamma_0$ by Theorem~\ref{thm:s0iso}. So suppose $s>0$. The vertices of $\Gamma$ are the vertices of $\Gamma_s$.  By Lemma~\ref{lem:diffcliq}  we can distinguish the vertices of each type in $\Gamma_s$ by the number of maximal cliques through them.  Thus we can reconstruct the original graph $\Gamma$ by  keeping the adjacencies the same, except reversing the adjacencies between points of type (ii) and type (iii).  
+
+By Result~\ref{res:gens}, from $\Gamma$ we can obtain all the generators of $\Q_n$, and by intersecting the generators pairwise, we can firstly recover the hyperplanes of each generator, and by continuing this process, recover the lattice of subspaces of the generators. At the end of this process, we have: the points of $\Q_n$, all the lines contained in $\Q_n$; the planes contained in $\Q_n$; \dots; the $g$-spaces contained in $\Q_n$. 
+\end{proof}
+
+For each generator of $\Q_n$ define a \emph{generator set} $G$ as a set of points of $\Gamma_s$ which corresponds to a generator of $\Q_n$, which by Result~\ref{res:gens} corresponds to a $g$-clique of $\Gamma$.
+
+
+
+\begin{lemma}\Label{per-gen}
+Let $\gamma$ be an automorphism of $\Gamma_s$ $(0<s<g)$.  Then $\gamma$ preserves the generators sets of $\Gamma_s$.
+\end{lemma}
+\begin{proof}
+The generators sets and the $g$-cliques of $\Gamma_s$ which contain only points of type (i) and type (ii) are the same, so there is nothing to show in this case.  Now consider a generator set $G$ of $\Gamma_s$ consisting of points of type (i), (ii) and (iii) and sets $A,B,C$ representing points of these types, so $G=A\cup B\cup C$ ($A,B,C$ possibly empty).  As $s>0$, by Lemma~\ref{lem:diffcliq}, $\gamma$ preserves the points of each type, that is $A^\gamma$, $B^\gamma$ and $C^\gamma$ are points of type (i), (ii) and (iii) respectively. Now the elements of $A\cup B$ are a clique, so the elements of $A^\gamma\cup B^\gamma$ are a clique, similarly the elements of $A^\gamma\cup C^\gamma$ form a clique.  As the elements of $B$ are not adjacent in $\Gamma_s$ to any element of $C$, and $\gamma$ is an automorphism,  it follows that the elements of $B^\gamma$ are not adjacent in $\Gamma_s$ to any element of $C^\gamma$.  Thus in $\Gamma$, $(A\cup B\cup C)^\gamma$ is a $g$-clique, and by Result~\ref{res:gens} $(A\cup B\cup C)^\gamma$ is a generator set of $\Gamma_s$.  Thus $\gamma$ permutes the  generators sets of $\Gamma_s$.
+\end{proof}
+
+\begin{proof}\emph{ of Theorem~\ref{aut-thm}}
+Consider any automorphism $\gamma$ of  $\Gamma_s$.  By Lemma~\ref{per-gen}  it preserves the generator sets of $\Gamma_s$, and by Lemma~\ref{gen-aut}  it is an automorphism of $\Gamma$.  Thus $\mbox{Aut}(\Gamma_s)\subseteq\mbox{Aut}(\Gamma)$. By Theorem~\ref{thm:3-orbit} $\mbox{Aut}(\Gamma_s)$ fixes  $\alpha_s$, and so $\mbox{Aut}(\Gamma_s)=\mbox{Aut}(\Gamma_s)_{\alpha_s}\subseteq \mbox{Aut}(\Gamma)_{\alpha_s}$. By Theorem~\ref{thm:3-orbit} $\mbox{Aut}(\Gamma)_{\alpha_s}\subseteq\mbox{Aut}(\Gamma_s)$ which completes the proof.
+\end{proof}
+
+
+
+
+
+
+\begin{thebibliography}{999}
+
+
+%\bibitem{abiad1} A. Abiad, A.E. Brouwer and W.H. Haemers.
+%Godsil-McKay switching and isomorphism.
+%{\em Electr. J. Linear Algebra}, to appear.
+%
+%\bibitem{abiad2} A. Abiad and W.H. Haemers.
+%Switched symplectic graphs and their 2-ranks. Preprint.
+%
+
+\bibitem{magma} W.~Bosma, J.~Cannon, and C.~Playoust. The Magma algebra system. I. The user language, {\em J. Symbolic Comput.}, {\bf 24} (1997), 235--265. 
+
+\bibitem{brouwer89} A.~E.~Brouwer, A.~M.~Cohen and A.~Neumaier. {\em Distance-regular graphs}. Ergebnisse der Mathematik 3.18, Springer, Heidelberg, 1989. 
+
+\bibitem{brouwer} A.~E.~Brouwer and W.~H.~Haemers. {\em Spectra of graphs}. Springer, 2012.
+
+
+\bibitem{godsil} C.~D.~Godsil and B.~D.~McKay. Constructing cospectral graphs. {\em   Aequationes Math.}, {\bf  25} (1982) 257--268. 
+
+\bibitem{hirs98}  {\em Projective Geometry over Finite
+Fields, Second Edition.} Oxford University Press, 1998.
+
+
+\bibitem{HT} J.~W.~P.~Hirschfeld. and J.~A.~Thas. {\em General
+  Galois Geometries.} Oxford University
+  Press, 1991.
+
+\bibitem{kantor} W.~M.~Kantor. Strongly regular graphs defined by spreads. {\em Israel J. Math.}, {\bf 41} (1982) 298--312.
+\bibitem{ZxW} Z.-x.~Wan. \emph{Geometry of classical groups over finite fields}. Studentlitteratur, 1993.
+
+%\bibitem{seidel} 
+%\red{
+%J.J. Seidel, Graphs and two-graphs. In Proc. Fifth Southeastern Conference on Combinatorics, Graph Theory and Computing, Congressus Numerantium X, {\em Utilitas Math}., Winnipeg, Man., (I974) 125--143. 
+%}
+  \bibitem{taylor1992geometry} D.~E.~Taylor.
+  {\em The geometry of the classical groups}, Sigma series in pure mathematics, Heldermann Verlag, 1992.
+}
+  \end{thebibliography}
+\end{document}

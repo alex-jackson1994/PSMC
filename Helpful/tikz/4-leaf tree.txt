@@ -1,0 +1,34 @@
+\usepackage{tikz}
+
+	\begin{figure}[h!]
+		\centering
+		\begin{tikzpicture} [>=stealth]
+		  \draw[->, very thick] (-2,0) -> (-2,7) node[midway, anchor = south, sloped]{Time in past};
+                  % LINES:
+		  \draw (2,0) -- (2,3) node[midway, anchor=east]{$v_1$};
+       		  \draw (4,0) -- (4,3) node[midway, anchor=east]{$v_2$};
+		  \draw (2,3) -- (4,3);
+		  \draw (6,0) -- (6,2) node[midway, anchor=east]{$v_3$};
+		  \draw (8,0) -- (8,2) node[midway, anchor=east]{$v_4$};
+		  \draw (6,2) -- (8,2);
+		  \draw (3,3) -- (3,6) node[midway, anchor=east]{$v_5$};
+		  \draw (7,2) -- (7,6) node[midway, anchor=east]{$v_6$};
+		  \draw (3,6) -- (7,6);
+		  \draw (5,6) -- (5,7);
+
+                  % NODES
+                  \draw [fill] (2,0) circle [radius=0.05] node[anchor=north]{$s_1$};
+                  \draw [fill] (4,0) circle [radius=0.05] node[anchor=north]{$s_2$};
+                  \draw [fill] (6,0) circle [radius=0.05] node[anchor=north]{$s_3$};
+                  \draw [fill] (8,0) circle [radius=0.05] node[anchor=north]{$s_4$};
+                  \draw [fill] (3,3) circle [radius=0.05] node[anchor=north]{$s_5$};
+                  \draw [fill] (7,2) circle [radius=0.05] node[anchor=north]{$s_6$};
+                  \draw [fill] (5,6) circle [radius=0.05] node[anchor=north]{$s_0$};
+
+                  
+%		\draw (2,0) -- (2,1) node[anchor=south]{0.4};
+%		\draw (6,0) -- (6,2) node[anchor=south]{0.3};
+		\end{tikzpicture}
+		\caption{A simple four-leaf tree.}
+		\label{FourLeafTree}
+	\end{figure}

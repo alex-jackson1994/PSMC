@@ -1,0 +1,419 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{fancyhdr} % HEADER!!
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{gensymb}
+%\usepackage{numbers,comma,}
+\usepackage[superscript]{cite}
+\usepackage{wrapfig}
+\usepackage{lscape}
+\usepackage[font={it},justification=centering]{caption}
+\usepackage{fixltx2e} % allows text subscript
+\usepackage{csquotes}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % rule horizontal line
+
+\graphicspath{{./figures/}}
+
+
+
+%\pdfpagewidth 8.5in
+%\pdfpageheight 11in
+
+\pagestyle{fancy}
+\headheight 15pt
+
+
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{25cm}
+\setlength{\parindent}{1cm}
+
+
+%\cfoot{\thepage}
+
+%\rhead{Alex Jackson, a1646282}
+
+\title{Towards metal-organic frameworks containing \emph{N}-heterocyclic carbene precursors for catalysis}
+%\date{}
+%\author{Alex Jackson, a1646282}
+
+% just the header line, no writing
+%\fancyhead{}
+
+\begin{document}
+\begin{titlepage}
+	
+	\center % Center everything on the page
+
+	\textsc{\Large The University of Adelaide}\\[2cm] % Name of your university/college
+	\textsc{\LARGE SCIENCE 3100}\\[1cm] % Major heading such as course name
+%	\textsc{\Huge Principles and Practice of Research III}\\[2cm] % Minor heading such as course title
+	\textsc{\LARGE Principles and Practice of Research III}\\[1.5cm] % Minor heading such as course title
+
+
+	\HRule \\[0.4cm]
+	{ \huge \bfseries Towards metal-organic frameworks containing \emph{N}-heterocyclic carbene precursor for catalysis}\\[0.4cm] % Title of your document
+	\HRule \\[1.5cm]
+
+	
+	\begin{minipage}{0.50\textwidth}
+		\begin{flushleft} \large
+			\emph{Author:}\\
+            Alex \textsc{Jackson} (a1646282)
+		\end{flushleft}
+	\end{minipage}
+	~
+	\begin{minipage}{0.45\textwidth}
+		\begin{flushright} \large
+			\emph{Supervisors:} \\
+			A/Prof. Christopher \textsc{Sumby}\\ % Supervisor's Name
+                        Mr. Patrick \textsc{Capon}
+		\end{flushright}
+	\end{minipage}\\[1cm]
+	
+	 % Date, change the \today to a set date if you want to be precise	
+	\includegraphics[width=0.4\textwidth]{the_university_of_adelaide.eps}\\[1.5cm]
+	{\large \today}\\[1cm] % Include a department/university logo - this will require the graphicx package
+	\vfill % Fill the rest of the page with whitespace
+	
+\end{titlepage}
+
+%\maketitle
+\thispagestyle{plain}
+
+\pagenumbering{roman}
+
+\newpage
+
+\tableofcontents
+\listoffigures
+\listoftables
+\newpage
+
+\pagenumbering{arabic}
+
+%\linespread{1.6}
+
+\section{Abstract}\label{sec:abstract}
+\textbf{The abstract should be a short paragraph summarising what I did, possibly how I did it, and what was interesting.}
+
+\section{Background}\label{sec:intro}
+
+\subsection{The importance of catalysts}\label{sec:catal}
+\emph{Catalysts} are substances that increase chemical reaction rates. They are essential for both industrial processes and laboratory scale applications, as they greatly increase efficiency and cost-effectiveness. For example, the Haber-Bosch process, which converts nitrogen and hydrogen into ammonia (NH$_3$), uses an iron-based catalyst. The process supports the world's population by producing vast amounts of fertiliser - in the U.S. alone in 2011, 8.3 million tonnes were synthesised\cite{apodaca2011us}. On a smaller scale, Fischer esterification is a common laboratory reaction catalysed by acid.
+
+The International Union of Pure and Applied Chemistry defines\cite{mcnaught2005iupac} a catalyst as
+
+\begin{displayquote}
+\emph{A substance that increases the rate of a reaction without modifying the overall standard Gibbs energy change in the reaction [...] The catalyst is both a reactant and product of the reaction.}
+\end{displayquote}
+Catalysts increase reaction rates by facilitating pathways with lower activation energy - for example, by orienting the reactants favourably, or activating a functional group. \emph{Catalysis} refers to the acceleration of a reaction by a catalyst.
+
+There are two classes of catalysis\cite{mcnaught2005iupac} - \emph{homogeneous} catalysis, which only involves one phase (e.g. with all reactants in solution, as found in the Fischer esterification) and \emph{heterogeneous} catalysis, which occurs on the interface between phases (e.g. the Haber-Bosch process involves adsorption of gas molecules onto the surface of the solid iron catalyst\cite{schlogl2003catalytic}).
+
+There is ongoing scientific and industrial interest in substances which can effectively catalyse reactions in efficient, selective or novel manners.
+
+\subsection{Homogeneous and heterogeneous catalysts}\label{sec:homo_hetero_catal}
+Both homogeneous and heterogeneous catalysts come with a set of advantages and disadvantages. Homogeneous catalysts are usually highly active, selective, and their mechanisms are simpler to determine, compared to heterogeneous catalysts\cite{li2014bridging}. However, because homogeneous catalysts are in the same phase as the reactants, the reaction mixture is more difficult to separate. Homogeneous catalysts can also decompose or self-react during reactions\cite{li2014bridging,luz2010bridging}.
+
+On the other hand, heterogeneous catalysts are generally stable solids. Because they are a different phase to the reactants, these catalysts can be easily separated from the reaction mixture. However, heterogeneous catalytic mechanisms are harder to investigate, and they often have lower activity\cite{li2014bridging}.
+
+
+\subsection{Catalysis in metal-organic frameworks}\label{sec:MOFcatal}
+\emph{Metal-organic frameworks} (MOFs) are porous, crystalline materials constructed from organic ligands coordinated to metal-based units\cite{furukawa2013chemistry} (otherwise known as secondary bonding units or SBUs). MOFs are prepared under solvothermal conditions to yield the crystal lattices\cite{BurgunMOF,song2015periodic,sen2012high} (for an example of the structure of a MOF, see Figure \ref{BurgunZnMOF}). Catalysis may take place within the pores, or at the surface of the material. The catalytic sites themselves may be coordinatively unsaturated SBU metals, functionalised linkers,\cite{ma2009enantioselective} or nanoparticles trapped inside the framework\cite{furukawa2013chemistry}.
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{center}
+\includegraphics[width=1\linewidth]{BurgunZnMOF.eps}
+\end{center}
+\caption{A [Zn$_4$O\{Cu(L)$_2$\}$_2$] MOF, viewed down the $a$-axis. The green prisms capped with red are the Zn$_4$O nodes. Copper (I) ions sit coordinated to the bridging ligands. Catalysis (hydroboration of carbon dioxide) occurs within the pores. Figure from Burgun et al.\cite{BurgunMOF}}\label{BurgunZnMOF}
+\end{wrapfigure}
+
+A potential advantage of MOFs is to combine the advantages of both homogeneous and heterogeneous catalysts. By fixing a homogeneous catalytic functional group to the framework, the new MOF catalyst is now easily separated from the reaction mixture, and ideally will not self-react due to physical separation of the catalytic moieties.
+
+Because of the range of ligands, SBUs and reaction conditions available, MOFs have a wide range of accessible structures. Furthermore, by changing ligand size but keeping the SBU constant, series of MOFs with matching topologies but varying pore sizes can be designed.\cite{furukawa2013chemistry} This is known as the \emph{isoreticular principle}. The versatility and tunability of MOFs is a distinct advantage over other porous materials such as zeolites. However, this comes at a price. MOFs, while often stable in the 250-500\degree C range\cite{furukawa2013chemistry}, cannot withstand temperatures which zeolites can. While by-products adsorbed onto zeolites' surface can be removed by calcination (thermal treatment), MOFs cannot be re-activated in this manner\cite{gascon2013metal}. Additionally, MOFs are less chemically stable than zeolites, as they can undergo ligand-displacement reactions\cite{furukawa2013chemistry}.
+
+\textbf{COULD GIVE EXAMPLES OF CATALYSIS HERE - SEE PAT'S LITERATURE REVIEWS HE SENT ME.}
+
+\subsection{The click reaction}\label{sec:click}
+
+The Huigsen 1,3-dipolar cycloaddition of organic azides and alkynes (commonly known as the \emph{click reaction}, see Figure \ref{Click}) is a one-pot reaction that produces 1,2,3-triazoles\cite{tornoe2002peptidotriazoles}. It is a useful reaction with many applications, including drug design, DNA modification, and polymer/dendrimer chemistry\cite{meldal2008cu}. For example, a Cathepsin S inhibitor was found after a library of \begin{wrapfigure}{r}{0.55\textwidth}
+\begin{center}
+\includegraphics[width=1\linewidth]{Click.eps}
+\end{center}
+\caption{The click reaction is homogeneously catalysed by a Cu(I) species to selectively give 1,4-disubstituted triazoles.}\label{Click}
+\end{wrapfigure}compounds were synthesised via the click reaction, then screened\cite{patterson2006identification}. Importantly, the click reaction is known to be homogeneously catalysed by copper (I)-based species\cite{tornoe2002peptidotriazoles,meldal2008cu}. This results in sterically favoured 1,4-disubstituted triazoles\cite{casarrubios2013click}. A worthwhile space to investigate is the effect of confining the copper (I) catalyst within a MOF, and observing any changes in efficiency, selectivity and product distribution - for example, preference for the more sterically hindered 1,5-disubstituted product. Changes in reactivity in a MOF-confined catalyst, versus a solution-based catalyst, could be due to different favourable orientations of the reactant, or activation of certain functional groups by the MOF structure.
+
+\subsection{\emph{N}-heterocyclic carbene ligands}\label{sec:NHC}
+\begin{wrapfigure}{l}{0.2\textwidth}
+\begin{center}
+\includegraphics[width=1\linewidth]{NHC.eps}
+\end{center}
+\caption{General form of an imidazolium-derived NHC.}\label{NHC}
+\end{wrapfigure}
+
+\emph{\emph{N}-heterocyclic carbenes} (known as NHCs; see Figure \ref{NHC}) are a promising ligand to support copper (I) catalysts, as NHCs bond strongly to transition metals through a carbon lone pair. Because of their strong metal-ligand interactions, they are not lost to solution\cite{ezugwu2015metal}. Furthermore, NHCs can be substituted in multiple positions, changing their steric and electronic properties. The combination of substituent tunability and strong binding makes NHCs excellent ligands for transition metal catalysts. Including an NHC group in the MOF linker gives a site for attaching a metal centre, turning the MOF into a catalyst. Deprotonation of the imidazolium \emph{in situ} generates the NHC group, which can then bind copper (I) ions. NHC-metal complexes can be formed prior to MOF synthesis, during MOF synthesis (one-pot), or post-synthetically\cite{ezugwu2015metal} (see Figure \ref{NHC-Synth}).
+
+\textbf{COULD DO WHY NHCs ARE USEFUL - NHCs VS PHOSPHINES. SEE PAT'S RESEARCH PROPOSAL.}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=.4\linewidth]{NHC-Synth.eps}
+\end{center}
+\caption{Generation and metalation of NHCs \emph{via} A (post-synthetic metalation) or B (pre-MOF metalation). Figure from Crees et al.\cite{crees2010synthesis}}\label{NHC-Synth}
+\end{figure}
+
+\subsection{Project objectives}\label{sec:Obj}
+\begin{itemize}
+\item Synthesise imidazolium-based \emph{N}-heterocyclic carbene precursor ligands \textbf{\emph{para}-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$}, \textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$} and \textbf{mes-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} (see Figure \textbf{I NEED TO SYNTHETIC SCHEMES FOR ALL THREE LIGAND SYNTHESES. PUT EACH ONE ABOVE THEIR RESPECTIVE PROJECT (UNDER THE ``METHODOLOGY'' SECTION).}).
+\item Synthesise MOFs with these ligands.
+\item Metalate MOFs with Cu(I) in a ``one-pot'' fashion, or post-synthetically.
+\item Investigate catalytic properties of Cu(I)-containing MOFs.
+\end{itemize}
+
+\section{Methodology}\label{sec:methods}
+\subsection{Project 1: In(III)/\textbf{\emph{para}-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} MOF}\label{method:p1}
+Synthesis of \textbf{pre-\emph{para}-H$\bm{_2}$L} and \textbf{\emph{para}-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} were carried out according to a literature procedure\cite{sen2012high} in a 24\% overall yield. The attempted syntheses of the In(III)/ MOF were based upon a literature procedure\cite{song2015periodic}.
+
+\textbf{SYNTHETIC SCHEME HERE. REFERENCE THIS SCHEME.}
+
+\textbf{MAKE SURE ALL SOLVENTS ETC. HAVE CORRESPONDING QUANTITIES.}
+
+\subsubsection{Synthesis of \emph{N,N}$'$-bis(4-carboxyphenyl)ethylenediimine (\textbf{pre-\emph{para}-H$\bm{_2}$L})}\label{synth:para-L-step1}
+4-Aminobenzoic acid (5.00 g, 36.5 mmol) was dissolved in methanol (15.0 mL). Formic acid (3 drops) was added, followed by the dropwise addition of aqueous glyoxal (40\%, 2.00 mL, \textbf{CALC. \# MOLES}). The solution was stirred at RT for 24 hours. The precipitate was collected by filtration under reduced pressure, washed with cold methanol ($3\times 30$ mL) and dried in air to yield pre-\emph{para}-H$_2$L as a pale orange solid (4.49 g, 42\%).
+
+The $^1$H NMR (500 MHz, DMSO-d$_6$) could not be assigned, but this is not unusal for bis imines. The synthesis was continued.
+
+\subsubsection{Synthesis of 1,3-bis(4-carboxyphenyl)imidazolium chloride (\textbf{\emph{para}-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$})}\label{synth:para-L-step2}
+\textbf{Pre-\emph{para}-H$\bm{_2}$L} was dissolved in anhydrous THF under an argon atmosphere, followed by the addition of a solution of paraformaldehyde (0.556 g, 18.9 mmol) in aqueous HCl (32\%, 2.13 mL) in dioxane (3.56 mL). The mixture was stirred at RT for 17 hours, and the resultant precipitate was collected by filtration and washed with diethyl ether ($2 \times 20$ mL). The solid was refluxed in ethanol (10 mL) for 1 hour, the solvent removed under reduced pressure, and the solid washed with ethanol ($4\times 20$ mL) to yield \textbf{\emph{para}-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} as a pale yellow solid (3.03 g, 58\%). $^1$H NMR (500 MHz, DMSO-d$_6$): $\delta$ 13.47 [2H, br s, $2\times$CO$_2$H], 10.57 [1H, s, H-Imid], 8.69 [2H, s, $2\times$N-CH=], 8.24 [4H, d, $J=???$, $4\times$Ar-H], 8.07 [4H, d, $J=???$, $4\times$Ar-H].
+
+\textbf{WORK OUT J VALUES.}
+
+\subsubsection{Synthesis of [In(OH)L]$_5$(NO$_3$)$_5\cdot$33H$_2$O$\cdot$14DMF (In(III)\textbf{\emph{para}-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$}) MOF}\label{synth:In-MOF}
+\textbf{WRITE SOMETHING BASED ON PAT'S EMAIL.}
+
+Table \ref{tab:In1}.
+
+\begin{table}[h]
+	\footnotesize
+	\caption{Selected In(III)/\textbf{\emph{para}-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} MOF synthetic conditions. ``L''=\textbf{\emph{para}-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$}, ``In''=In(NO$_3$)$_3\cdot$xH$_2$O, ``Cu(I)''=Cu(CH$_3$CN)$_4$PF$_6$.}\label{tab:In1}
+	\begin{center}
+		\begin{tabular}{cccccccccc}
+\hline
+Code & L ($\mu$M) & In eq. & DMF (mL) & Comments \\ \hline
+AJ-15-17-1 & 101 & 1 & 5 & Literature-scale\cite{song2015periodic} synthesis. Distilled DMF used. \\ \hline
+ &  &  &  &  \\ \hline
+AJ-15-13-1 & 13.6 & 1.0 & 1.5 & Down-scaled literature synthesis.\\ \hline
+AJ-15-13-3 & 14.2 & 1.0 & 1.5 & 1 eq. Cu(I) added. \\ \hline
+AJ-15-13-4 & 14.2 & 1.0 & 1.5 & 0.5 eq. Cu(I) added.\\ \hline
+AJ-15-13-5 & 15.1 & 1.0 & 1.5 & 1 drop H$_2$O cosolvent.\\ \hline
+ &  &  &  &  \\ \hline
+AJ-15-17-2 & 14.5 & 1 & 1.5 & 1 eq. benzoic acid added.\\ \hline
+AJ-15-17-3 & 13.6 & 1 & 1.5 & 2 eq. benzoic acid added.\\ \hline
+AJ-15-17-4 & 13.4 & 1 & 1.5 & 1 drop 70\% HNO$_3$ added. \\ \hline
+ &  &  &  &  \\ \hline
+AJ-15-21-1 & 103 & 1 & 5 & Exactly as literature: stirred not sonicated. \\ \hline
+AJ-15-21-3 & 29.0 & 1 & 1.5 & 1:1 DMF/H$_2$O solvent system.\\ \hline
+AJ-15-21-4 & 27.9 & 1 & 2.5 & 5:1 DMF/EtOH solvent system.\\ \hline
+ &  &  &  &  \\ \hline
+AJ-15-21-2 & 31.1 & 2 & 3 & 2 eq. In. \\ \hline
+AJ-15-25-1 & 28.7 & 3 & 3 & 3 eq. In, RT. \\ \hline
+AJ-15-25-3 & 29.0 & 3 & 3 & 3 eq. In, 40\degree C. \\ \hline
+AJ-15-25-3 & 30.2 & 3 & 3 & 3 eq. In, 50\degree C. \\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\subsection{Project 2: Zn(II)/\textbf{mes-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} MOF}\label{synth:p2}
+Ligand \textbf{mes-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} was successfully synthesised with 1\% overall yield in 6 steps according to modified literature techniques\cite{nishioka2010effect,nickerl2012selective}.
+
+\subsubsection{Synthesis of nitromesitylene}\label{synth:mes-L-step1}
+Mesitylene (20.0 mL, 0.144 mol) and acetic anhydride (23.2 mL, 0.245 mol) were added to a dry flask, and cooled to 0\degree C. Glacial acetic acid (8.40 mL, 0.147 mol) was mixed with fuming nitric acid (9.20 mL, 0.220 mol), and this solution was added dropwise to the mesitylene/acetic anhydride solution over 1.5 hours, maintaining the temperature below 10\degree C. The mixture was stirred for 2 hours, then neutralised with sodium bicarbonate and NaOH (10M, ) \textbf{WORK OUT SOME APPROPRIATE QUANTITIES}. The product was extracted with ethyl acetate, the organic layer washed with water, brine, and dried over MgSO$_4$. The solvent was removed \emph{in vacuo} to yield nitromesitylene as a yellow solid (5.20 g, 22\%)
+
+ $^1$H NMR ($x$ MHz, $x$ solvent): $\delta$ \textbf{NMR data here...}
+
+\textbf{MAKE SURE ALL SOLVENTS ETC. HAVE CORRESPONDING QUANTITIES.}
+
+
+\subsubsection{Synthesis of 1,3-dimethyl-4-nitrobenzoic acid \textbf{(1)}}\label{synth:mes-L-step2}
+Nitromesitylene (10.3 g, 62.0 mmol) in glacial acetic acid (25.0 mL) was added dropwise to a slurry of CrO$_3$ (20.5 g, 205 mmol) in glacial acetic acid (215 mL). The mixture was stirred overnight at RT, then poured onto ice to precipitate the product. The residue was collected by filtration and washed with water. The precipitate was dissolved in CHCl$_3$ (200 mL) and the organic layer extracted with aqueous NaOH (2M, $2\times 75$ mL). The aqueous layers were combined, filtered, and then acidified to pH 1 to precipitate the product. The precipitate was collected by filtration, washed with water and dried \emph{in vacuo} to give compound \textbf{1} as a white powder (3.20 g, 37\% with recovery of starting material). $^1$H NMR ($x$ MHz, $x$ solvent): $\delta$ \textbf{NMR data here...}
+
+\textbf{MAKE SURE ALL SOLVENTS ETC. HAVE CORRESPONDING QUANTITIES.}
+
+\subsubsection{Synthesis of 1,3-dimethyl-4-nitrobenzoic acid methyl ester \textbf{(2)}}\label{synth:mes-L-step3}
+Compound \textbf{1} (3.20 g, 16.4 mmol) was heated at reflux overnight in a solution of methanol (28.0 mL) and conc. H$_2$SO$_4$ (1 mL). The mixture was cooled to -20\degree C, the precipitate collected by filtration under reduced pressure, and washed with cold methanol ($3\times 30.0$ mL) to yield \textbf{2} as a white solid (2.73 g, 80\%). $^1$H NMR ($x$ MHz, $x$ solvent): $\delta$ \textbf{NMR data here...}
+
+\subsubsection{Synthesis of 1,3-dimethyl-4-aminobenzoic acid methyl ester \textbf{(3)}}\label{synth:mes-L-step4}
+To a stirred solution of \textbf{(2)} (2.70 g, 13.0 mmol) in ethanol (88.0 mL) was added Pd/C (10\%, 0.135 g). The reaction was stirred overnight under a hydrogen atmosphere. The solution was filtered through celite, washed with ethanol and the solvent removed under reduced pressure to yield \textbf{3} as a white powder (2.27 g, 98\%). $^1$H NMR ($x$ MHz, $x$ solvent): $\delta$ \textbf{NMR data here...}
+
+\textbf{MAKE SURE ALL SOLVENTS ETC. HAVE CORRESPONDING QUANTITIES.}
+
+\subsubsection{Synthesis of (mes-Me$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$)}\label{synth:mes-L-step5}
+Paraformaldehyde (85.2 mg, 2.84 mmol) was dissolved in toluene (6.80 mL). Compounds \textbf{3} (506 mg, 2.82 mmol) was added and the solution stirred at RT overnight. The solution was cooled to 0\degree C and another portion of \textbf{3} (506 mg, 2.83 mmol) was added. Aqueous HCl (3M, 920 $\mu$L, 2.79 mmol) was added dropwise, and the solution warmed to RT. Aqueous glyoxal (40\%, 392 $\mu$L, 3.43 mmol) was added and the solution was stirred overnight at 50\degree C. The solid was extracted with water and washed with diethyl ether. The water was removed under reduced pressure and the resultant oil put under vacuum to yield mes-Me$_2$L$^+$Cl$^-$ as a brown solid (433 mg, 36\%). $^1$H NMR (500 MHz, CDCl$_3$): $\delta$ 11.80 [1H, s, H-Imid], 7.96 [4H, s, $4\times$Ar-H], 7.56 [2H, s, $2\times$N-CH=], 3.96 [6H, s, $2\times$CO$_2$CH$_3$], 2.34 [12H, s, $4\times$Ar-CH$_3$].
+
+\textbf{MAKE SURE ALL SOLVENTS ETC. HAVE CORRESPONDING QUANTITIES.}
+
+
+\subsubsection{Synthesis of 1,3-bis(2,6-dimethyl-4-carboxyphenyl)imidazolium chloride (\textbf{mes-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$})}\label{synth:mes-L-step6}
+Mes-Me$_2$L$^+$Cl$^-$ (85.3 mg, 1.01 mmol) was heated at reflux overnight in a solution of aqueous HCl (20\%, 10.0 mL). The solid was collected by filtration and washed with diethyl ether to yield \textbf{mes-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} as a light brown solid (51.1 mg, 64\%). $^1$H NMR (500 MHz, DMSO-d$_6$): $\delta$ 9.75 [1H, s, H-Imid], 8.38 [2H, s, $2\times$N-CH=], 7.94 [4H, s, $4\times$Ar-H], 2.32 [12H, s, $4\times$Ar-CH$_3$].
+
+\textbf{MAKE SURE ALL SOLVENTS ETC. HAVE CORRESPONDING QUANTITIES.}
+
+\subsubsection{Synthesis of Zn(II)/\textbf{mes-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} MOF}\label{synth:Zn-MOF}
+\textbf{WRITE MOF SYNTHESIS.}
+
+\begin{table}[h]
+	\footnotesize
+	\caption{Selected Zn(II)/\textbf{mes-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} MOF synthetic conditions. ``L''=\textbf{mes-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$}, ``Zn''=Zn(NO$_3$)$_2\cdot$6H$_2$O}\label{tab:Zn1}
+	\begin{center}
+		\begin{tabular}{cccccccccc}
+\hline
+Code & L ($\mu$M) & Zn eq. & EtOH (mL) & Temp (\degree C) & Comments \\ \hline
+AJ-21-7-1 & 13.5 & 1.5 & 1.75 & 90 & As per literature\cite{nickerl2012selective} \\ \hline
+AJ-15-29-4 & 24.8 & 1.5 & 3.5 & 100 &  \\ \hline
+AJ-15-31-1 & 10.5 & 1.5 & 1.75 & 60 &  \\ \hline
+AJ-15-31-2 & 12.0 & 1.5 &  & 100 & 1.5 mL DMF instead of EtOH solvent. \\ \hline
+AJ-15-31-3 & 12.5 & 1.5 & 1.75 & 60 &  \\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+\subsection{Project 3: Co(II)/\textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$} MOF}\label{synth:p3}
+Ligand \textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$} was successfully synthesised with 29\% overall yield by a literature procedure\cite{sen2014construction}.
+
+\subsubsection{Synthesis of \emph{N,N}$'$-bis(3,5-dicarboxyphenyl)ethylenediimine (pre-H$_4$L)}\label{synth:H4L-1}
+5-Aminoisophthalic acid (840 mg, 4.64 mmol) was stirred in methanol (14.0 mL). Formic acid (2 drops) was added, followed by the dropwise addition of aqueous glyoxal (40\%, 2.64 mL, 2.32 mmol). The solution was stirred at RT for 24 hours, then filtered and washed with cold methanol ($3\times 50.0$ mL) to yield pre-H$_4$L as a pale yellow solid (393 mg, 38\%). $^1$H NMR ($x$ MHz, $x$ solvent): $\delta$ \textbf{NMR data here...}
+
+\subsubsection{Synthesis of 1,3-bis(3,5-dicarboxyphenyl)imidazolium chloride (\textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$})}\label{synth:H4L-2}
+\textbf{Pre-H$\bm{_4}$L} (393 mg, 0.892 mmol) was added to anhydrous THF (2.00 mL) under an argon atmosphere, followed by the addition of a solution of paraformaldehyde (38.3 mg, 1.27 mmol) in aqueous HCl (32\%, 0.262 mL, \textbf{MOLES}) in dioxane (3 mL). The solution was stirred overnight. The solid was collected by filtration, washed with diethyl ether (30.0 mL), and dried under reduced pressure to yield \textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$} as a cream solid (354 mg, 92\%). $^1$H NMR ($x$ MHz, $x$ solvent): $\delta$ \textbf{NMR data here...}
+
+\subsubsection{Synthesis of Co(II)/\textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$} MOF}\label{synth:Co-MOF}
+\textbf{NEED SYNTHESIS AND TABLE.}
+\begin{table}[h]
+	\footnotesize
+	\caption{...}\label{tab:Co1}
+	\begin{center}
+		\begin{tabular}{cccccccccc}
+\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+
+
+
+
+\section{Results and Discussion}\label{sec:res_disc}
+
+\subsection{Project 1: In(III)/\textbf{\emph{para}-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} MOF}\label{sec:dis-in}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=.7\linewidth]{figures/InChannels}
+\end{center}
+\caption{Pore structure of the In(III)/\textbf{\emph{para}-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} MOF.}\label{InChannels}
+\end{figure}
+
+An In(III)/\textbf{\emph{para}-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} MOF reported by Song and coworkers\cite{song2015periodic} showed clearly defined channels with potential for metalation and novel chemistry (see Figure \ref{InChannels}). The aim of this project was to synthesise the literature MOF and metalate it with Cu(I), followed by investigation of its click reaction catalysis.
+
+
+\subsubsection{\textbf{\emph{Para}-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} ligand synthesis}\label{sec:paraLdis}
+The synthesis of \textbf{\emph{para}-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} was successful under literature \cite{sen2012high} conditions.
+
+\subsubsection{In(III)/\textbf{\emph{para}-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} MOF}\label{sec:in-synth-disc}
+See Table \ref{tab:In1} for a list of synthetic conditions.
+
+Originally, a one-pot synthesis of the In(III)/\textbf{\emph{para}-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} MOF metallated with Cu(I) was attempted (AJ-15-13-3 and 4 contained 1 and 0.5 equivalents of Cu(I) respectively). Other attempts included a scaled-down literature synthesis (AJ-15-13-1), and adding 1 drop of H$_2$O cosolvent (AJ-15-13-5). However, within 3 days it was evident that no MOF crystals had formed, only precipitate (by direct observation and optical microscopy).
+
+Next, a synthesis using the literature scale was trialled (AJ-15-17-1). Distilled DMF was used to exactly control the amount of water in the reaction mixture, in the case that was an important factor. However, this also failed to yield MOFs.
+
+It was hypothesised that kinetic inhibition of MOF formation could lead to better crystal growth (as slowly-growing crystals often have the best structures). Therefore, acid was added to the reaction mixture. As the \textbf{\emph{para}-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} ligand binds the In(III) metal node through a carboxylate group, which is in equilibrium with the carboxylic acid form, adding acid would disfavour the carboxylate form, slowing MOF formation. AJ-15-17-2 and 3 contained 1 and 2 equivalents of benzoic acid respectively (as benzoic acid only has one binding site, it cannot form MOFs), while AJ-15-17-4 contained 1 drop of 70\% nitric acid (chosen as the reaction mixture already contained nitrate anions from the indium nitrate). Unfortunately, this technique did not afford any MOF crystals.
+
+In the literature procedure, reactants were dissolved in DMF by stirring. So far, the experimental reagents had been dissolved by sonication. In the chance that stirring would give a different outcome to sonication, a literature-scale synthesis was tried using this change in technique. This did not yield MOFs though.
+
+Co-solvents were added in an attempt to speed crystal nucleation (as the MOF product was insoluble in water and ethanol, this would result in faster crystallisation). \textbf{Sooo... before we wanted it slower now we want it faster?} Aj-15-21-3 and 4 contained 1:1 DMF/H$_2$O and 5:1 DMF/EtOH respectively. However, MOFs were not produced.
+
+It was suggested by Song that increasing the In/L ratio and lowering the temperature would give MOFs (although in the latter case, the formation time would be longer). AJ-15-21-2 contained 2 equivalents of In, while AJ-15-25-1, 2 and 3 contained 3 equivalents of In each, and were left at RT, 40\degree C and 50\degree C respectively. However, these also failed to yield MOFs.
+
+Work towards obtaining X-ray quality In(III)/\textbf{\emph{para}-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} MOF crystals is ongoing.
+
+\subsection{Project 2: Zn(II)/\textbf{mes-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} MOF}\label{sec:dis-zn}
+Ligand \textbf{mes-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} is similar in structure to ligand $para$-H$_2^+$Cl$^-$, the difference being that \textbf{mes-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} containing additional steric bulk around the imidazolium unit. It was hypothesised that a MOF with the \textbf{mes-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} linker could have different catalytic outcomes compared to a MOF with the $para$-H$_2^+$Cl$^-$ linker (for example, the reactants may have different favourable orientations within the pores).
+
+\textbf{PROBABLY WANT A STRUCTURE OF THIS?}
+
+\subsubsection{Mes-H$_2$L$^+$Cl$^-$ ligand synthesis}\label{sec:dis-mesL}
+The synthesis of the ligand proved more difficult than the synthesis of $para$-H$_2^+$Cl$^-$. Synthesis was first attempted in the same was as $para$-H$_2^+$Cl$^-$, by first making the diimine and then ring-closing to form the imidazolium species. However, this reaction had to be abandoned after an unknown mixture was formed.
+
+Next, the synthesis was attempted following instructions from a different paper\cite{nickerl2012selective}. This first involved a reaction between 1,3-dimethyl-4-aminobenzoic acid methyl ester, and formaldehyde. Next, glyoxal and another portion of 1,3-dimethyl-4-aminobenzoic acid methyl ester were added, forming the other half of the molecule and closing the imidazolium ring. However, following the literature procedure exactly gave a low yield (23\%). It was suspected that this was due to the sterically hindering methyl groups on the phenyl ring were inhibiting the reaction, as the amino group between them was required to nucleophically attack the formaldehyde. Therefore, the time for the reaction with formaldehyde was increased from 5 hours to 24 hours. This modified procedure gave a 36\% yield. It should be noted though that the modified reaction used approximately 7 times more starting material than the unmodified reaction, and so this increase in yield may be due to less relative loss in product in the work-up.
+
+
+
+\subsubsection{Zn(II)/\textbf{mes-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} MOF}\label{sec:dis-znmof}
+A variety of temperatures and solvent conditions were used in the attempted synthesis of the Zn(II)/\textbf{mes-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} MOF (refer to Table \ref{tab:Zn1}). However, none of the conditions yielded X-ray quality MOF crystals.
+
+AJ-21-7-1, which used scaled literature conditions\cite{nickerl2012selective}, did not give crystals.
+
+For AJ-15-29-4, the temperature was increased to 100\degree C. Orange, round-shaped crystals were obtained. However, under powder X-ray diffraction (PXRD), it was determined that the crystals were not a MOF. The simulated MOF spectrum gave strong scattering at low angles $\bm{5=2\theta ???}$. On the other hand, the experimental data showed some low angle scattering at 9 and 11 \textbf{????}, but it di not match the simulated data of the desired Zn(II)/\textbf{mes-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} MOF.
+
+Other attempts met with a similar lack of success. AJ-15-31-1 was a lower-temperature, 60\degree C trial which produced tiny, clear crystals. However, on analysis with synchotron single crystal X-ray diffraction (SC-XRD), the crystals were found to be ligand salts. For AJ-31-2, which was a trial at 100\degree C with DMF instead of ethanol, crystals were obtained but were too small to give a diffraction pattern even under synchotron radiation. AJ-15-31-3 was another 60\degree C trial which produced crystals, but under PXRD lots of high-angle scattering was obtained, suggesting the crystals were those of the zinc salt.
+
+Work to obtain high quality MOF crystals is ongoing.
+
+\subsection{Project 3: Co(II)/\textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$} MOF}\label{sec:dis-co}
+It is known that dicarboxylic acid analogues of \textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$} (see Figure \textbf{NEED PIC}) form 1-D MOFs \textbf{(SAYS WHO?)}. Therefore, it was hypothesised that using the tetracarboxylic \textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$} could lead to highly interconnected, 2-D and 3-D structures. Sen et al.\cite{sen2014construction} had reported a bipillared-layer 3-D MOF, constructed from planes of Zn(II)/\textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$}, and pillars of various bipyridine derivatives \textbf{GET PICS, FROM ARTICLE SHOULD BE OKAY}. The aim of this project was was to replace then zinc with different metal species, and obtain new structures with potential for metalation.
+
+\subsubsection{\textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$} ligand synthesis}\label{sec:dis-H4L}
+Ligand \textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$} was synthesised successfully in a 29\% overall yield.
+
+\subsubsection{Co(II)/\textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$} MOF synthesis}\label{sec:dis-CoMOF}
+The synthesis of the literature MOF Zn(II)/\textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$}/bpy was attempted, but did not yield crystals.
+
+As a preliminary investigation, MOF synthesis was attempted without the bpy pillaring agent. A variety of metal(II) salts were used in syntheses, including Mn, Mg, Ca and Cu. Under microscopy, it was evident that none of these four gave MOF crystals. However, for Co, a new 1-D Co(II)/\textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$} MOF was obtained (see Figure \ref{CoMOFStruc}).
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{center}
+\includegraphics[width=1\linewidth]{figures/CoMOFStruc.eps}
+\end{center}
+\caption{Structure of new Co(II)/\textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$} MOF.}\label{CoMOFStruc}
+\end{wrapfigure}
+
+The structure of this MOF was determined by SC-XRD, revealing a close-packed structure. The MOF grows in 1-D, with the linear structure being held together by a network of hydrogen bonding. \textbf{MAYBE I CAN WRITE MORE ABOUT THIS, HOW THE H-BONDS WORK??}
+
+
+
+
+
+\section{Conclusion}\label{sec:conc}
+\textbf{Do last.}
+
+\section{Future Directions}\label{sec:future}
+
+
+\subsection{In(III)/$para$-H$_2^+$Cl$^-$ and Zn(II)/\textbf{mes-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} MOFs}\label{sec:in_zn-fut}
+As these two MOFs were not successfully synthesised, more investigation needs to go into finding synthetic conditions which facilitate MOF formation. \textbf{do i do suggestions?} Following this, one-pot and post-synthetic Cu(I) metalation techniques will be explored. Finally, click reaction catalysis with the metalated MOFs shall be tested, and changes compared to that of the homogeneously catalysed reaction.
+
+\subsection{Co(II)/\textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$} MOF}\label{sec:co-fut}
+As the Co(II)/\textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$} MOF was found to have a non-porous structure, work needs to go into increasing porosity. A one-pot synthesis of the Co(II)/\textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$} MOF with pillaring agent bpy, as exemplified by Sen and coworkers' Zn(II)/\textbf{H$\bm{_4}$L$\bm{^+}$Cl$\bm{^-}$}/bpy MOF would be a good starting point for this. Following this, metalation and catalysis testing would be done as for the In(III)/$para$-H$_2^+$Cl$^-$ and Zn(II)/\textbf{mes-H$\bm{_2}$L$\bm{^+}$Cl$\bm{^-}$} MOFs.
+
+\subsection{Other options}\label{sec:other-fut}
+Another option would be having the NHC-Cu(I) centre sticking off the ligand, so it was centred in the pore of the MOF. This may make it more accessible to reactants during catalysis. However, this would also require the structural linkers to be longer, to account for the pore space being taken up by the extra ligand bulk. Which may give difficulties in itself.
+
+\section{Acknowledgements}\label{sec:thanks}
+The author would like to acknowledge Patrick Capon and Associate Professor Christopher Sumby for their supervision and advice throughout this project.
+
+\bibliography{MyBibliography}{}\label{sec:bib}
+\bibliographystyle{JAmChemSoc}
+
+
+
+\end{document}

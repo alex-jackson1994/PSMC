@@ -1,0 +1,4 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces A simple four-leaf tree.\relax }}{3}
+\contentsline {figure}{\numberline {2}{\ignorespaces Bayesian statistics involves updating prior beliefs with data. Starting from the prior $f(\bm {\theta }|C)$, we find the likelihood $L(\bm {\theta };\bm {y},C)$and ``combine'' them to give our posterior $f(\bm {y}|\bm {\theta },C)$, which is a distribution that gives us information about $\bm {\theta }$ with higher confidence. \textbf {I NEED TO FIGURE OUT HOW TO DRAW THIS PROPERLY, ALSO MY LIKELIHOOD IS THE WRONG WAY ROUND}\relax }}{5}
+\contentsline {figure}{\numberline {3}{\ignorespaces A highly simplified example of recombination, which occurs at the point marked by dashed lines.\relax }}{8}
+\contentsline {figure}{\numberline {4}{\ignorespaces A simple ARG with three leaves and two recombination events. The marginal tree for some site $x\in (0.3,0.4)$ is shown in red.\relax }}{9}

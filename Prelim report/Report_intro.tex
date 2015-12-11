@@ -4,11 +4,13 @@
 \usepackage{bm} % bold maths
 \usepackage[normalem]{ulem} % cross stuff out
 \usepackage{tikz} % for diagrams
-\usepackage[font={it},justification=centering]{caption}
- % italic figure captions
+\usepackage[font={it},justification=centering]{caption}% italic figure captions
 %\usepackage{natbib}
 %\usepackage{har2nat}
 %\usepackage[style=authoryear,backend=biber]{biblatex}
+%\usepackage{harvard}
+
+
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % rule horizontal line
 \usepackage[]{algorithmic}
 \usepackage{algorithm}
@@ -257,7 +259,7 @@ Red-penned words of wisdom, let it bean
 %\newpage
 
 \section{Introduction}\label{sec:intro}
-The aim of this project is to reconstruct ancient population dynamics of \sout{iconic Australian animals} the iconic Australian bison \textbf{(WHAT TYPE?)}, to investigate past bottleneck events and the possible resulting lack of genetic diversity. This will be undertaken by using the \emph{pairwise sequentially Markovian coalescent} (PSMC) model suggested by Li and Durban (\textbf{REF...}).
+The aim of this project is to reconstruct ancient population dynamics of \sout{iconic Australian animals} the iconic Australian bison \textbf{(WHAT TYPE?)}, to investigate past bottleneck events and the possible resulting lack of genetic diversity. This will be undertaken by using the \emph{pairwise sequentially Markovian coalescent} (PSMC) model suggested by Li and Durban \cite{li2011inference}.
 
 Before the PSMC model can be discussed, we will cover the background theory: the Wright-Fisher model, tree likelihoods, Bayesian statistics, Skyline Plots, recombination, Hidden Markov models and maximisation algorithms.
 
@@ -266,7 +268,7 @@ Before the PSMC model can be discussed, we will cover the background theory: the
 In order to model population changes over time, we need some method of modelling genetic drift. One way we can do this is with the Wright-Fisher model. This method has the frequency of alleles in one generation drawn at random from the frequency of alleles in the previous generation.
 
 \subsubsection{The Coalescent Model}\label{sssec:CoalMo}
-The coalescent model aims to trace individuals in a population back to the \emph{most recent common ancestor} (MRCA). The pioneering mathematician in this field was Kingman \textbf{REF}. The theory involves going back in time, by having children ``select'' their parents from the previous generation according to the Wright-Fisher model. A coalescent event occurs when two children select the same parent, until all modern individuals can be shown to have descended from a single ancestor.
+The coalescent model aims to trace individuals in a population back to the \emph{most recent common ancestor} (MRCA). The pioneering mathematician in this field was Kingman \cite{kingman1982genealogy}. The theory involves going back in time, by having children ``select'' their parents from the previous generation according to the Wright-Fisher model. A coalescent event occurs when two children select the same parent, until all modern individuals can be shown to have descended from a single ancestor.
 
 The assumptions are
 \begin{itemize}
@@ -276,7 +278,7 @@ The assumptions are
 \end{itemize}
 Time is rescaled such that one unit of scaled time corresponds to $N$ generations passing. It can be shown that for $k$ lineages in a population of $N$, the time until a coalescent event is distributed exponentially with rate ${k\choose 2}$.
 
-Other elements can be added to this simple model, such as population dynamics, population substructure, recombination, selection, and positive or negative mutations. For example, in section \ref{ssec:skyline}, we discuss Skyline Plots, which allow use to estimate ancient population sizes, based upon the above theory.
+Other elements can be added to this simple model, such as population dynamics, population substructure, recombination, selection, and positive or negative mutations. For example, in Section \ref{ssec:skyline}, we discuss Skyline Plots, which allow use to estimate ancient population sizes, based upon the above theory.
 
 \textbf{yeah i still don't really understand where wright-fisher ends and coalescent begins...}
 
@@ -311,7 +313,7 @@ Finally, let
 \item $v_i$ be the branch length extending backward in time from node $i$; and
   \item $P_{i,j}(v)$ be the probability of going from sequence $s_i$ to $s_j$ over time $v$.
 \end{itemize}
-One possible model of nucleotide substitution is the \emph{Jukes-Cantor model} \textbf{(REFERENCE)}, defined by
+One possible model of nucleotide substitution is the \emph{Jukes-Cantor model} \cite{jukes1969evolution}, defined by
 \begin{eqnarray}
   %\[
   P_{x,y}(v)=\begin{cases} 
@@ -387,7 +389,7 @@ We start with the \emph{prior distribution} $f(\bm{\theta}|C)$, which represents
 \begin{figure}[h!]
   \centering
   	\includegraphics[width=0.3\textwidth]{figures/Triplot}\\[1.5cm]
-        \caption{Bayesian statistics involves updating prior beliefs with data. Starting from the prior $f(\bm{\theta}|C)$, we find the likelihood $L(\bm{\theta};\bm{y},C)$and ``combine'' them to give our posterior $f(\bm{y}|\bm{\theta},C)$, which is a distribution that gives us information about $\bm{\theta}$ with higher confidence. \textbf{I NEED TO FIGURE OUT HOW TO DRAW THIS PROPERLY, ALSO MY LIKELIHOOD IS THE WRONG WAY ROUND}} \label{Triplot}
+        \caption{Bayesian statistics involves updating prior beliefs with data. Starting from the prior $f(\bm{\theta}|C)$, we find the likelihood $L(\bm{\theta};\bm{y},C)$ and ``combine'' them to give our posterior $f(\bm{y}|\bm{\theta},C)$, which is a distribution that gives us information about $\bm{\theta}$ with higher confidence. \textbf{I NEED TO FIGURE OUT HOW TO DRAW THIS PROPERLY, ALSO MY LIKELIHOOD IS THE WRONG WAY ROUND}} \label{Triplot}
 \end{figure}
 
 
@@ -396,7 +398,7 @@ This process can be iterated. When more data arises, the old posterior becomes t
 In this field, the parameters of interest may be things like tree branch lengths.
 
 \subsubsection{Approximate Bayesian Computing}\label{sssec:ABC}
-In the majority of real-life problems, it is difficult or impossible to calculate the exact posterior distribution. This may be due to the marginal likelihood being computationally intractable, or the likelihood function may not exist. However, there are a variety of methods for sampling from the posterior distribution. One of these is \emph{Approximate Bayesian Computing} (ABC), which relies upon efficient data simulation and avoids calculating the likelihood. This technique is derived from another method called the \emph{Rejection-Acceptance Algorithm}. \textbf{REF THESE TWO.} ABC starts with some observed data $\bm{x_{\text{obs}}}$. The steps in Algorithm \ref{alg:ABC} are then followed.
+In the majority of real-life problems, it is difficult or impossible to calculate the exact posterior distribution. This may be due to the marginal likelihood being computationally intractable, or the likelihood function may not exist. However, there are a variety of methods for sampling from the posterior distribution. One of these is \emph{Approximate Bayesian Computing} (ABC), which relies upon efficient data simulation and avoids calculating the likelihood \cite{beaumont2002approximate}. This technique is derived from another method called the \emph{Rejection-Acceptance Algorithm}. ABC starts with some observed data $\bm{x_{\text{obs}}}$. The steps in Algorithm \ref{alg:ABC} are then followed.
 
 \begin{algorithm}[h!]
 \caption{Approximate Bayesian Computing.}
@@ -421,7 +423,7 @@ If in Algorithm \ref{alg:ABC}, $\epsilon=0$ and $S$ is a sufficient statistic, t
 
 
 \subsubsection{Markov Chain Monte Carlo}\label{sssec:MCMC}
-\emph{Markov Chain Monte Carlo} (MCMC) is another method of sampling from the posterior distribution. It avoids calculating the marginal likelihood by taking the ratio of posterior densities. MCMC works by using a Markov chain which has the posterior distribution of the parameter $\bm{\theta}$, as the equilibrium distribution of the chain. With a set of observations $\bm{y}$, the method is as follows in Algorithm \ref{alg:MCMC}. \textbf{REF METROPOLIS HASTINGS}
+\emph{Markov Chain Monte Carlo} (MCMC) is another method of sampling from the posterior distribution. It avoids calculating the marginal likelihood by taking the ratio of posterior densities. MCMC works by using a Markov chain which has the posterior distribution of the parameter $\bm{\theta}$, as the equilibrium distribution of the chain \cite{metropolis1953equation}. With a set of observations $\bm{y}$, the method is as follows in Algorithm \ref{alg:MCMC}. 
 
 \begin{algorithm}[h!]
 \caption{Markov Chain Monte Carlo.}
@@ -481,7 +483,7 @@ We can update the estimates with the belief that $M_i\sim\text{Exp}(M_{i-1})$, w
 \subsection{Ancestral Recombination Graphs}\label{ssec:ARGs}
 Thus far, we have only considered mutations as driving genetic change. However, this neglects another important phenomenon - \emph{recombination}.
 
-\emph{Diploid} organisms receive genetic material from both parents, and ``mix'' it together via recombination (see Figure \ref{RecombinationForDummies}). \textbf{USE ARG PAPER I DOWNLOADED AS REF.}
+\emph{Diploid} organisms receive genetic material from both parents, and ``mix'' it together via recombination (see Figure \ref{RecombinationForDummies}).
 
 	\begin{figure}[h!]
 		\centering
@@ -507,7 +509,7 @@ Thus far, we have only considered mutations as driving genetic change. However, 
 
 We need to incorporate recombination into the coalescent model. In the coalescent approximation, the ``death rate'' (i.e. the rate of coalescent events), is $\mu_k={k \choose 2}=\frac{k(k-1)}{2}$ when there are $k$ lineages. The rate of recombination is $\lambda_k=\frac{k\rho}{2}$, for $\rho$ small.
 
-When a recombination event occurs, the place on the genome at which the recombination happens is randomly assigned by a realisation of a distribution on (0,1), where we take 0 and 1 to be the start and end of the DNA molecule). The coalescent process with recombination is visualised with ARGs, \emph{ancestral recombination graphs} (not trees, as there can be loops in the ARGs). See Figure \ref{ARGexample}.
+When a recombination event occurs, the place on the genome at which the recombination happens is randomly assigned by a realisation of a distribution on (0,1), where we take 0 and 1 to be the start and end of the DNA molecule). The coalescent process with recombination is visualised with ARGs, \emph{ancestral recombination graphs} (not trees, as there can be loops in the ARGs) \cite{griffiths1997ancestral}. See Figure \ref{ARGexample}.
 
 	\begin{figure}[h!]
 		\centering
@@ -572,7 +574,7 @@ Each individual site (or segment of genetic material between recombination point
 As a recombination event increases the number of lineages, this allows us to probe deeper into species' past.
 
 \subsection{Hidden Markov Models}\label{ssec:HMM}
-In standard Markov chains, the state of the system is observed directly. However, in \emph{Hidden Markov models} (HMMs), the states are not observed - instead, observations are probabilistic functions of the states. In our case, states could be the time until most recent common ancestor, and observations could be heterozygousity, for different sections of the genome. Conditional upon knowing the order of states, observations are independent. \textbf{REF THE SPEECH RECOG. PAPER.}
+In standard Markov chains, the state of the system is observed directly. However, in \emph{Hidden Markov models} (HMMs), the states are not observed - instead, observations are probabilistic functions of the states \cite{rabiner1989tutorial}. In our case, states could be the time until most recent common ancestor, and observations could be heterozygousity, for different sections of the genome. Conditional upon knowing the order of states, observations are independent.
 
 The elements of a discrete-time Hidden Markov model are listed below.
 \begin{itemize}
@@ -611,8 +613,6 @@ There are three main problems in HMM analyses.
 \item \emph{Parameter estimation}: How do we choose $\bm{\lambda}$ to maximise $L(\bm{\lambda};\bm{O})$? \label{HMM:parest}
   
 \end{enumerate}
-
-\textbf{I'm not sure whether we are calculating a likelihood or a probability?}
 
 We will just consider problem \ref{HMM:eval} for now (methods for solving problem \ref{HMM:parest} can be found in Sections \ref{ssec:EM-Alg} and \ref{ssec:BW-Alg}). We begin by considering a state sequence $\bm{Q}=(q_1,q_2,\cdots,q_T)$. As the observations are independent given the states, we have
 \begin{eqnarray*}
@@ -669,7 +669,7 @@ Finally, we obtain the probability
 
 
 \subsection{The Expectation-Maximisation Algorithm}\label{ssec:EM-Alg}
-The Expectation-Maximisation (EM) Algorithm is a technique for finding MLEs which cannot be solved analytically. It is a useful method when there are missing data or ``latent variables'', e.g. for a HMM when we don't know the parameters $\bm{\theta}$ and the sequence of hidden states $\bm{Q}$. For the list of steps, see Algorithm \ref{alg:EM}.
+The Expectation-Maximisation (EM) Algorithm is a technique for finding MLEs which cannot be solved analytically \cite{bishop1986maximum}. It is a useful method when there are missing data or ``latent variables'', e.g. for a HMM when we don't know the parameters $\bm{\theta}$ and the sequence of hidden states $\bm{Q}$. For the list of steps, see Algorithm \ref{alg:EM}.
 
 \begin{algorithm}
 \caption{Expectation-Maximisation.}
@@ -694,7 +694,7 @@ The Expectation-Maximisation (EM) Algorithm is a technique for finding MLEs whic
 
 
 \subsection{The Baum-Welch Algorithm}\label{ssec:BW-Alg}
-The Baum-Welch Algorithm is also used to find the unknown parameters of a HMM (see Algorithm \ref{alg:BW}).
+The Baum-Welch Algorithm is also used to find the unknown parameters of a HMM \cite{wu1983convergence} (see Algorithm \ref{alg:BW}).
 \begin{algorithm}[h!]
 \caption{Baum-Welch.}
 \label{alg:BW}
@@ -731,7 +731,7 @@ The Baum-Welch Algorithm is also used to find the unknown parameters of a HMM (s
 In the next section, we use the Baum-Welch Algorithm to calculate the parameters in the PSMC model.
 
 \subsection{The Pairwise Sequentially Markovian Coalescent Model}\label{ssec:PSMC}
-The \emph{pairwise sequentially Markovian coalescent} (PSMC) model is used to find relative population sizes in the past. Using diploid genome sequences, it estimates past population sizes relative to $N_0$, (the time 0 population size) in a discrete-time manner. \textbf{REF PAPER.}
+The \emph{pairwise sequentially Markovian coalescent} (PSMC) model is used to find relative population sizes in the past \cite{li2011inference}. Using diploid genome sequences, it estimates past population sizes relative to $N_0$, (the time 0 population size) in a discrete-time manner.
 
 The PSMC model uses a HMM to describe events. To begin with, the genome is divided into non-overlapping 100 base pair (bp) ``bins''. Additionally, continuous time is discretised such that the intervals are evenly spaced on a log scale. For each bin $\B$, its corresponding hidden state is the discrete time interval $k$ into which the bin $\B$'s \emph{time until most recent common ancestor} (TMRCA) can be found. Thus, the state space $S$ of the HMM is
 \begin{eqnarray}
@@ -749,7 +749,7 @@ The emission probabilities $e_k(i)$ of observation $i\in V$ given a bin has stat
   e_k(1)&=&\left(1-\frac{\pi_k}{C_\sigma\sigma_k} \right)^{\theta/\rho}\\
   e_k(0)&=&1-e_k(1),
 \end{eqnarray}
-where $\pi_k, C_\sigma$ and $\sigma_k$ are functions of $\lambda_k$, and $\lambda_t$ is a piecewise-constant function describing the relative population size at time $t$. We assume the mutation rate $\theta$ and recombination rate $\rho$ are known. \textbf{REF S.I. of PSMC paper}
+where $\pi_k, C_\sigma$ and $\sigma_k$ are functions of $\lambda_k$, and $\lambda_t$ is a piecewise-constant function describing the relative population size at time $t$. We assume the mutation rate $\theta$ and recombination rate $\rho$ are known.
 
 The state transition probability (i.e. a recombination event), for going from bin $\B$ in state $k$ to bin $\B+1$ in state $l$ is
 \begin{eqnarray}
@@ -761,8 +761,9 @@ where $q_{k,l}$ is a conditional transition probability and \textbf{I think $\de
 To estimate the parameters, an expectation-maximisation algorithm is used. The expectation step was begun for a constant population size over time, that is $\lambda_t$ constant for all $t$. The expectation step was found analytically, while the Baum-Welch Algorithm was used for the maximisation step \textbf{(I dunno how these work at the moment)}.
 
 Information on population dynamics and past bottleneck events can be useful for conservation efforts.
-%\bibliography{../Bibliography/Bibliography}{}\label{sec:bib}
+
+\bibliography{bibliography/Bibliography}{}\label{sec:bib}
 %\printbibliography
-%\bibliographystyle{natdin}
+\bibliographystyle{plain}
 
 \end{document}
